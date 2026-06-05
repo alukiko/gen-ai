@@ -1,0 +1,22 @@
+{
+  "input_reviews": 40,
+  "structured_reviews": 33,
+  "validation_errors": 7,
+  "issue_count": 35,
+  "aspect_quote_count": 48,
+  "total_checked_quotes": 83,
+  "ghost_quote_count": 0,
+  "ghost_quote_rate": 0.0,
+  "ghost_quotes": [],
+  "judge_overall_score": 0.75,
+  "elapsed_seconds": 187.6,
+  "usage": {
+    "calls": 25,
+    "prompt_tokens": 40722,
+    "completion_tokens": 14558,
+    "total_tokens": 55280,
+    "prompt_cache_hit_tokens": 1792,
+    "cost_usd_estimate": 0.014843,
+    "cost_note": "Calculated with GPT-4o mini prices: $0.15/M input tokens and $0.60/M output tokens."
+  }
+}

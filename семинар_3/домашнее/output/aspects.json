@@ -1,0 +1,553 @@
+[
+  {
+    "review_id": "67f75e14-ea4d-4c34-a3d7-356abe7bf8d3",
+    "author": "М Б",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "ads",
+        "sentiment": "negative",
+        "quote": "идите лесом со своей рекламой, морковками и другой ерундой которую вы впариваете.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "как только меняешь количество в упаковке цена необъяснимым образом взлетает сразу в 3 минимум раза.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "a5c4802e-b4c3-4722-a450-e2e527900633",
+    "author": "мастер йода",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "нет работы с впн то и не нужно мне ваше приложение",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "e9242139-11c2-4fe3-b3e9-086b97f9134b",
+    "author": "fan_killerDrones",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "само приложение часто начало тупить, вообще не удобно.",
+        "confidence": 0.85
+      },
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "лимит в отзывах, он очень маленький и неудобный.",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "22f2baab-c0d4-4e3b-91ea-278e2bc164af",
+    "author": "Шавкатбек Абахонов",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "удобный приложение",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "review_id": "7281c635-66ed-4527-a713-2cf8768b90a7",
+    "author": "Андрей Мандрик",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "это уже мошенничество со стороны озона!",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "после того , как они залезли ко мне в карман и заблокировали доступ к приложению с включенным ВПН.",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "review_id": "0b765af2-fe75-4ccb-898c-82a4f9671381",
+    "author": "Светлана Янченкова",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "работает без нареканий.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "support",
+        "sentiment": "positive",
+        "quote": "справочная отвечает оперативно.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "reliability",
+        "sentiment": "positive",
+        "quote": "оплата/возврат денежных средств проходит быстро и без проблем",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "e6236f2d-50d9-4674-8570-85822fe9ef21",
+    "author": "С П",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "конченая доставка курьером, хотят привозят, хотят переносят🤮.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "поддержка у вас вообще бесполезная, тупо бот отписки шаблонные пишет",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "8450e4aa-dd58-4c62-972d-45a39166c74f",
+    "author": "IVG",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "Товар приходит в ужасном состоянии... Много обмана.",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "Техподдержка никакая, отвечают на звонки необразованные субъекты...",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "655ce73b-af05-4c14-a5d6-1df054e44a70",
+    "author": "АAA___mag",
+    "rating": 3,
+    "aspects": [
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "спасибо что вы исправили другие вещи но 250 баллов и ничего больше не удобно",
+        "confidence": 0.7
+      }
+    ]
+  },
+  {
+    "review_id": "f4b8f006-8577-4418-8874-8fc1c9ecd02c",
+    "author": "Silon",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "Следит за сетью, сливает ip впнов",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "21439149-dc1d-4ec8-9cfd-7fa4740c06b3",
+    "author": "Viktorij Letner",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "пришел не тот товар и ещё возврат не захотели принимать,ссылаясь что должна в другой пункт отнести",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "29ccbc2d-d472-4dc9-be23-28c3d4fd7fd6",
+    "author": "Нимфа Морская",
+    "rating": 4,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Неудобно смотреть одежду, когда много образцов.",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "bd519ef1-1429-4d9d-9d0b-2543cef0984b",
+    "author": "Bloodreina",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "последующей борьбы с деревянной модерацией и увлекательным (абсолютно нет) опытом общения в чате поддержки",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "fc8a7b04-4307-48b5-9f05-b5997f316df9",
+    "author": "Виталий",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "товар месяцами ждешь заказы и приходит в мятой картонной упаковке.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "a7816e0b-4dd3-4fb1-829e-4ed1c5007357",
+    "author": "андрей южный",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "Почему нет возможности написать и получить помощь ни на сайте, ни в приложении?",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "dda759cc-c21a-45af-9e01-12447b631754",
+    "author": "Пётр Немцов",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "у Ozon жадности нет предела, поэтому подключили в тихаря подписку премиум не уведомив меня.",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "818c4bad-a8c8-4e7c-9a30-fc8e2a65ebb1",
+    "author": "Роман Кузнецов",
+    "rating": 4,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Почему в Android-приложении не видно по какому именно товару из всех вариаций задавался вопрос продавцу?",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "986567d1-fa86-45fa-9657-c8b21218bc18",
+    "author": "user",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "удобное приложение!",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "7d92c32e-3ab2-484b-bc91-dfd01066137e",
+    "author": "Надежда Иванова",
+    "rating": 2,
+    "aspects": [
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "приложение работает не корректно, не оформить заказ, к корзину не добавляются товары, не выбрать фильтры",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "f8de9d99-7dab-49cd-b736-db703152ffd2",
+    "author": "Андрей",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "крутое приложение",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "17d48205-09fc-41c9-88f7-2043ad9602b6",
+    "author": "Александр Полянин",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "все подошло,я очень довольна, спасибо.",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "204c63f3-0e56-4ccf-8ccf-9bed23556cfc",
+    "author": "Кира",
+    "rating": 5,
+    "aspects": []
+  },
+  {
+    "review_id": "9aa88d32-8b7d-476d-a3c2-44760a6a4f61",
+    "author": "Виталий Паршин",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "только одно НО почему по телефону нет поддержки?",
+        "confidence": 0.7
+      }
+    ]
+  },
+  {
+    "review_id": "46de9b6a-99c1-46e6-b881-1115cf8d05d6",
+    "author": "age_002",
+    "rating": 4,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "neutral",
+        "quote": "не хватает более гибкой настройки фильтра в поиске товаров",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "bf1a10a3-ccf0-4aab-9589-e584aa01f989",
+    "author": "Кэтрин Спирс",
+    "rating": 3,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "а в нужную дату не приходят! до сих пор не пришли!!!!",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "качество хорошое",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "f3d50fc1-3344-44a8-84c9-95c53f0a5c2d",
+    "author": "Rer of Riverwood",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "по какой причине для обращения в тех поддержку я должен регистрироваться в социальной сети",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "9b49e511-c688-4a36-8918-c95a2672df28",
+    "author": "Елена Феоктистова",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "performance",
+        "sentiment": "positive",
+        "quote": "Все быстро и хорошо.",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "review_id": "e462bfe2-6834-4b32-8cde-d5b68c457475",
+    "author": "Герман Гольштейн",
+    "rating": 5,
+    "aspects": []
+  },
+  {
+    "review_id": "9fe6319d-29d7-43cc-a642-9167f8e6c2dc",
+    "author": "Kirshe",
+    "rating": 3,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "почему таблица размеров такая ущербная, с телефона она вообще не прокручивается",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "c5bd0407-1023-4ad1-84e4-fa99db04b6d9",
+    "author": "павел т",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "ads",
+        "sentiment": "negative",
+        "quote": "реклама с лысым жирдяем - это верх маркетинга!",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "performance",
+        "sentiment": "negative",
+        "quote": "лента дергается как псих (лаг)",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "в поддержку через бота не пробиться",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "Часто перенос сроков доставки",
+        "confidence": 0.8
+      },
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "рулетка тоже какие-то жалкие 5-10 % скидка, хотя в курсе что перед такими акциями поднимают цену",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "51609fed-92f6-4b78-8b68-88a134965caf",
+    "author": "BOSTON63rus",
+    "rating": 2,
+    "aspects": [
+      {
+        "aspect": "price",
+        "sentiment": "negative",
+        "quote": "при заказе оказывается надо ещё и растаможку сверху оплатить!",
+        "confidence": 0.9
+      },
+      {
+        "aspect": "ads",
+        "sentiment": "negative",
+        "quote": "реклама с лысым жирдяем - это верх маркетинга!",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "67f39195-018c-40c5-b4d9-e55317cf981f",
+    "author": "Full Moon",
+    "rating": 3,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "в озон фреш пропала сортировка... и поиск по названию тоже не работает",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "5f6b600c-df9e-468b-ad3e-b1d26c1966e2",
+    "author": "Ярослав Карпов",
+    "rating": 5,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "positive",
+        "quote": "хорошее приложение",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "8b945196-08e1-4e61-8fc3-39ec945b79a9",
+    "author": "Кирилл Гурьянов",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "reliability",
+        "sentiment": "negative",
+        "quote": "морковск это развод!!!",
+        "confidence": 0.9
+      }
+    ]
+  },
+  {
+    "review_id": "b5ade990-5708-45a2-b458-719dab7666a9",
+    "author": "Вера Егорова",
+    "rating": 3,
+    "aspects": [
+      {
+        "aspect": "support",
+        "sentiment": "negative",
+        "quote": "не могу у найти деньги в приложении за отказаный заказ",
+        "confidence": 0.8
+      }
+    ]
+  },
+  {
+    "review_id": "4ae65cbc-48c5-4f60-8e3d-3a21aee2a34f",
+    "author": "Anna",
+    "rating": 4,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "Почему я кладу товар в корзину,а его там нет и оформить соответственно тоже не могу,в понравившиеся тоже нет его,хотя я нажимаю?",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "review_id": "2ff3040f-406e-44ab-90eb-95061156aa08",
+    "author": "Александр Ф",
+    "rating": 5,
+    "aspects": []
+  },
+  {
+    "review_id": "e230fed3-ee61-435b-a57d-ccca70f1c020",
+    "author": "Kigen Defrinov",
+    "rating": 1,
+    "aspects": [
+      {
+        "aspect": "design",
+        "sentiment": "negative",
+        "quote": "отвратительно стал искать товары, пишешь для андроид, а выдает все товары на айфон и раз в 10 товаров будет на андроид",
+        "confidence": 0.9
+      }
+    ]
+  }
+]

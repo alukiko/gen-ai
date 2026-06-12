@@ -1,0 +1,117 @@
+# doc_04: 2311.12983v1 / part 4
+
+Source file: 2311.12983v1.pdf
+
+[Page 22]
+System prompt: You are a general AI assistant. I will ask you a question. Report your thoughts, and finish
+your answer with the following template: FINAL ANSWER: [YOUR FINAL ANSWER].
+YOUR FINAL ANSWER should be a number OR as few words as possible OR a comma separated list of
+numbers and/or strings.
+If you are asked for a number, don’t use comma to write your number neither use units such as $or percent
+sign unless specified otherwise.
+If you are asked for a string, don’t use articles, neither abbreviations (e.g. for cities), and write the digits in
+plain text unless specified otherwise.
+If you are asked for a comma separated list, apply the above rules depending of whether the element to be put
+in the list is a number or a string.
+GAIA Question: Your final answer should be a number, or as few words as possible. Where were
+the Vietnamese specimens described by Kuznetzov in Nedoshivina’s 2010 paper eventually deposited? Just
+give me the city name without abbreviations.
+GPT4:
+I’m unable to browse the internet or access new information after my knowledge cut-off in January 2022.
+Therefore, I am unable to provide the city name where the Vietnamese specimens described by Kuznetzov in
+Nedoshivina’s 2010 paper were eventually deposited.
+FINAL ANSWER: Unable to provide Ground truth: Saint Petersburg ✗
+System prompt: You are a general AI assistant. I will ask you a question. Report your thoughts, and finish
+your answer with the following template: FINAL ANSWER: [YOUR FINAL ANSWER].
+YOUR FINAL ANSWER should be a number OR as few words as possible OR a comma separated list of
+numbers and/or strings.
+If you are asked for a number, don’t use comma to write your number neither use units such as $or percent
+sign unless specified otherwise.
+If you are asked for a string, don’t use articles, neither abbreviations (e.g. for cities), and write the digits in
+plain text unless specified otherwise.
+If you are asked for a comma separated list, apply the above rules depending of whether the element to be put
+in the list is a number or a string.
+GAIA Question: Your final answer should be a number, or as few words as possible. Where were
+the Vietnamese specimens described by Kuznetzov in Nedoshivina’s 2010 paper eventually deposited? Just
+give me the city name without abbreviations.
+GPT4 (Web browsing):
+Browsing Bing:
+/searc “Vietnamese specimens described by Kuznetzov Nedoshivina 2010 paper deposition location”
+/rerder Reading content
+Result:
+A catalogue of type specimens of the Tortricidae described by V. I. Kuznetzov from Vietnam and
+deposited in the Zoological Institute, St. Petersburg : Nedoshivina, Svetlana : Free Download, Borrow,
+and Streaming : Internet Archive
+FINAL ANSWER: Saint Petersburg Ground truth: Saint Petersburg ✓
+Figure 9 Proper web search is very effective to answer GAIA questions. The reasoning trace was obtained with the
+current GPT4 web browsing version.
+22
+
+[Page 23]
+System prompt: You are a general AI assistant. I will ask you a question. Report your thoughts, and finish
+your answer with the following template: FINAL ANSWER: [YOUR FINAL ANSWER].
+YOUR FINAL ANSWER should be a number OR as few words as possible OR a comma separated list of
+numbers and/or strings.
+If you are asked for a number, don’t use comma to write your number neither use units such as $or percent
+sign unless specified otherwise.
+If you are asked for a string, don’t use articles, neither abbreviations (e.g. for cities), and write the digits in
+plain text unless specified otherwise.
+If you are asked for a comma separated list, apply the above rules depending of whether the element to be put
+in the list is a number or a string.
+GAIA Question: In the film Goldfinger, what color was the object that James Bond concealed him-
+self and his companion Pussy Galore at the end of the film? If there are multiple colors, put them in a
+comma-separated list in alphabetical order.
+GPT4 (Web browsing):
+Browsing Bing:
+/searc “Goldfinger ending scene object color”
+Goldfinger (1964) ending / spoiler
+/rerder Reading content
+/searc “Goldfinger ending scene parachute color”
+/rerder Reading content
+FINAL ANSWER: Orange, White Ground truth: orange, white ✓
+Figure 10 The official GPT4 browsing plugin is able to refine its initial query based on the information it finds. This
+reasoning trace was obtained with the GPT4 browsing plugin version that was removed, and could not be reproduced
+with the new version.
+23
+
+[Page 24]
+System prompt: [Same system prompt as Figure 10.]
+GAIA Question: A standard Rubik’s cube has been broken into cubes making up its sides. The
+cubes are jumbled, and one is removed. There are 6 cubes with one colored face, 12 edge cubes with two
+colored faces, and 8 corner cubes with three colored faces. All blue cubes have been found. All cubes directly
+left, right, above, and below the orange center cube have been found, along with the center cube. The green
+corners have all been found, along with all green that borders yellow. For all orange cubes found, the opposite
+face’s cubes have been found. The removed cube has two colors on its faces. What are they? Answer using a
+comma separated list, with the colors ordered alphabetically.
+GPT4:
+To solve this, let’s break it down step by step and visualize a standard Rubik’s cube:
+•A standard Rubik’s Cube has 6 faces: Front, Back, Left, Right, Up, Down.
+•Each face has a center cube (which determines the color of that face), surrounded by 4 edges and 4
+corners.
+•Each edge has two colors, and each corner has three colors.
+Cube Structure:
+•Orange: Front
+•Red: Back
+•Blue: Left
+•Green: Right
+•White: Up
+•Yellow: Down
+Step-by-Step Analysis:
+•All blue cubes have been found.
+•All cubes directly left, right, above, and below the orange center cube have been found, along with the
+center cube.
+•This means the central, top, bottom, left, and right orange cubes have been found.
+•All green corners have been found, along with all green that borders yellow.
+•This means all green-yellow edges and corners have been found.
+•For all orange cubes found, the opposite face’s cubes have been found.
+•This means all the red cubes opposite the found orange cubes have been found.
+Solution Approach: Since the removed cube has two colors on its faces, it must be an edge cube. To determine
+which one is missing, we should look for the edge cube that is not accounted for by the given conditions.
+•All blue cubes found, which means all blue edges and corners are found.
+•The orange center, and all surrounding it, are found, and hence the opposite reds are found too.
+•All green corners are found, and green that borders yellow are found too.
+•By deducting the cubes found from the total cubes, we will find the missing cube, which is the edge
+cube between the red and yellow faces.
+FINAL ANSWER: Red, Yellow Ground truth: green, white ✗
+Figure 11 GPT4 and other assistants struggle on puzzles, which often are Level 1 questions.
+24

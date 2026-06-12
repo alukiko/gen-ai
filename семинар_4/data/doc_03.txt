@@ -1,0 +1,360 @@
+# doc_03: 2311.12983v1 / part 3
+
+Source file: 2311.12983v1.pdf
+
+[Page 13]
+Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto,
+Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta
+Koreeda. Holistic Evaluation of Language Models, November 2022a.
+Percy Liang, Rishi Bommasani, Tony Lee, Dimitris Tsipras, Dilara Soylu, Michihiro Yasunaga, Yian Zhang, Deepak
+Narayanan, Yuhuai Wu, Ananya Kumar, Benjamin Newman, Binhang Yuan, Bobby Yan, Ce Zhang, Christian
+Cosgrove, Christopher D. Manning, Christopher R´ e, Diana Acosta-Navas, Drew A. Hudson, Eric Zelikman, Esin
+Durmus, Faisal Ladhak, Frieda Rong, Hongyu Ren, Huaxiu Yao, Jue Wang, Keshav Santhanam, Laurel Orr,
+Lucia Zheng, Mert Yuksekgonul, Mirac Suzgun, Nathan Kim, Neel Guha, Niladri Chatterji, Omar Khattab, Peter
+Henderson, Qian Huang, Ryan Chi, Sang Michael Xie, Shibani Santurkar, Surya Ganguli, Tatsunori Hashimoto,
+Thomas Icard, Tianyi Zhang, Vishrav Chaudhary, William Wang, Xuechen Li, Yifan Mai, Yuhui Zhang, and Yuta
+Koreeda. Holistic evaluation of language models, 2022b.
+Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen Men, Kejuan
+Yang, Shudan Zhang, Xiang Deng, Aohan Zeng, Zhengxiao Du, Chenhui Zhang, Sheng Shen, Tianjun Zhang, Yu Su,
+Huan Sun, Minlie Huang, Yuxiao Dong, and Jie Tang. Agentbench: Evaluating llms as agents. arXiv preprint arXiv:
+2308.03688 , 2023a.
+Zhiwei Liu, Weiran Yao, Jianguo Zhang, Le Xue, Shelby Heinecke, Rithesh Murthy, Yihao Feng, Zeyuan Chen,
+Juan Carlos Niebles, Devansh Arpit, Ran Xu, Phil Mui, Huan Wang, Caiming Xiong, and Silvio Savarese. BOLAA:
+Benchmarking and Orchestrating LLM-augmented Autonomous Agents, August 2023b.
+Gr´ egoire Mialon, Roberto Dess` ı, Maria Lomeli, Christoforos Nalmpantis, Ram Pasunuru, Roberta Raileanu, Baptiste
+Rozi` ere, Timo Schick, Jane Dwivedi-Yu, Asli Celikyilmaz, Edouard Grave, Yann LeCun, and Thomas Scialom.
+Augmented language models: a survey, 2023.
+Microsoft. Semantic Kernel. github, September 2023.
+Meredith Ringel Morris, Jascha Sohl-dickstein, Noah Fiedel, Tris Warkentin, Allan Dafoe, Aleksandra Faust, Clement
+Farabet, and Shane Legg. Levels of agi: Operationalizing progress on the path to agi, 2023.
+Reiichiro Nakano, Jacob Hilton, Suchir Balaji, Jeff Wu, Long Ouyang, Christina Kim, Christopher Hesse, Shantanu
+Jain, Vineet Kosaraju, William Saunders, et al. Webgpt: Browser-assisted question-answering with human feedback.
+arXiv preprint arXiv:2112.09332 , 2021.
+Harsha Nori, Nicholas King, Scott Mayer McKinney, Dean Carignan, and Eric Horvitz. Capabilities of gpt-4 on medical
+challenge problems, 2023.
+OpenAI. Gpt-4 technical report, 2023.
+Anton Osika. GPT Engineer, September 2023.
+Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, Sandhini
+Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens,
+Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike, and Ryan Lowe. Training language models to follow
+instructions with human feedback, 2022.
+Shishir G. Patil, Tianjun Zhang, Xin Wang, and Joseph E. Gonzalez. Gorilla: Large Language Model Connected with
+Massive APIs, May 2023.
+Yotam Perlitz, Elron Bandel, Ariel Gera, Ofir Arviv, Liat Ein-Dor, Eyal Shnarch, Noam Slonim, Michal Shmueli-Scheuer,
+and Leshem Choshen. Efficient benchmarking (of language models), 2023.
+Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. SQuAD: 100,000+ questions for machine
+comprehension of text. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing ,
+pages 2383–2392, Austin, Texas, November 2016. Association for Computational Linguistics. doi: 10.18653/v1/
+D16-1264. URL https://aclanthology.org/D16-1264 .
+Sasha Rush. MiniChain, September 2023.
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess` ı, Roberta Raileanu, Maria Lomeli, Luke Zettlemoyer, Nicola Can-
+cedda, and Thomas Scialom. Toolformer: Language models can teach themselves to use tools. arXiv preprint
+arXiv:2302.04761 , 2023.
+Yongliang Shen, Kaitao Song, Xu Tan, Dongsheng Li, Weiming Lu, and Yueting Zhuang. HuggingGPT: Solving AI
+Tasks with ChatGPT and its Friends in Hugging Face, May 2023.
+13
+
+[Page 14]
+Kurt Shuster, Jing Xu, Mojtaba Komeili, Da Ju, Eric Michael Smith, Stephen Roller, Megan Ung, Moya Chen, Kushal
+Arora, Joshua Lane, et al. Blenderbot 3: a deployed conversational agent that continually learns to responsibly
+engage. arXiv preprint arXiv:2208.03188 , 2022.
+Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal Md Shoeb, Abubakar Abid, Adam Fisch, Adam R.
+Brown, Adam Santoro, Aditya Gupta, Adri` a Garriga-Alonso, Agnieszka Kluska, Aitor Lewkowycz, Akshat Agarwal,
+Alethea Power, Alex Ray, Alex Warstadt, Alexander W. Kocurek, Ali Safaya, Ali Tazarv, Alice Xiang, Alicia Parrish,
+Allen Nie, Aman Hussain, Amanda Askell, Amanda Dsouza, Ambrose Slone, Ameet Rahane, Anantharaman S.
+Iyer, Anders Johan Andreassen, Andrea Madotto, Andrea Santilli, Andreas Stuhlm¨ uller, Andrew M. Dai, Andrew
+La, Andrew Lampinen, Andy Zou, Angela Jiang, Angelica Chen, Anh Vuong, Animesh Gupta, Anna Gottardi,
+Antonio Norelli, Anu Venkatesh, Arash Gholamidavoodi, Arfa Tabassum, Arul Menezes, Arun Kirubarajan, Asher
+Mullokandov, Ashish Sabharwal, Austin Herrick, Avia Efrat, Aykut Erdem, Ayla Karaka¸ s, B. Ryan Roberts,
+Bao Sheng Loe, Barret Zoph, Bart lomiej Bojanowski, Batuhan ¨Ozyurt, Behnam Hedayatnia, Behnam Neyshabur,
+Benjamin Inden, Benno Stein, Berk Ekmekci, Bill Yuchen Lin, Blake Howald, Bryan Orinion, Cameron Diao,
+Cameron Dour, Catherine Stinson, Cedrick Argueta, Cesar Ferri, Chandan Singh, Charles Rathkopf, Chenlin Meng,
+Chitta Baral, Chiyu Wu, Chris Callison-Burch, Christopher Waites, Christian Voigt, Christopher D Manning,
+Christopher Potts, Cindy Ramirez, Clara E. Rivera, Clemencia Siro, Colin Raffel, Courtney Ashcraft, Cristina
+Garbacea, Damien Sileo, Dan Garrette, Dan Hendrycks, Dan Kilman, Dan Roth, C. Daniel Freeman, Daniel
+Khashabi, Daniel Levy, Daniel Mosegu´ ı Gonz´ alez, Danielle Perszyk, Danny Hernandez, Danqi Chen, Daphne
+Ippolito, Dar Gilboa, David Dohan, David Drakard, David Jurgens, Debajyoti Datta, Deep Ganguli, Denis Emelin,
+Denis Kleyko, Deniz Yuret, Derek Chen, Derek Tam, Dieuwke Hupkes, Diganta Misra, Dilyar Buzan, Dimitri Coelho
+Mollo, Diyi Yang, Dong-Ho Lee, Dylan Schrader, Ekaterina Shutova, Ekin Dogus Cubuk, Elad Segal, Eleanor
+Hagerman, Elizabeth Barnes, Elizabeth Donoway, Ellie Pavlick, Emanuele Rodol` a, Emma Lam, Eric Chu, Eric Tang,
+Erkut Erdem, Ernie Chang, Ethan A Chi, Ethan Dyer, Ethan Jerzak, Ethan Kim, Eunice Engefu Manyasi, Evgenii
+Zheltonozhskii, Fanyue Xia, Fatemeh Siar, Fernando Mart´ ınez-Plumed, Francesca Happ´ e, Francois Chollet, Frieda
+Rong, Gaurav Mishra, Genta Indra Winata, Gerard de Melo, Germ´ an Kruszewski, Giambattista Parascandolo,
+Giorgio Mariani, Gloria Xinyue Wang, Gonzalo Jaimovitch-Lopez, Gregor Betz, Guy Gur-Ari, Hana Galijasevic,
+Hannah Kim, Hannah Rashkin, Hannaneh Hajishirzi, Harsh Mehta, Hayden Bogar, Henry Francis Anthony Shevlin,
+Hinrich Schuetze, Hiromu Yakura, Hongming Zhang, Hugh Mee Wong, Ian Ng, Isaac Noble, Jaap Jumelet, Jack
+Geissinger, Jackson Kernion, Jacob Hilton, Jaehoon Lee, Jaime Fern´ andez Fisac, James B Simon, James Koppel,
+James Zheng, James Zou, Jan Kocon, Jana Thompson, Janelle Wingfield, Jared Kaplan, Jarema Radom, Jascha
+Sohl-Dickstein, Jason Phang, Jason Wei, Jason Yosinski, Jekaterina Novikova, Jelle Bosscher, Jennifer Marsh,
+Jeremy Kim, Jeroen Taal, Jesse Engel, Jesujoba Alabi, Jiacheng Xu, Jiaming Song, Jillian Tang, Joan Waweru,
+John Burden, John Miller, John U. Balis, Jonathan Batchelder, Jonathan Berant, J¨ org Frohberg, Jos Rozen, Jose
+Hernandez-Orallo, Joseph Boudeman, Joseph Guerr, Joseph Jones, Joshua B. Tenenbaum, Joshua S. Rule, Joyce
+Chua, Kamil Kanclerz, Karen Livescu, Karl Krauth, Karthik Gopalakrishnan, Katerina Ignatyeva, Katja Markert,
+Kaustubh Dhole, Kevin Gimpel, Kevin Omondi, Kory Wallace Mathewson, Kristen Chiafullo, Ksenia Shkaruta,
+Kumar Shridhar, Kyle McDonell, Kyle Richardson, Laria Reynolds, Leo Gao, Li Zhang, Liam Dugan, Lianhui
+Qin, Lidia Contreras-Ochando, Louis-Philippe Morency, Luca Moschella, Lucas Lam, Lucy Noble, Ludwig Schmidt,
+Luheng He, Luis Oliveros-Col´ on, Luke Metz, L¨ utfi Kerem Senel, Maarten Bosma, Maarten Sap, Maartje Ter Hoeve,
+Maheen Farooqi, Manaal Faruqui, Mantas Mazeika, Marco Baturan, Marco Marelli, Marco Maru, Maria Jose
+Ramirez-Quintana, Marie Tolkiehn, Mario Giulianelli, Martha Lewis, Martin Potthast, Matthew L Leavitt, Matthias
+Hagen, M´ aty´ as Schubert, Medina Orduna Baitemirova, Melody Arnaud, Melvin McElrath, Michael Andrew Yee,
+Michael Cohen, Michael Gu, Michael Ivanitskiy, Michael Starritt, Michael Strube, Michal Swedrowski, Michele
+Bevilacqua, Michihiro Yasunaga, Mihir Kale, Mike Cain, Mimee Xu, Mirac Suzgun, Mitch Walker, Mo Tiwari, Mohit
+Bansal, Moin Aminnaseri, Mor Geva, Mozhdeh Gheini, Mukund Varma T, Nanyun Peng, Nathan Andrew Chi,
+Nayeon Lee, Neta Gur-Ari Krakover, Nicholas Cameron, Nicholas Roberts, Nick Doiron, Nicole Martinez, Nikita
+Nangia, Niklas Deckers, Niklas Muennighoff, Nitish Shirish Keskar, Niveditha S. Iyer, Noah Constant, Noah Fiedel,
+Nuan Wen, Oliver Zhang, Omar Agha, Omar Elbaghdadi, Omer Levy, Owain Evans, Pablo Antonio Moreno Casares,
+Parth Doshi, Pascale Fung, Paul Pu Liang, Paul Vicol, Pegah Alipoormolabashi, Peiyuan Liao, Percy Liang, Peter W
+Chang, Peter Eckersley, Phu Mon Htut, Pinyu Hwang, Piotr Mi lkowski, Piyush Patil, Pouya Pezeshkpour, Priti Oli,
+Qiaozhu Mei, Qing Lyu, Qinlang Chen, Rabin Banjade, Rachel Etta Rudolph, Raefer Gabriel, Rahel Habacker,
+Ramon Risco, Rapha¨ el Milli` ere, Rhythm Garg, Richard Barnes, Rif A. Saurous, Riku Arakawa, Robbe Raymaekers,
+Robert Frank, Rohan Sikand, Roman Novak, Roman Sitelew, Ronan Le Bras, Rosanne Liu, Rowan Jacobs, Rui
+Zhang, Russ Salakhutdinov, Ryan Andrew Chi, Seungjae Ryan Lee, Ryan Stovall, Ryan Teehan, Rylan Yang, Sahib
+Singh, Saif M. Mohammad, Sajant Anand, Sam Dillavou, Sam Shleifer, Sam Wiseman, Samuel Gruetter, Samuel R.
+Bowman, Samuel Stern Schoenholz, Sanghyun Han, Sanjeev Kwatra, Sarah A. Rous, Sarik Ghazarian, Sayan Ghosh,
+Sean Casey, Sebastian Bischoff, Sebastian Gehrmann, Sebastian Schuster, Sepideh Sadeghi, Shadi Hamdan, Sharon
+Zhou, Shashank Srivastava, Sherry Shi, Shikhar Singh, Shima Asaadi, Shixiang Shane Gu, Shubh Pachchigar,
+Shubham Toshniwal, Shyam Upadhyay, Shyamolima Shammie Debnath, Siamak Shakeri, Simon Thormeyer, Simone
+14
+
+[Page 15]
+Melzi, Siva Reddy, Sneha Priscilla Makini, Soo-Hwan Lee, Spencer Torene, Sriharsha Hatwar, Stanislas Dehaene,
+Stefan Divic, Stefano Ermon, Stella Biderman, Stephanie Lin, Stephen Prasad, Steven Piantadosi, Stuart Shieber,
+Summer Misherghi, Svetlana Kiritchenko, Swaroop Mishra, Tal Linzen, Tal Schuster, Tao Li, Tao Yu, Tariq Ali,
+Tatsunori Hashimoto, Te-Lin Wu, Th´ eo Desbordes, Theodore Rothschild, Thomas Phan, Tianle Wang, Tiberius
+Nkinyili, Timo Schick, Timofei Kornev, Titus Tunduny, Tobias Gerstenberg, Trenton Chang, Trishala Neeraj, Tushar
+Khot, Tyler Shultz, Uri Shaham, Vedant Misra, Vera Demberg, Victoria Nyamai, Vikas Raunak, Vinay Venkatesh
+Ramasesh, vinay uday prabhu, Vishakh Padmakumar, Vivek Srikumar, William Fedus, William Saunders, William
+Zhang, Wout Vossen, Xiang Ren, Xiaoyu Tong, Xinran Zhao, Xinyi Wu, Xudong Shen, Yadollah Yaghoobzadeh,
+Yair Lakretz, Yangqiu Song, Yasaman Bahri, Yejin Choi, Yichi Yang, Yiding Hao, Yifu Chen, Yonatan Belinkov,
+Yu Hou, Yufang Hou, Yuntao Bai, Zachary Seid, Zhuoye Zhao, Zijian Wang, Zijie J. Wang, Zirui Wang, and Ziyi
+Wu. Beyond the imitation game: Quantifying and extrapolating the capabilities of language models. Transactions
+on Machine Learning Research , 2023. ISSN 2835-8856. URL https://openreview.net/forum?id=uyTL5Bvosj .
+George Stein, Jesse C. Cresswell, Rasa Hosseinzadeh, Yi Sui, Brendan Leigh Ross, Valentin Villecroze, Zhaoyan Liu,
+Anthony L. Caterini, J. Eric T. Taylor, and Gabriel Loaiza-Ganem. Exposing flaws of generative model evaluation
+metrics and their unfair treatment of diffusion models, 2023.
+D´ ıdac Sur´ ıs, Sachit Menon, and Carl Vondrick. ViperGPT: Visual Inference via Python Execution for Reasoning,
+March 2023.
+Yashar Talebirad and Amirhossein Nadiri. Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM
+Agents, June 2023.
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov,
+Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen,
+Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj
+Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez,
+Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril,
+Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor
+Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan
+Silva, Eric Michael Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh Tang, Ross Taylor, Adina Williams,
+Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan
+Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. Llama 2: Open foundation and
+fine-tuned chat models, 2023.
+Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel Bowman. Glue: A multi-task
+benchmark and analysis platform for natural language understanding. In Proceedings of the 2018 EMNLP Workshop
+BlackboxNLP: Analyzing and Interpreting Neural Networks for NLP , page 353–355. Association for Computational
+Linguistics, Nov 2018. URL https://aclanthology.org/W18-5446 .
+Alex Wang, Yada Pruksachatkun, Nikita Nangia, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel
+Bowman. SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems. In Advances
+in Neural Information Processing Systems , volume 32. Curran Associates, Inc., 2019.
+Chenfei Wu, Shengming Yin, Weizhen Qi, Xiaodong Wang, Zecheng Tang, and Nan Duan. Visual ChatGPT: Talking,
+Drawing and Editing with Visual Foundation Models, March 2023.
+Binfeng Xu, Xukun Liu, Hua Shen, Zeyu Han, Yuhan Li, Murong Yue, Zhiyuan Peng, Yuchen Liu, Ziyu Yao, and
+Dongkuan Xu. Gentopia: A Collaborative Platform for Tool-Augmented LLMs, August 2023a.
+Qiantong Xu, Fenglu Hong, Bo Li, Changran Hu, Zhengyu Chen, and Jian Zhang. On the tool manipulation capability
+of open-source large language models, 2023b.
+Hui Yang, Sifu Yue, and Yunzhong He. Auto-GPT for Online Decision Making: Benchmarks and Additional Opinions,
+June 2023.
+Andy Zeng, Maria Attarian, Brian Ichter, Krzysztof Choromanski, Adrian Wong, Stefan Welker, Federico Tombari,
+Aveek Purohit, Michael Ryoo, Vikas Sindhwani, Johnny Lee, Vincent Vanhoucke, and Pete Florence. Socratic
+Models: Composing Zero-Shot Multimodal Reasoning with Language, May 2022.
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin, Zhuohan Li,
+Dacheng Li, Eric. P Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica. Judging llm-as-a-judge with mt-bench
+and chatbot arena, 2023.
+15
+
+[Page 16]
+Yuchen Zhuang, Yue Yu, Kuan Wang, Haotian Sun, and Chao Zhang. ToolQA: A Dataset for LLM Question Answering
+with External Tools, June 2023.
+16
+
+[Page 17]
+A Extended related work
+Large Language Models as General Assistants. Several avenues have been explored to turn LLMs into
+general-purpose assistants: (i) using single agent LLMs with better capabilities through Chain of Thought
+prompting or equivalent mechanisms, such as GPT-Engineer (Osika, 2023), AutoGPT (Yang et al., 2023);
+(ii) using multiple agent LLMs to debate and together reach better conclusions to answer user queries (Li
+et al., 2023a; Hong et al., 2023; Chan et al., 2023; Talebirad and Nadiri, 2023); (iii) using single agent LLMs
+augmented with specific tools, such as Blender Bot 3 (Shuster et al., 2022), BOLAA (Liu et al., 2023b) and
+AssistGPT (Gao et al., 2023) extending LLMs with planning components, Socratic Models (Zeng et al., 2022)
+or Visual ChatGPT (Wu et al., 2023) extended with multimodal models, WebGPT Nakano et al. (2021)
+fine-tuned for web-search, or a collection of tools and APIs, such as Toolformer (Schick et al., 2023) fine-tuned
+for general tool usage, ViperGPT (Sur´ ıs et al., 2023) using coding capabilites to generate correct API calls,
+HuggingGPT (Shen et al., 2023) leveraging calls to the HuggingFace ecosystem to extend its LLM with other
+ML models capabilities, or even (iv) providing full new API/tooling libraries, such as the OpenAI plugins,
+SemanticKernel (Microsoft, 2023), Langchain (Chase, 2022) and MiniChain (Rush, 2023).
+B Datacard
+We follow (Bender and Friedman, 2018) for the creation of this datacard, where we try to summarise and
+centralise all information which might be relevant for analysis of this dataset.
+Curation rationale. This is detailed in Section 3.4 and Appendix D.
+Language variety. Information about our annotators’ nationality was not provided, but they were all based
+in the US, and all questions, answers, and meta-data were written in mainstream English (therefore most
+likely en-US). We can also note that all authors of this paper are French and do not have English as a first
+language, which might have lead to the inclusion of non-standard English phrasing in the questions or answers.
+Curators and Annotators demographic. Following the definitions proposed in (Bender and Friedman, 2018),
+building GAIA required the work of Curators, who devised the questions and their answer, and Annotators,
+who independently annotated the questions to assess their non-ambiguity. Both come from the following
+population:
+•Age :
+–18-25: 17%
+–26-35: 39%
+–36-45: 26%
+–45-55: 13%
+–56-65: 4%
+•Gender : 57% Male, 43% Female.
+•Academic background :
+–Bachelor’s Degree: 61%
+–Master’s Degree: 26%
+–PhD: 17%
+Text characteristics. This is detailed in Appendix C.
+17
+
+[Page 18]
+C Extended description of GAIA
+Description of capabilities. When answering the questions, annotators specified the steps that were followed
+and listed the tools they use. Based on the set of tools that were mentionned by the annotators, we defined
+capabilities required by GAIA . For each capability, we report examples of corresponding tool as reported by
+annotators.
+•Web browsing : tools related to search the web and browse websites. Examples: Web browser, Search
+engine, Website widget access, Access to YouTube, Google Street View .
+•Multi-modality : tools related to understanding data modality other than text. Examples: A speech-to-text
+tool, Video recognition, Image recognition, OCR, Google Street View .
+•Coding : tools related to code execution. Examples: Python, a calculator, Substitution cipher
+encoder, C++ compiler, A word reversal tool / script .
+•Diverse filetype reading : tools related to understanding various type of files given by a user or found
+on the web. Examples: PDF viewer, Excel file access, PowerPoint viewer, CSV access, Txt
+file access .
+•N/A : tools for tasks that can currently be performed by non-augmented LLMs. Examples: Tetris
+rules database, German translator, Spell checker, Text Editor, Bass note data .
+Note that a tool can belong to different categories. For example, Google Street View requires access to the
+web, browsing, but also multi-modality. Hence, these categories are indications of the capabilities required by
+GAIA and not a perfect typology of our questions.
+Filetypes. Some GAIA questions come with additional files, whose distribution is given in Figure 6.
+0 5 10 15 20 25 30
+File Countxlsxpngpdftxtmp3jpgcsvdocxpptxzipxmlpyjsonm4apdbMOVjsonldFile Type
+291815137762222111111Distribution of File Types
+Figure 6 Initial distributions of file types in GAIA .
+Difficulty of the questions. Our analysis of the time taken by the annotators to answer a question shows a
+correlation with the number of steps taken. The correlation is less clear with the number of different tools
+used to answer.
+18
+
+[Page 19]
+0 1 2 3 4 5 6
+Number of tool used to answer0102030405060Time taken to answer (minutes)Time versus number of tools to answer
+Level 2
+Level 1
+Level 3Figure 7 Using multiple tools does not necessarily involve
+more time to answer a question.
+0 10 20 30 40
+Number of steps taken to answer0102030405060Time taken to answer (minutes)Time versus number of steps to answer
+Level 2
+Level 1
+Level 3Figure 8 Unsurprisingly, the number of steps taken to
+answer is correlated to the time taken.
+D Extended description of our question design framework
+Question creation phase. We provided the annotators with a seed set of GAIA questions we devised ourselves,
+accompanied with the following instructions:
+We want to augment the dataset of provided questions (not variations of what we already have).
+Requirements:
+•Make sure your question is based on a source of truth (Wikipedia, arXiv, githhub, other...). For Level 2
+and Level 3, a good way to create questions is to combine sources of truth.
+•Make sure the answer to your question does not exist on the internet in plain text.
+•Make sure the answer to your question is a number or at most a few words to make evaluation robust.
+•Make sure the answer to your question does not change with time. This includes potential deletion of
+the source of truth.
+•Make sure the answer to your question is unambiguous.
+•Make sure your question is “interesting”, i.e. by reading it you think that an AI assistant answering
+this kind of question would help you a lot.
+•Make sure your question can be answered in a reasonable amount of time by a human annotator.
+•(Added later on) : check the robots.txt of the website containing the information needed to answer so
+that it is accessible to AI assistants.
+The annotators were also asked to answer the questions they created. We provide a typical example of
+annotated question in Table 1.
+Validation phase. After question creation, we ask two new independent annotators to answer the questions
+to check it is not ambiguous. We provide a typical annotator output for the validation phase in Table 2, as
+well as additional statistics on the validation phase of our protocol in Table 3. If the new annotators don’t
+fully agree with the original answer and there is no human error, the question is repaired if possible and
+removed otherwise.
+We estimate the creation of a question, including its validation by two supplementary annotators and potential
+repairs, requires two hours of annotator time.
+19
+
+[Page 20]
+Question What was the actual enrollment count of the clinical trial on H. pylori in acne vulgaris patients
+from Jan-May 2018 as listed on the NIH website?
+File None
+Level 1
+Steps
+- Searched “nih” on Google search.
+- Clicked the top link to nih.gov.
+- Searched “h pylori acne” in the search box.
+- Clicked “More” and selected “Clinical Trials”.
+- Clicked the result about H. Pylori and acne.
+- Checked the date to confirm it was January to May 2018.
+- Opened “Tabular View”.
+- Scrolled down to Actual Enrollment and recorded the number.
+Number of steps 8
+Answer 90
+Time to answer 8 minutes
+Tools
+- Web browser
+Number of tools 1
+Table 1 An annotated question during the question creation phase.
+Question What was the actual enrollment count of the clinical trial on H. pylori in acne vulgaris patients
+from Jan-May 2018 as listed on the NIH website?
+File None
+Level 1
+Verifier response 90
+Answer match Yes - my answer matches the correct answer.
+Cause of mismatch None
+Table 2 An annotated question during the validation phase.
+20
+
+[Page 21]
+After two new, independent annotators answer for all crafted questions:
+Two new annotators agree with original answer 55%
+One new annotator agree with original answer, other disagree 27%
+Two new annotators disagree with original answer 18%
+Valid questions (aggregated)* 68%
+Valid Level 1 questions 75%
+Valid Level 2 questions 68%
+Valid Level 3 questions 47%
+Human score (aggregated)** 92%
+Human score for Level 1 94%
+Human score for Level 2 92%
+Human score for Level 3 87%
+Table 3 Statistics on the validation phase. 623 newly crafted questions were validated by two new annotators each.
+The statistics were computed on their 1246 annotations. *: a valid question is a question for which two annotators
+give the same answer as the question designer, or only one annotator gives the same answer as the question designer
+and the other made a mistake. **: the human baseline is computed as the fraction of correct answers for all tentative
+on valid questions by the new annotators.
+Metric Score in % ( ↑) Avg. time to answer in mins ( ↓)
+Level Level 1 Level 2 Level 3 Level 1 Level 2 Level 3
+Number of questions 146 245 75 146 245 75
+GPT4 9 .1±2.5 2 .6±0.6 0 0.19 0.15 N.A.
+GPT4 Turbo 13 .0±2.1 5 .5±1.4 0 0.24 0.12 N.A.
+AutoGPT (GPT4 backend) 14.4 0.4 0 7.6 11.7 N.A.
+GPT4 + plugins* 30.3 9.7 0 0.65 0.53 N.A.
+Search engine 7.4 0 0 7.4 N.A. N.A.
+Human annotator** 93.9 91.8 87.3 6.8 10.5 17.7
+Table 4 Score and average time to answer for various baselines on GAIA in %. *: GPT4 + plugins scores were
+obtained by manually selecting plugins, and cannot be reproduced exactly for the reasons described in the main text.
+**: Human score corresponds to the portion of correct answers by validation annotators for valid questions. Whenever
+we have direct API access, we run the model three times and report the average. Times for APIs were obtained by
+running the API on 20 questions then averaging, and were taken at a single point in time: they aren’t meant to reflect
+GPT4 vs. GPT4 Turbo speed, but GPT4 vs. other types of methods for answering GAIA .
+D.1 Extended evaluation
+We provide the detailed scores of the different methods evaluated in Table 4.
+Additional examples of GPT4 answering GAIA .We provide more reasoning traces of GPT4 with and
+without plugins when answering GAIA . The output of AutoGPT is currently much longer, denser and less
+interpretable thant GPT4. Examples of AutoGPT outputs are therefore provided in the supplementary
+material for the same GAIA question as the example in Figure 9.
+21

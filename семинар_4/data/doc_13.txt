@@ -1,0 +1,1138 @@
+# doc_13: messages / part 1
+
+Source file: messages.html
+
+21 October 2025
+
+Мария ✨🕉️🐚 created group «LLM и игры» with members Мария ✨🕉️🐚, Vladimir Okladnikov, Bragin Vladimir and Anna Kalyuzhnaya
+
+18:05
+Мария ✨🕉️🐚
+FYI
+
+18:05
+Мария ✨🕉️🐚
+ЮД
+Юрий Дементьев
+15.10.2025 16:19:44
+Всем привет!
+@PoisonedPoisson
+@kalyuzhnaya
+немного запоздало, но все же, статьи после нашего обсуждения
+1) Дележи и справедливость с LLMками, и как сеттинг на это влияет
+-
+https://ar5iv.labs.arxiv.org/html/2502.00313
+-
+https://arxiv.org/html/2505.12001v1
+2) Добавление учета будущих последствий LLMкам при решении социальных дилемм
+-
+https://www.ijcai.org/proceedings/2025/0026.pdf
+3) Статьи про кооперацию LLM-агентов в простейших играх
+-
+https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p2771.pdf
+-
+https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p2786.pdf
+
+18:05
+Anna Kalyuzhnaya
+AK
+Anna Kalyuzhnaya
+06.10.2025 19:13:20
+https://www.connectedpapers.com/
+
+18:25
+Мария ✨🕉️🐚
+Ещё ссылки:
+Моя таблица со всякой инфой
+https://docs.google.com/spreadsheets/d/1Brn5D3Yb2cbCQmJ1_JL0BCsrNF7dzSsymwvIa0uOcq0/edit?gid=1325324342#gid=1325324342
+Литобзор от Владимира Брагина
+https://docs.google.com/spreadsheets/d/1TJh4KvDoRK84rxpiMjH-UOeYuV3OCnGhJVkZdReNpns/edit?gid=969726950#gid=969726950
+
+18:31
+Итоги звонка 21 октября
+К следующему вторнику (28 октября) готовим литобзор: берём несколько статей, делаем 1-2 слайда на каждую.
+Слайды помещать в эту презентацию, чтобы случайно не дублировать работу:
+https://docs.google.com/presentation/d/1485woOi649rxipIFYj_rPMaRGzMpStx2Fo5U1KCwGH4/edit?slide=id.p#slide=id.p
+На чём фокусироваться:
+- Выделить гипотезы;
+- Сеттинг эксперимента — постановка, методы, способ проверки;
+- Есть ли связи с эмоциями, если есть то какие?
+- Исследуются ли отклонения от рациональности?
+- Описание теоретико-игровой модели, если есть;
+- Что изучается в статье относительно LLM?
+
+28 October 2025
+
+10:03
+Мария ✨🕉️🐚
+Всем привет! Напоминаю про сегодняшнюю встречу в 17:00, ссылка будет потом
+
+10:06
+Anna Kalyuzhnaya
+21:00?
+
+10:07
+Мария ✨🕉️🐚
+In reply to
+this message
+Сорян, я своё время написала случайно
+👌
+AK
+
+16:58
+Мария ✨🕉️🐚
+https://telemost.yandex.ru/j/85407315551297
+
+17:06
+PuppeData.pdf
+Not included, change data exporting settings to download.
+166.6 KB
+
+17:15
+
+17:19
+Navigating Social Dilemmas with LLM-based Agents
+via Consideration of Future Consequences
+
+17:20
+https://github.com/andyzoujm/representation-engineering
+
+17:24
+
+17:43
+Мария ✨🕉️🐚
+
+17:49
+https://pypi.org/project/Axelrod/
+
+18:25
+Мария ✨🕉️🐚
+https://en.wikipedia.org/wiki/Dictator_game
+
+6 November 2025
+
+10:03
+Мария ✨🕉️🐚
+In reply to
+this message
+Доброе утро, коллеги
+В связи с праздниками было предложено перенести вторничный звонок на сегодня в 18:00
+Предлагаю подключаться по той же ссылке
+
+Мария ✨🕉️🐚 removed Bragin Vladimir
+
+18:04
+Мария ✨🕉️🐚
+@kalyuzhnaya
+Привет, получится подключиться?
+
+18:04
+Anna Kalyuzhnaya
+привет, неа. Поставь в календарь, пожалуйста, регулярную встречу
+
+18:24
+Vladimir Okladnikov
+s41598-025-01715-7.pdf
+Not included, change data exporting settings to download.
+1.4 MB
+
+11 November 2025
+
+Мария ✨🕉️🐚 pinned
+this message
+
+18 November 2025
+
+18:12
+Vladimir Okladnikov
+https://osf.io/4gkb3/files
+
+18:12
+dg_data.xlsx
+Not included, change data exporting settings to download.
+22.0 KB
+
+18:12
+dg_instructions.docx
+Not included, change data exporting settings to download.
+56.4 KB
+
+25 November 2025
+
+18:26
+Мария ✨🕉️🐚
+Планирование ресурсов.pdf
+Not included, change data exporting settings to download.
+614.0 KB
+
+26 November 2025
+
+17:44
+Vladimir Okladnikov
+Нужно сделать Мультиагентную систему для решения бенчмарка GAIA.
+Составные части
+1) Planer
+Что делает:
+- получает query,
+- разбивает задачу под задачи
+- распределяет задачи между агентами
+- передает итоговый план Оракулу (последовательность связок агент - подзадача)
+Чем обладает:
+- system промт
+- список всех агентов с их навыками
+2) Оракул
+Что делает:
+- получает итоговый план распределения подзадач между агентами
+- Распределяет ресурсы между агентами (выдает LLM и кол-во токенов) получается план в виде связок
+(Агент - подзадача - LLM - число токенов)
+3) Агенты
+Что делают:
+- получают подзадачи и ресурсы, которые используют для решения своих задач
+Чем обладают:
+- system промт - с ролью
+- некоторый набор тулов
+- ресурсы в виде LLM и токенов для каждой задачи
+Какие могут быть роли у агентов
+1.Поисковик
+2. Итоговый ответчик
+3. Критик
+4. (Возможно нужны какие-то ещё это пока набросок)
+Возможно стоит взять за базу существующую Агентную систему для решения этого бенчмарка и просто модифицировать её оракулом раздающем ресурсы.
+
+18:01
+Vladimir Okladnikov
+Можно ещё рисунки пожалуйста скинуть, думаю я там ещё что-то найду, что забыл
+
+18:34
+Vladimir Okladnikov
+Лучше наверное для рисования miro использовать, чтобы можно было совместно рисовать
+
+27 November 2025
+
+20:52
+Anna Kalyuzhnaya
+Оставлю пока здесь документ (поискала похожие на нашу идею статьи, вроде ниша не занята)
+https://docs.google.com/document/d/1SYt4NDqFXIDGLcIxmBLugRRzrUMM4sGUS1gt45UpAm0/edit?usp=sharing
+
+20:52
+In reply to
+this message
+миро вроде из рф не работает, для схем можно drawio использовать
+
+20:53
+In reply to
+this message
+скину)
+
+1 December 2025
+
+17:41
+Vladimir Okladnikov
+Добрый вечер,подойдет такой план? (сроки такие длинные потому-что пересекаются)
+👍
+AK
+
+8 December 2025
+
+23:27
+Vladimir Okladnikov
+multi_agent_system_GAIA.ipynb
+Not included, change data exporting settings to download.
+36.1 KB
+Общий набросок мультиагентной системы
+
+23:29
+В качестве агентов исполнителей чаще всего берут:
+1) Search Agent (Агент поиска / Retrieval Agent)
+2) Extraction / Parsing Agent (Агент извлечения информации)
+3) Reasoning Agent (Агент рассуждений / Дедукции)
+4) Calculation Agent (Агент вычислений / Code Interpreter)
+5) Verification Agent (Агент проверки / Critic)
+6) Summarization / Reporting Agent (Агент финального ответа)
+
+23:30
+думаю нам стоит придерживаться примерно того-же списка
+
+23:49
+Anna Kalyuzhnaya
+Посмотри статью gpt swarm и какие у них агенты под гайу используются.
+👌
+VO
+
+9 December 2025
+
+01:29
+Anna Kalyuzhnaya
+и Aworld
+
+Мария ✨🕉️🐚 invited Саша
+
+16 December 2025
+
+18:52
+Мария ✨🕉️🐚
+К сегодняшнему звонку я подготовила презентацию, прошу ознакомиться тех, кто не смог прийти
+Суть:
+наша задача выглядит как роутинг LLM в мультиагентных системах, а
+MasRouter
+похож на нашего конкурента
+https://docs.google.com/presentation/d/12Ta79yDgDjWtZpGNj15DH-nDHGiARKdYLExTcjPFYik/edit?slide=id.p#slide=id.p
+👍
+AK
+
+23 December 2025
+
+18:29
+Anna Kalyuzhnaya
+чуть опоздаю сегодня, но подключусь
+👍
+М✨
+
+19:38
+Мария ✨🕉️🐚
+https://docs.google.com/presentation/d/1g6CTtTQYZu6L__HwiLjS-BJNKpSYFUqamf5MMrp-MgM/edit?usp=sharing
+
+26 December 2025
+
+18:22
+Мария ✨🕉️🐚
+@kalyuzhnaya
+Статья про дизайн механизмов, которую я упоминала
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5223726
+
+29 December 2025
+
+Anna Kalyuzhnaya invited Юрий Дементьев
+
+9 January 2026
+
+02:33
+Vladimir Okladnikov
+Результаты первого +- (скорее -) удачного запуска экспериментальной системы. Точность очень низкая, всего 4% ( 15% если приблизительные ответы считать за правильные)
+
+02:33
+image_2026-01-09_02-33-53.png
+Not included, change data exporting settings to download.
+45.5 KB
+
+02:34
+gaia_validation_runs.rar
+Not included, change data exporting settings to download.
+558.6 KB
+🔥
+М✨
+
+02:34
+In reply to
+this message
+тут логи для каждого вопроса
+
+12 January 2026
+
+22:19
+Vladimir Okladnikov
+Есть ли возможность перенести созвоны с 18:30 на 18:00 ? (в 18:50 пара начинается)
+
+23:41
+Anna Kalyuzhnaya
+Я могу
+
+13 January 2026
+
+07:00
+Мария ✨🕉️🐚
+Я тоже
+
+18:17
+Vladimir Okladnikov
+Исследование применимости методов теории игр для задачи планирования в мультиагентных системах -
+
+20 January 2026
+
+18:27
+Anna Kalyuzhnaya
+Всем привет. Я сегодня не смогу, к сожалению. Маша, посмотрите и поправьте презы насколько возможно плез. И скиньте их сюда. Маша, я напишу тебе, созвонимся отдельно на этой неделе
+👌
+М✨
+
+18:38
+Vladimir Okladnikov
+https://github.com/alukiko/llm-mas-fair-routing
+
+18:44
+Мария ✨🕉️🐚
+https://www.overleaf.com/1553185935vcwdpwmgcpbf#cd2429
+
+19:02
+Vladimir Okladnikov
+Научный проект.pptx.pdf
+Not included, change data exporting settings to download.
+741.3 KB
+
+19:36
+Vladimir Okladnikov
+gaia_run_20260120_185150.rar
+Not included, change data exporting settings to download.
+222.7 KB
+
+19:37
+стало лучше
+🔥
+М✨
+
+21 January 2026
+
+16:18
+Anna Kalyuzhnaya
+In reply to
+this message
+Привет. А результаты то будут до завтра?
+
+16:21
+Саша
+С
+Саша
+21.01.2026 06:25:32
+https://docs.google.com/presentation/d/1EHVMZzEfTP1Qhm6zh7VSKr92W_WDh7dJ/edit?usp=sharing&ouid=109725198918640373725&rtpof=true&sd=true
+
+16:36
+Vladimir Okladnikov
+In reply to
+this message
+Привет, у меня защита 29
+👍
+AK
+
+16:37
+Я постараюсь как можно скорее
+
+16:37
+Саша
+In reply to
+this message
+Кстати странно что нас распределили в разные комиссии
+
+16:38
+Anna Kalyuzhnaya
+@Alukiko
+,
+@Fvtrst_8
+, т.к. у вас в презентациях есть общая часть, то приготовьтесь завтра акцентировать внимание на отличающихся частях в работах.
+@Fvtrst_8
+, подробнее опиши что такое "кубик оценок" и из чего он формируется, а также на что направлены эксперименты и чем они отличаются от экспериментов Владимира или как их дополняют. Также, уместно отметить, что симулятор разрабатывал Владимир в соседнем проекте. В названии темы фигурирует справедливое распределение, но из презентации непонятно откуда это. "предложен метод анализа распределения LLM-ресурсов в мультиагентных системах через теоретико-игровой подход" - не предложен, но стоит его выписать.
+@PoisonedPoisson
+попробуйте с Сашей выписать это математически, вроде наброски для этого есть у тебя в презе. В драфт тоже будет полезно добавить.
+@Alukiko
+, собственно добавить результаты. Сейчас много чего написано голословно, но совершенно не подтверждается результатами. Поэтому что получится успеть добавить - добавляй, что не получится - скорректируй отсылки в презентации так, чтобы было понятно, что это еще в работе.
+@Fvtrst_8
+,
+@Alukiko
+, для обоих - критически проанализируйте научную новизну - там слишком громко для текущих результатов. Скорректируйте так, чтобы то, что уже есть отмечать как факт, а чт как планируемую новизну для дальнейшей работы.
+При описании экспериментов - в начале опишите, какая задача или гипотеза проверялась эксприментом, как он ставился, а потом уже показывайте результаты. Иначе не понятно, зачем и что было сделано.
+
+16:39
+In reply to
+this message
+а ты в какой?
+
+16:39
+Саша
+В первой
+
+16:41
+Anna Kalyuzhnaya
+In reply to
+this message
+в таблице 28.01 12:15
+👌
+VO
+
+16:41
+странно, что разделили, но мб вам так даже проще, меньше объяснять что у вас общего а что разного
+❤
+С
+
+18:17
+Vladimir Okladnikov
+Думаю это из-за старого названия
+
+26 January 2026
+
+18:50
+Vladimir Okladnikov
+1) Доделал систему до +- приемлемого качества.
+2) Провел первые эксперименты.
+3) Использовал один вот такой пакет = {"model": "openai/gpt-4o-mini", "tokens_per_package": 100, "cost": 1} и total_package_budget=20.
+4) Запускал прогон эксперимента для каждой политики оракула 3 раза.
+5) В качестве данных 30 примеров GAIA первого уровня.
+exact_match_acc - полное совпадение ответа LLM с ответом в бенчмарке
+normalized_match_acc - exact_match_acc допускающий небольшие отклонения (нормализует и ответ и gt ответ)
+numeric_match_acc - точность в численных задачах GAIA
+
+18:52
+Завтра добавлю ещё несколько пакетов и токенов и запущу такие-же эксперименты
+👍
+AK
+
+18:52
+Anna Kalyuzhnaya
+нужен бы еще эксперимент с статической МАС без пакетов
+
+18:53
+Vladimir Okladnikov
+gaia_validation_runs.rar
+Not included, change data exporting settings to download.
+982.0 KB
+Логи
+
+18:56
+In reply to
+this message
+Всм без ограничения ресурсов? могу total_package_budget=200 сделать вместо 20
+
+18:57
+Anna Kalyuzhnaya
+сделай вообще без
+
+27 January 2026
+
+12:00
+Vladimir Okladnikov
+подойдет вот такая оценка пакетов?
+base_packages = {
+"gpt4": {
+"model": "openai/gpt-4o-mini",
+"tokens_per_package": 100,
+"cost": 1,
+},
+"gpt5": {
+"model": "openai/gpt-5-chat",
+"tokens_per_package": 50,
+"cost": 1,
+},
+"gemini": {
+"model": "google/gemini-2.5-pro-preview-05-06",
+"tokens_per_package": 100,
+"cost": 1,
+},
+"claude": {
+"model": "anthropic/claude-opus-4.1",
+"tokens_per_package": 80,
+"cost": 1,
+},
+"qwen": {
+"model": "qwen/qwen3-next-80b-a3b-instruct",
+"tokens_per_package": 120,
+"cost": 1,
+},
+}
+
+12:00
+Anna Kalyuzhnaya
+Так сходу не оценить, поэтому пробуй так
+👌
+VO
+
+17:34
+Anna Kalyuzhnaya
+Привет. Сегодня созваниваемся? Есть новые результаты?
+
+17:39
+Мария ✨🕉️🐚
+Привет, мы собирались с тобой отдельно созваниваться, может сегодня обсудим?
+
+17:40
+Anna Kalyuzhnaya
+Давай
+
+17:41
+Тогда мы вдвоем созваниваемся?
+
+17:41
+Мария ✨🕉️🐚
+Возможно
+
+17:44
+Vladimir Okladnikov
+In reply to
+this message
+я сейчас жду пока отработает до конца этот эксперимент
+
+17:45
+уже есть интересные отличия по метрикам от предыдущего, теперь nash показывает худшую метрику
+
+17:46
+в итоге на вот этом списке пакетов запускал. gemini не заработал, а anthropic безумно дорогой
+base_packages = {
+"gpt4": {
+"model": "openai/gpt-4o-mini",
+"tokens_per_package": 100,
+"cost": 1,
+},
+"gpt5": {
+"model": "openai/gpt-5.2",
+"tokens_per_package": 50,
+"cost": 1,
+},
+"qwen": {
+"model": "qwen/qwen3-next-80b-a3b-instruct",
+"tokens_per_package": 150,
+"cost": 1,
+},
+},
+
+17:48
+Anna Kalyuzhnaya
+Можешь заменить гпт5.2 на 5 мини
+
+17:49
+В следующий раз
+👌
+VO
+
+17:49
+Чтобы дешевле было
+
+18:00
+Vladimir Okladnikov
+
+18:09
+Anna Kalyuzhnaya
+In reply to
+this message
+Пытаюсь подключиться
+
+18:09
+Мария ✨🕉️🐚
+In reply to
+this message
+Не получается?
+
+18:09
+Anna Kalyuzhnaya
+пока нет
+
+18:09
+Мария ✨🕉️🐚
+А что там?
+
+18:18
+Vladimir Okladnikov
+gaia_validation_runs.rar
+Not included, change data exporting settings to download.
+970.9 KB
+Логи второго эксперимента с множеством пакетов
+
+18:20
+График распределения пакетов
+
+18:23
+Посчитать метрики по справедливости
+
+18:23
+Токены ещё посчитать
+
+28 January 2026
+
+15:44
+Vladimir Okladnikov
+Научный проект (3).pptx
+Not included, change data exporting settings to download.
+2.4 MB
+итоговая версия с защиты
+👍
+AK
+
+17:46
+Anna Kalyuzhnaya
+Вопросы по делу были?
+
+17:48
+Vladimir Okladnikov
+Спросили как задавали политику, как замеряли справедливость, про метрики ещё спрашивали... Я перелимитил время доклада и не успел рассказать про второй эксперимент 😢
+
+3 February 2026
+
+18:06
+Vladimir Okladnikov
+Сегодня будет встреча?
+
+18:13
+Anna Kalyuzhnaya
+@PoisonedPoisson
+, тебе удалось подготовить видение по новым задачам для ребят? Или перенесем встречу?
+
+18:13
+Мария ✨🕉️🐚
+In reply to
+this message
+По поводу видения у меня есть что рассказать, а по экспериментам я хочу с тобой посоветоваться
+
+18:14
+Anna Kalyuzhnaya
+хочешь сначала на двоих созвониться?
+
+18:16
+Мария ✨🕉️🐚
+In reply to
+this message
+Можно начать всем вместе, а потом вдвоём остаться дополнительно
+
+18:18
+Anna Kalyuzhnaya
+Давай может тогда все таки сегодня мы с тобой обсудим, а с ребятами отдельно созвонитесь. А то непонятно что обсуждать без понимания экспериментов
+
+18:19
+Мария ✨🕉️🐚
+Хорошо, давай
+
+10 February 2026
+
+18:33
+Мария ✨🕉️🐚
+@yurudem
+https://colab.research.google.com/drive/11y_04I4ZjvwKyxsR9Rr6BoSjchQjVhYC?usp=sharing
+👍
+ЮД
+
+17 February 2026
+
+18:09
+Vladimir Okladnikov
+Сегодня будет встреча?
+
+18:19
+Мария ✨🕉️🐚
+Да
+
+18:32
+Саша
+по какой ссылке подключаться?
+
+18:32
+Vladimir Okladnikov
+в закрепе
+
+18:32
+Саша
+у меня нет закрепа
+
+24 February 2026
+
+18:36
+Мария ✨🕉️🐚
+https://gist.github.com/tail-call/d846c282396ece6f8dda81b6ca0c2c1d
+
+18:57
+Мария ✨🕉️🐚
+@Alukiko
+https://arxiv.org/abs/2502.11133
+https://arxiv.org/abs/2601.02695
+
+3 March 2026
+
+18:42
+Мария ✨🕉️🐚
+https://arxiv.org/pdf/2601.02695
+
+Юрий Дементьев invited Gera Drobierro
+
+19:47
+Мария ✨🕉️🐚
+Gera
+https://docs.google.com/presentation/d/1g6CTtTQYZu6L__HwiLjS-BJNKpSYFUqamf5MMrp-MgM/edit?slide=id.g3b144b3cf14_0_187#slide=id.g3b144b3cf14_0_187
+
+19:48
+https://docs.google.com/spreadsheets/d/1Brn5D3Yb2cbCQmJ1_JL0BCsrNF7dzSsymwvIa0uOcq0/edit?gid=521394113#gid=521394113
+
+6 March 2026
+
+16:30
+Мария ✨🕉️🐚
+https://gist.github.com/tail-call/d846c282396ece6f8dda81b6ca0c2c1d
+Немного обновила эксперименты, добавила эксперимент 1.5 (про размер пакетов) и переписала эксперимент 3 (с диктаторами). Эффект истории пока убрала
+Выбор LLM моделей пока не трогала
+
+10 March 2026
+
+11:49
+Anna Kalyuzhnaya
+Привет всем. Я сегодня не смогу подключиться вечером. Давайте либо перенесем на чтв в 18 или 18:30, или проведите без меня сегодня, а я в чт с Машей отдельно созвонюсь
+
+12:03
+Юрий Дементьев
+In reply to
+this message
+Привет!)
+Я по четвергам читаю лекции с 18 до 19:30 как раз. Так что давайте созвонимся и сегодня, и в чт.
+
+12 March 2026
+
+17:48
+Мария ✨🕉️🐚
+@kalyuzhnaya
+Привет, в итоге сегодня в 18 или 18:30?
+
+23:26
+Anna Kalyuzhnaya
+Блин, я забыла ( Щас телега ещё плохо работает, не сразу сообщения доходят. Когда ставим переносы, закидывай их в календарь, пожалуйста, а то мне вообще без шансов запомнить
+
+23:26
+Напишу тебе завтра
+
+17 March 2026
+
+18:32
+Мария ✨🕉️🐚
+У меня телемост не открывается
+
+18:33
+Anna Kalyuzhnaya
+я сегодня не смогу подключиться
+
+18:33
+всем привет
+
+18:35
+Юрий Дементьев
+In reply to
+this message
+Привет!
+Ага, связи совсем нет
+
+18:36
+Мария ✨🕉️🐚
+Давайте попробуем сюда
+https://salutejazz.ru/calls/f01b3b?psw=OBwEDUZWA04ADAMbGUIUXQ8GHg
+
+18:38
+@Alukiko
+Давид
+подойдёте?
+
+18:39
+Gera Drobierro
+Да, секунду
+
+18:45
+Юрий Дементьев
+In reply to
+this message
+У меня видимо это тоже лагает
+Меня слышно?
+
+18:45
+Мария ✨🕉️🐚
+Нет
+🤔
+ЮД
+
+18:51
+@yurudem
+Видимо, оно не чинится?
+
+18:51
+Юрий Дементьев
+In reply to
+this message
+Ага, эта звонилка тоже не работает
+
+18:52
+Пока ничего рабочего не нашел
+
+18:53
+Мария ✨🕉️🐚
+Давайте наверное пока разойдёмся, если нечего обсудить больше? Может в другой раз телемост поднимется
+
+24 March 2026
+
+18:48
+Юрий Дементьев
+@PoisonedPoisson
+Основные экономические модели диктаторов:
+1) Утилитарный диктатор (Becker altruism). Разумнее рассматривать в качестве бейзлайна. Просто максимизирует суммарную полезность.
+https://www.jstor.org/stable/1830662
+2) Избегание неравенства между агентами (текущий вариант). Форма балансировки эффективности и равномерности нагрузки.
+3) Cправедливость, взаимность, конкуренция (ERC – Bolton, Ockenfels). Концентрация на том, чтобы собственная выгода была справедлива на уровне системы.
+https://www.aeaweb.org/articles?id=10.1257/aer.90.1.166
+
+31 March 2026
+
+19:11
+Мария ✨🕉️🐚
+@yurudem
+Кубики и распределения для разных задач
+https://github.com/tail-call/economic-agents/tree/feature/evaluate-task-assignment/multi-agent_system/task_assignment_multiple_run
+Сводная таблица
+https://github.com/tail-call/economic-agents/blob/feature/evaluate-task-assignment/multi-agent_system/AssignmentReport.ipynb
+👍
+ЮД
+
+9 April 2026
+
+18:50
+Мария ✨🕉️🐚
+In reply to
+this message
+@kalyuzhnaya
+@yurudem
+Всем привет,
+Я посмотрела, почему минимизация зависти приводит к дорогим пайплайнам, проблему и свои мысли описала по ссылке
+https://gist.github.com/tail-call/9a97967f65bb76046cb3e2257383de59
+Кратко:
+- Да, нам может не повезти, и модели с маленькими оценками могут доминировать в распределении
+- Маленькие оценки кореллируют с дорогими моделями — скорее всего, потому что им дают мало токенов
+- Чтобы этого избежать, нужно делать "гибридную" оптимизацию, которая смотрит не только на зависть, но и на общую полезность
+
+18:52
+Anna Kalyuzhnaya
+т.е. дорогие модели с малым количеством токенов скорее нежелательны? Что такое маленькая оценка?
+
+18:52
+Мария ✨🕉️🐚
+In reply to
+this message
+У них полезность на уровне 0.2-0.3
+
+18:53
+Anna Kalyuzhnaya
+т.е. их полезность не особо варьируется для разных задач и находится на постоянно низком уровне?
+
+18:57
+Мария ✨🕉️🐚
+Да, так и происходит по большей части
+
+18:59
+Anna Kalyuzhnaya
+это значит, что оракул в первую очередь оценивает количество токенов, т.е. не сбалансированная оценка получается
+
+19:00
+попробуй промпт поправить
+
+19:00
+In reply to
+this message
+это тоже звучит интересно
+
+14 April 2026
+
+19:01
+Vladimir Okladnikov
+VO
+Vladimir Okladnikov
+14.04.2026 01:24:46
+llm_profile.py
+Not included, change data exporting settings to download.
+3.1 KB
+1) Копируем репозиторий masrouter
+2) закидываем туда этот ноутбук и протыкиваем, чтобы скачать датасет
+3) заменяем файл llm_profile на мой (у авторов какие-то кривые название моделей и модели от гугла вообще не хотят дергаться
+4) в .env записываем все что нужно для openrouter
+5) можно запускать питоновский файлик с экспериментом run_math.py (я для этого эксперимента данные скачивал)
+
+19:01
+Он начинает долго проходится по каждой задачи, до конца хотя-бы одной эпохи я ещё не дошел, возможно стоит ограничить ещё больше датасет, и убрать дорогой Claude 3.5 Haiku из списка моделей (разоримся на нем)
+
+19:01
+
+19:01
+1.5 минуты на задачу тратит +-
+
+19:01
+VO
+Vladimir Okladnikov
+14.04.2026 08:55:03
+поставил обучение на ночь, 1.3 $ кончились быстрее... даже на одну эпоху не хватило, видимо нужно 10 $
+
+19:02
+Vladimir Okladnikov
+VO
+Vladimir Okladnikov
+14.04.2026 01:24:46
+Untitled-1.ipynb
+Not included, change data exporting settings to download.
+30.6 KB
+
+19:14
+Vladimir Okladnikov
+from datasets import load_dataset, concatenate_datasets
+configs = [
+"algebra",
+"counting_and_probability",
+"geometry",
+"intermediate_algebra",
+"number_theory",
+"prealgebra",
+"precalculus"
+]
+datasets_list = []
+for cfg in configs:
+ds = load_dataset("EleutherAI/hendrycks_math", cfg, split="train")
+ds = ds.add_column("category", [cfg] * len(ds)) # полезно для анализа
+datasets_list.append(ds)
+full_train = concatenate_datasets(datasets_list)
+print(full_train)
+
+19:16
+
+19:28
+1) Перенести агентов MAS к нам
+2) Обучение Mas router на Math, 500 трейн , (жду набор моделей) 100 тест, 5 эпох.
+
+21 April 2026
+
+11:31
+Anna Kalyuzhnaya
+Всем привет! У меня сегодня наложение, не смогу быть на встрече
+
+28 April 2026
+
+15:53
+Мария ✨🕉️🐚
+Всем привет, результаты прогона на GAIA lvl 1-3, validation split, 165 задач
+
+18:21
+Anna Kalyuzhnaya
+@PoisonedPoisson
+, а где файл с драфтом статьи, который ты делала?
+Скинь ссылки на актуальные материалы презентации/гит хаб страницы - что угодно. В истории чата какие то материалы есть, но часть не открывается, часть устарела
+
+18:30
+Мария ✨🕉️🐚
+In reply to
+this message
+Драфт:
+https://www.overleaf.com/project/6968e948b98a1054fdd2602f
+Эксперименты:
+https://gist.github.com/tail-call/d846c282396ece6f8dda81b6ca0c2c1d
+Другие ссылки:
+https://docs.google.com/spreadsheets/d/1Brn5D3Yb2cbCQmJ1_JL0BCsrNF7dzSsymwvIa0uOcq0/edit?gid=521394113#gid=521394113
+
+19:15
+Vladimir Okladnikov
+1)
+
+19:15
+Vladimir Okladnikov
+М✨
+Мария ✨🕉️🐚
+15.04.2026 12:16:08
+Привет, я выбрала другой набор LLM для экспериментов, более дешёвый
+https://github.com/tail-call/economic-agents/blob/feature/llmrouter/multi-agent_system/models/packages.py
+("qwen/qwen3.5-27b", 0.195, 1.56),
+("google/gemini-3.1-flash-lite-preview", 0.25, 1.50),
+("openai/gpt-5-mini", 0.25, 2),
+("deepseek/deepseek-v3.2", 0.26, 0.38),
+("qwen/qwen3-max-thinking", 0.78, 3.90),
+("anthropic/claude-3.5-haiku", 0.8, 4),
+Убрала gemini-3.1-pro-preview, gpt-5.2 и claude-sonnet-4.6
+
+19:20
+Vladimir Okladnikov
+1) Доделать агентов исполнителей из MAS роутера в нашем контуре
+2) Запустить обученную модель mas router на MBPP
+3) Протестировать нашу систему на MBPP
+
+5 May 2026
+
+19:01
+Мария ✨🕉️🐚
+system_prompt = (
+"You are an expert system designer evaluating agent role relevance for a subtask.\n"
+"\n"
+"Evaluate the relevance of each executor agent for the given subtask.\n"
+"RULES:\n"
+"1. Assess Role Relevance: Analyze the subtask inputs and description. Rate how relevant "
+"each agent's specific capabilities are from 0.0 to 1.0. The sum does not need to be 1.0."
+"0.0 means completely irrelevant, 1.0 means executor is highly specialized for the task."
+"0.5 means the agent can do the job if no one else can handle it.\n"
+"2. `answer_agent` almost always should be the final node. Look for keywords like "
+"'provide the final answer' or 'summarize the findings'. Assign a high score for such tasks. "
+"For all other tasks, prefer assigning 0.0 for `answer_agent`.\n"
+"3. Assume that any task involving content extraction, analysis, or "
+"processing implicitly requires access to relevant files, even if such "
+"files are not mentioned directly in the prompt. Treat these files as "
+"implicit inputs necessary for executing the subtask effectively.\n"
+"4. Generating a relevance vector of only zeroes is considered a HARD FAILURE. Avoid this. Someone "
+"has to do the job even if no agent seems perfect."
+"\n"
+"Output STRICT JSON only (no markdown, no backticks).\n"
+"{\n"
+' "relevance": {\n'
+' "<executor_id>": 0.0-1.0\n'
+" }\n"
+"}\n"
+) + MODEL_DESCRIPTIONS
+
+12 May 2026
+
+17:02
+Юрий Дементьев
+Всем привет!
+Сегодня не успею на нашу встречу
+👌
+AK
+
+17:07
+Anna Kalyuzhnaya
+Привет. Давайте сегодняшнюю встречу отменим.
+Маша больше не сможет работать над этим проектом, поэтому я пока возьму небольшую паузу на ввод новых исполнителей. Не должно быть долго, т.к. уже есть люди на примете. Но, в любом случае, на фоне пересменок, мы к emnlp не успеем, поэтому думаю, что будем целиться на апробацию на летних воркшопах и подачу на aaai, если все таки родится что-то путное.
+
+17:09
+Vladimir Okladnikov
+In reply to
+this message
+1 и 2 задачи готовы
+👍
+AK
+
+19 May 2026
+
+18:19
+Anna Kalyuzhnaya
+Всем привет. Сегодня не созваниваемся. Мария передает задачу новому участнику.
+@Alukiko
+, вышли свои результаты сюда, плез. Надо провести инвентаризацию и обновить план будет
+
+18:25
+Юрий Дементьев
+Привет!
+Вот так новости. Напишу пока сюда размышления насчет теоретических выкладок, которые за это время получилось довести.
+1) Полиномиальная вычислимость
+Поскольку у нас assignment problem (каждый агент получает ровно один бандл), задача сводится к взвешенному паросочетанию с ограничением на кратность. Оптимальное взвешенное распределение по нашей функции оптимизации = (1−λ)·NSW/NSW* − λ·UE/UE* находится точно за полиномиальное время при фиксированном числе агентов.
+Следствие:
+наша система легко масштабируется с ростом числа задач и моделей.
+2) Нижняя оценка на NSW нашего решения
+Если кубик оценок ε-разнообразен (агенты различаются в предпочтениях хотя бы на ε·max_utility), то наше решение σ* гарантирует:
+NSW(σ*) ≥ (1 − λ + λ·ε) · NSW*
+То есть чем разнообразнее оценки агентов, тем ближе мы к оптимальному NSW, что является мерилом оптимальности нашей системы с точки зрения эффективной раздачи ресурсов.
+3) Нижняя оценка на accuracy
+Если полезность u_i(m) = p_i(m) + ξ, где p_i(m) — реальная вероятность выполнения задачи, и ξ – δ-калиброванная ошибка оценщика ( |ξ| ≤ δ ), то:
+Accuracy(σ*) ≥ (1−λ)
+/e
+· Accuracy(σ_opt) − 2δ
+То есть наша система не хуже идеального назначения в e/(1−λ) раз, плюс аддитивный штраф 2δ за ошибку оценщика.
+Влияние на архитектуру нашего рещения
+: можем в явном виде задать
+практическое правило
+выбора регуляризатора
+λ* = min(1 − e·(α_min + 2δ) / Accuracy(σ_opt), ε)
+Влияние на эксперименты
+:
+Эксп. 1: можно явно измерить δ — корреляцию предсказанных u_i и реальных success rate. δ входит в гарантию напрямую. Также помимо общей корреляции, явно репортить δ и ε для каждого оценщика, и на основании этих численных результатов сделать подстановку в наши теоретические результаты, чтобы дать гарантированную нижнюю аценку на accuracy по сравнению с идеальным выполнением, ещё до запуска Эксп. 2.
+Эксп. 1: можно измерить ε-разнообразие кубиков — дисперсию оценок по агентам для фиксированной модели.
+Эксп. 3 (сетка по λ): теорема предсказывает монотонное снижение нижней границы accuracy с ростом λ — можно сравнить с эмпирической кривой.
+👍
+AK
+
+18:26
+Anna Kalyuzhnaya
+Спасибо, Юра!
+
+20 May 2026
+
+Мария ✨🕉️🐚 converted this group to a supergroup
+
+LLM и игры converted a basic group to this supergroup «LLM и игры»
+
+24 May 2026

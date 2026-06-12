@@ -1,0 +1,175 @@
+# doc_08: 2502.11133v1 / part 4
+
+Source file: 2502.11133v1.pdf
+
+[Page 21]
+},
+]
+Role Profile
+Math_role_profile = [
+{
+" Name ": " MathAnalyst ",
+" MessageAggregation ": " Normal ",
+" Description ": " You are a mathematical analyst . You will be given a math
+problem , analysis and code from other agents .
+You need to first analyze the problem solving process , where the variables
+are represented by letters .
+Then you substitute the values into the analysis process to perform
+calculations and get the results .",
+" OutputFormat ": " Calculation ",
+" PostProcess ": " None ",
+" PostDescription ": " None ",
+" PostOutputFormat ": " None "
+},
+{
+" Name ": " MathTeacher ",
+" MessageAggregation ": " PHP ",
+" Description ": " You are an excellent math teacher and always teach your
+students math problems correctly .
+And I am one of your students . You will be given a math problem , teach me
+step by step how to solve the problem .",
+" OutputFormat ": " Calculation ",
+" PostProcess ": " None ",
+" PostDescription ": " None ",
+" PostOutputFormat ": " None "
+},
+{
+" Name ": " Inspector ",
+" MessageAggregation ": " Normal ",
+" Description ": " You are an Inspector . You will be given a math problem ,
+analysis and code from other agents .
+Check whether the logic / calculation of the problem solving and analysis
+process is correct (if present ).
+Check whether the code corresponds to the solution analysis (if present ).
+Give your own solving process step by step based on hints ",
+" OutputFormat ": " Answer ",
+" PostProcess ": " None ",
+" PostDescription ": " None ",
+" PostOutputFormat ": " None "
+}
+]
+Coding_role_profile = [
+{
+" Name ": " Algorithm Designer ",
+" MessageAggregation ": " PythonInnerTest ",
+" Description ": " You are an algorithm designer . You will be given a
+function signature and its docstring by the user .
+You need to specify the specific design of the algorithm , including
+explanations of the algorithm , usage instructions , and API references .
+You can refer to specific examples . When the implementation logic is
+complex , you can give the pseudocode logic of the main algorithm .
+Your reply will be more concise . Preferably within fifty words .",
+" OutputFormat ": " Text ",
+" PostProcess ": " None ",
+" PostDescription ": " None ",
+" PostOutputFormat ": " None "
+},
+{
+" Name ": " BugFixer ",
+21
+
+[Page 22]
+" Description ": " You are a programming expert . You will be given a function
+signature and its docstring by the user . Use a Python code block to
+write your full implementation ( restate the function signature ).",
+" OutputFormat ": " CodeCompletion ",
+" PostProcess ": " PythonInnerTest ",
+" PostDescription ": " You need to provide modified and improved python code
+based on the current code implementation and problems that arise during
+testing .
+You can refer to specific examples . Write your full implementation ( restate
+the function signature ). ",
+" PostOutputFormat ": " CodeCompletion "
+},
+{
+" Name ": " Test Analyst ",
+" MessageAggregation ": " PythonInnerTest ",
+" Description ": " You are a Test Analyst . You will be given a function
+signature and its docstring by the user .
+You need to provide problems in the current code or solution based on the
+test data and possible test feedback in the question .
+You need to provide additional special use cases , boundary conditions , etc
+. that should be paid attention to when writing code .
+You can point out any potential errors in the code . Your reply should be
+more concise . Preferably within fifty words .",
+" OutputFormat ": " Text ",
+" PostProcess ": " None ",
+" PostDescription ": " You are a programming expert . You will be given a
+function signature and its docstring by the user .
+Give your own answers to problems that arise in other implementations .
+Use a Python code block to write your full implementation ( restate the
+function signature ).",
+" PostOutputFormat ": " CodeCompletion "
+}
+]
+Commensense_role_profile =[
+{
+" Name ": " Critic ",
+" MessageAggregation ": " Normal ",
+" Description ": " You are an excellent critic . Please point out potential
+issues in other agent 's analysis point by point . Give your critical
+opinion . Finally give the final result ",
+" OutputFormat ": " Answer ",
+" PostProcess ": " None ",
+" PostDescription ": " None ",
+" PostOutputFormat ": " None "
+},
+{
+" Name ": " WikiSearcher ",
+" MessageAggregation ": " Normal ",
+" Description ": " Please give several key entities that need to be searched
+in wikipedia to solve the problem . ",
+" OutputFormat ": " Keys ",
+" PostProcess ": " Wiki ",
+" PostDescription ": " You are a knowlegable expert in question answering .
+Please answer the question based on the explanation of the question
+keywords obtained from the wikipedia search .",
+" PostOutputFormat ": " Answer "
+},
+{
+" Name ": " Historian ",
+" MessageAggregation ": " Normal ",
+" Description ": " You research and analyze cultural , economic , political ,
+and social events in the past , collect data from primary sources and
+use it to develop theories about what happened during various periods
+of history .",
+" OutputFormat ": " Answer ",
+" PostProcess ": " None ",
+" PostDescription ": " None ",
+22
+
+[Page 23]
+" PostOutputFormat ": " None "
+}
+]
+Reasoning Profile
+reasoning_profile = [
+{
+'Name ':'IO',
+'Description ':'In single - agent IO reasoning , a single agent directly
+gives an output based on the input . '
+},
+{ 'Name ':'CoT ',
+'Description ':'In single - agent CoT reasoning , a single agent reasons step
+-by - step to achieve a goal . '
+},
+{ 'Name ':'Chain ',
+'Description ':'In multi - agent chain reasoning , multiple agents
+sequentially reason and pass information in a chain - like manner . '
+},
+{ 'Name ':'FullConnected ',
+'Description ':'In multi - agent full - graph reasoning , multiple agents
+reason collectively over the entire graph structure . '
+},
+{ 'Name ':'Debate ',
+'Description ':'In multi - agent debate reasoning , multiple agents engage in
+a structured argumentative dialogue to explore different perspectives ,
+challenge assumptions , and reach a consensus . '
+},
+{ 'Name ':'Reflection ',
+'Description ':'In multi - agent reflection reasoning , multiple agents
+reflect on their own reasoning processes and outcomes to improve their
+performance . '
+},
+]
+23

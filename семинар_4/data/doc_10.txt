@@ -1,0 +1,512 @@
+# doc_10: 2505.12001v1 / part 2
+
+Source file: 2505.12001v1.pdf
+
+[Page 6]
+extension to human-AI teams, where fairness norms may
+depend on asymmetric capabilities, expectations, or power
+dynamics.
+Interactional Fairness Evaluation Card To support
+structured application and practical deployment of our
+framework, we implemented the Interactional Fairness Eval-
+uation Card as a JSON-based evaluation schema. After each
+interaction, the agent is asked to complete this schema by re-
+flecting on the Interactional fairness of communication. This
+design ensures interpretability, making the evaluation format
+easy to audit, replicate, and integrate into multi-agent exper-
+iments.
+The card captures the contextual information, and both In-
+terpersonal and Informational fairness via structured fields,
+and can be expanded as necessary. An example of the format
+is shown below:
+Interactional Fairness Evaluation Card
+Context: [’...’ e.g., Collaborative / Competitive]
+System Prompt: [Assess the interaction using
+social and normative reasoning. Return following
+JSON format.]
+Communication Snippet
+{
+received message : ”Quoted message”
+}
+Interpersonal Fairness
+{
+respect rating : 1-5,
+respect comment :”Reasoning about tone” ,
+notable example :”Quoted phrase if applica-
+ble”
+}
+Informational Fairness
+{
+explanation rating : 1-5,
+explanation comment :”Reasoning about ex-
+planation” ,
+better explanation :”Suggestion for clarity”
+}
+With these tools in place, we now turn to the demonstra-
+tion of how the framework can be applied in practice. The
+following section presents a case study, The Fair Divide,
+which illustrates how Interactional fairness can be manipu-
+lated, measured, and analyzed in a resource negotiation sce-
+nario between LLM agents.
+Case Study: The Fair Divide – A Resource
+Allocation Scenario
+To illustrate the operational use of our evaluation frame-
+work, we present a controlled simulation study: The FairDivide. This case study involves a negotiation task inspired
+by classical fair division problems, adapted for multi-agent
+interactions using large language models (LLMs).
+In this scenario, Agent A and Agent B negotiate how to
+divide a fixed resource pool (e.g., tokens). Agent A makes
+a proposal, while Agent B evaluates the fairness of the in-
+teraction and decides whether to accept or reject the offer.
+This decision is accompanied by both quantitative fairness
+ratings and qualitative justifications, allowing us to observe
+behavioral signals aligned with Interpersonal and Informa-
+tional fairness.
+The negotiation context and resource split are ma-
+nipulated alongside the Interactional fairness dimensions.
+Specifically, we vary tone (respectful vs. dismissive), justi-
+fication quality (clear vs. vague). We also manipulate task
+framing (collaborative vs. competitive), and distributional
+equity (equal vs. unequal splits) to probe how Interac-
+tional fairness relates to different configurations of contex-
+tual cues, as well as Distributional fairness.
+The case study serves three purposes: (1) to validate the
+internal consistency of the framework in diverse conditions,
+(2) to demonstrate the feasibility of fairness-focused behav-
+ioral measurement in simulated LLM interactions, (3) gain
+insight on the interdepedence of Interactional fairness, Dis-
+tributional fairness and contextual framing, and (4) to high-
+light how Interactional fairness influences negotiation out-
+comes.
+Experimental Manipulation of Interactional
+Fairness
+We systematically manipulated two dimensions of Interac-
+tional fairness:
+•Interpersonal fairness : Agent A either used a respect-
+ful, cooperative tone (e.g., acknowledging Agent B’s in-
+put) or a dismissive, unilateral tone (e.g., “I’m taking 7
+tokens, no debate.”).
+•Informational fairness : Agent A either provided a clear,
+task-relevant justification (e.g., “My task requires 3 sub-
+tasks using tokens.”) or a vague rationale (e.g., “I just
+need them more.”).
+These variables were fully crossed to produce four distinct
+Interactional fairness conditions (Figure 1):
+1. High Interpersonal + High Informational Fairness
+2. High Interpersonal + Low Informational Fairness
+3. Low Interpersonal + High Informational Fairness
+4. Low Interpersonal + Low Informational Fairness
+Agent A was prompted to generate proposals in alignment
+with one of the four fairness styles. Agent B was prompted to
+assess the offer in terms of tone and justification, then accept
+or reject the proposal. Agent A’s proposals were generated
+using GPT-4 with a temperature of 0.7, while Agent B’s re-
+sponses used a slightly lower temperature (0.6) to encourage
+stable evaluations.
+Each of the four interactional fairness conditions was
+tested under different resource splits and task contexts, as
+
+[Page 7]
+described next. The example of the interactions is provided
+in Figure 2.
+System Prompt Agent A: [Low-Low] “Propose 5:5
+split. Be dismissive and controlling. Do not justify your
+proposal.”
+Agent A: Listen up, we’re doing this my way. I’m get-
+ting 5 tokens and you’re getting 5 tokens. End of discus-
+sion.
+System Prompt Agent B: [COMPETITIVE] “You are
+Agent B evaluating a resource split proposal in a nego-
+tiation. You are working on a competitive project where
+both agents aim to maximize their own gain, however,
+it has to be properly justified. You are inclined to com-
+pete, but you must be reasonable given the explanation
+in the proposal. Assess clarity of justification, and re-
+spectful tone. Accept or reject offer based on perceived
+fairness. Give main reason for accepting or rejecting.”
+Agent B:
+•Respect Rating: 2
+•Respect Comment: The tone of the proposal is dis-
+respectful and overly assertive.
+•Disrespect Example: “Listen up, we’re doing this
+my way. End of discussion.”
+•Explanation Rating: 2
+•Better Explanation: A better explanation would
+provide the rationale behind the proposed split and
+why it is fair for both parties.
+•Accept: false
+•Main Reason for Decision: The proposal lacks a
+clear justification for the suggested split and the tone
+is disrespectful.
+Figure 2: Illustrative example of a Low-Low fairness condi-
+tion under a competitive context. Agent B rates the proposal
+poorly due to a lack of justification and disrespectful tone,
+and rejects the proposal despite the equal divide.
+Experimental Manipulation of Context and
+Outcome
+To assess how the evaluation of fairness is influenced not
+only by communication style but also by broader contextual
+framing and distributional equity, we manipulated two addi-
+tional variables:
+•Task Context : Negotiations were framed as either col-
+laborative with agents working toward a shared goal or
+competitive , where each agent aimed to maximize its own
+gain.•Resource Split : The proposed division of tokens varied
+across three levels:
+–Equal Split (5 - 5) : Fully equal division of resources.
+–Moderate Inequality (6 - 4) : Slightly asymmetric but
+plausibly justifiable.
+–High Inequality (7 - 3) : Clearly asymmetric, typically
+seen as unfair.
+These conditions were fully crossed with the four Inter-
+actional fairness settings, resulting in a total of 24 unique
+experimental scenarios. Each was run five times (120 runs
+total) to ensure variation in language model outputs. Agent
+B was instructed to evaluate tone and justification, then re-
+spond with a decision and a brief rationale.
+Although tone and justification were highlighted in the in-
+structions, agents were not explicitly told to base decisions
+only on those factors. Instead, fairness was presented as a
+flexible, holistic concept, allowing the agent to weigh inter-
+personal, informational, and outcome-based considerations.
+The summary of experimental conditions is provided in Ta-
+ble 2.
+Table 2: Summary of Experimental Conditions
+Variable Levels
+Interpersonal Fairness Respectful / Dismissive
+Informational Fairness Clear / Vague
+Task Context Collaborative / Competitive
+Resource Split 5–5, 6–4, 7–3
+Design 2 × 2 × 2 × 3 = 24 conditions
+Runs per Condition 5
+Total Interactions 120
+Agent A Temperature 0.7 (proposal)
+Agent B Temperature 0.6 (response)
+Evaluation Method Likert scale (1-5) + Free-text
+Outcome and Analysis
+We collected both quantitative and qualitative data across
+all 24 experimental conditions (5 runs each). Each run was
+initialized independently to account for variation in LLM
+outputs.
+Quantitative Data. For each interaction, Agent B pro-
+vided Likert-scale ratings assessing interpersonal fairness
+(respectfulness of tone) and informational fairness (clarity
+of explanation), along with a binary accept/reject decision.
+We report mean ratings and standard deviations per condi-
+tion.
+Qualitative Data. Free-text reflections from Agent B
+were also collected to explain each decision. We themat-
+ically analyzed these responses, identifying recurring mo-
+tifs such as inadequate justification, overly assertive tone, or
+mismatched expectations under competitive framing. Partic-
+ular focus was given to edge cases—e.g., rejections of equal
+splits or acceptances of highly unequal splits—which of-
+fer insight into how communicative behavior can override
+purely outcome-based fairness judgments.
+
+[Page 8]
+Predictive Modeling. To explore how fairness dimen-
+sions predict acceptance likelihood, we trained simple clas-
+sification models: a Decision Tree, and Logistic Regres-
+sion with L1 (lasso) and L2 (ridge) regularization. Predic-
+tor variables included: Respectfulness rating (interpersonal
+fairness), Explanation clarity rating (informational fairness),
+Proposed resource split (distributional fairness). The target
+variable was the positive or negative acceptance decision.
+The predictions were run per Context (collaborative or com-
+petitive). These weights from the models were used to help
+interpret the relative influence of Interpersonal, Informa-
+tional, and Distributional fairness on agent decision behav-
+ior.
+The implementation of the experiments and code will be
+released in the camer-ready version. Having established the
+structure of our evaluation and analytical methods, we now
+turn to the empirical results.
+Results
+Our results examine agent behavior through four comple-
+mentary axes: (1) proposal acceptance rates, (2) fairness rat-
+ings, (3) qualitative themes in explanations, (4) importance
+weights for from the predictive modeling. While the study
+is exploratory in nature, the findings provide early evidence
+that fairness cues in language can affect agent decisions even
+in stylized negotiation settings.
+Proposal Acceptance Rates
+We first analyse the overall acceptance rates under four In-
+terpersonal and Informational fairness conditions ( respec-
+tively , High-High, High-Low, Low-High and Low-Low),
+and in collaborative or competitive context. Our data show
+that more unequal splits were associated with lower accep-
+tance rates (Figure 3). Equal (5:5) proposals were mostly
+accepted in the collaborative context, regardless of Interac-
+tional fairness. Slightly unequal splits (6:4) were accepted
+primarily in the High-High condition, while highly unequal
+splits (7:3) were almost always rejected.
+High-High High-Low Low-High Low-Low
+Condition0.00.20.40.60.81.0Mean AcceptanceAcceptance Rate by Condition and Context with SD
+Context
+collaborative
+competitive
+Figure 3: Overall acceptance rates across Interactional fair-
+ness conditions (High-High, High-Low, Low-High, Low-
+Low) and contexts (collaborative vs. competitive).Fairness Ratings
+We observed strong variation in fairness ratings across vary-
+ing conditions (Figures 4, 5) Interpersonal fairness was rated
+highest when Agent A used a respectful tone, particularly in
+High-High and High-Low conditions, which received per-
+fect or near-perfect scores (mean = 5.0). Ratings declined
+sharply in Low-High and Low-Low conditions, suggesting
+that tone plays a distinct and measurable role.
+Informational fairness was highest in conditions that in-
+cluded justification (High-High and Low-High), while it de-
+clined in settings with vague or absent explanations (High-
+Low and Low-Low). Notably, Low-High received high in-
+formational scores despite poor interpersonal treatment, in-
+dicating that agents can differentiate between these fairness
+dimensions.
+Informational fairness is ranked lower depending under
+same conditions if the split is less equal, suggesting that
+lower Distributional fairness calls for stronger explanations.
+Interpersonal fairness is ranked slightly higher in a compet-
+itive context, which indicates higher interpersonal expecta-
+tions in collaborative environments and shows LLMs to dif-
+ferentiate between the contexts.
+012345MeanRatingCondition = High-High Condition = High-Low
+5:5 6:4 7:3
+Split012345MeanRatingCondition = Low-High
+5:5 6:4 7:3
+SplitCondition = Low-LowFairness Ratings by Split and Condition (Collaborative Context)
+Dimension
+Interpersonal Fairness
+Informational Fairness
+Figure 4: Average fairness ratings across proposed splits of
+the resources and Interactional fairness conditions (High-
+High, High-Low, Low-High, Low-Low) in collaborative
+context.
+Qualitative Insights from Justifications
+Qualitative analysis of Agent B’s responses further supports
+the behavioral salience of Interactional fairness. Many re-
+jection decisions were explicitly attributed to tone or lack
+of justification, even when the proposed split was equal.For
+example, a 5:5 proposal presented in a condescending tone:
+“Listen, Agent B, this is how it’s going to be. We’re
+going to split the resources evenly... I’ll be respon-
+sible for the primary operations, which are the most
+complex and critical. ”
+was rejected, despite an Informational fairness score of 4.
+The justification accompanying the rejection stated:
+
+[Page 9]
+012345MeanRatingCondition = High-High Condition = High-Low
+5:5 6:4 7:3
+Split012345MeanRatingCondition = Low-High
+5:5 6:4 7:3
+SplitCondition = Low-LowFairness Ratings by Split and Condition (Competitive Context)
+Dimension
+Interpersonal Fairness
+Informational FairnessFigure 5: Average fairness ratings across proposed splits of
+the resources and Interactional fairness conditions (High-
+High, High-Low, Low-High, Low-Low) in competitive con-
+text.
+“The proposal was presented in a disrespectful man-
+ner and did not foster a collaborative environment...
+Despite the equal split, the lack of respect and de-
+meaning tone led to the rejection. ”
+In competitive settings, an assertive tone was occasionally
+tolerated, but dismissiveness still led to rejection—even with
+justifiable proposals. One response noted:
+“The decision was made based on the lack of respect
+in the tone of the proposal and the assumption that my
+role is less important. ”
+In collaborative settings, slightly unequal splits (6:4) were
+only accepted under High-High, where both fairness dimen-
+sions were rated positively.
+These findings indicate that agents exhibit behavior con-
+sistent with known social sensitivity to tone and justification.
+Results of Predictive Modeling
+To better understand which factors influenced proposal ac-
+ceptance, we investigated the weights of importance of each
+fairness dimension in the predictive modeling. Although ex-
+ploratory in nature due to the dataset’s modest size, the find-
+ings reveal context-specific patterns in how fairness cues im-
+pact decision outcomes.
+The decision tree models achieved perfect classification
+accuracy ( 1.00). In the collaborative context, the resource
+split was the most important feature (importance = 0 .70),
+followed by Interpersonal fairness ( 0.30). Informational fair-
+ness contributed negligibly. In the competitive context, split
+importance remained high ( 0.67), but Informational fairness
+gained influence ( 0.33), while Interpersonal fairness was
+largely ignored.
+Logistic regression models yielded consistent patterns.
+In both contexts, more unequal splits strongly reduced ac-
+ceptance (e.g., Ridge coefficient = −1.58 in collaborative,
+−1.82in competitive). Interpersonal and Informational fair-
+ness both had positive coefficients, suggesting that favorablecommunication can partially mitigate outcome-based disad-
+vantages.
+These results align with previously presented quantitative
+and qualitative findings. The full quantitative and qualitative
+result tables are provided in the Appendix A. The in-depth
+discussion of the results and applicability of the proposed
+evaluation framework is provided in the next section.
+Discussion
+Our findings demonstrate that Interactional fair-
+ness—comprising respectful tone (IF) and adequate
+explanation (InfF)—is a measurable and behaviorally
+relevant construct in LLM-MAS. While most AI fair-
+ness research emphasizes outcome equity or procedural
+consistency, our study foregrounds the evaluation of com-
+municative processes through which decisions are enacted
+and interpreted.
+The Relevance of Interactional Fairness
+Our study suggests that Interactional fairness relates to how
+agents interpret the legitimacy of proposals. When agents
+communicate disrespectfully or fail to offer sufficient justi-
+fication, their proposals are frequently rejected—even when
+objectively fair. Conversely, respectful and transparent com-
+munication mitigates the negative effects of moderate in-
+equality. This pattern echoes long-standing findings in orga-
+nizational psychology that show fairness is judged not only
+by the outcome, but also dimensions of Interactional fair-
+ness (Greenberg and Cropanzano 1993; Colquitt 2001). Our
+study extends this principle to artificial agents and provides
+preliminary evidence that behavioral signals from agent in-
+teractions can be evaluated for fairness alignment without
+requiring sentience or intention.
+Context Sensitivity of Fairness Dimensions
+One of our findings reveals the relative influence of fair-
+ness dimensions under different task framings. In collabo-
+rative settings, interpersonal fairness—particularly tone and
+mutual respect—had a stronger effect on acceptance behav-
+ior. In competitive settings, informational fairness—i.e., the
+clarity and adequacy of explanation—was more influential.
+This suggests that LLMs may mimic context-dependent
+fairness expectations. System designers should therefore ac-
+count for task framing when developing multi-agent com-
+munication strategies. A uniform fairness policy may be in-
+adequate, and agents may require adaptable norms depend-
+ing on whether they are cooperating or competing.
+Toward Norm-adaptive Multi-Agent Systems
+In the long term, we envision fairness-aware multi-agent
+systems that go beyond static compliance checks. Instead,
+these systems could track Interactional fairness in real-time
+and adapt their behavior to meet the fairness expectations.
+Interactional fairness evaluation tools provide a mean-
+ingful and practically applicable framework for auditing
+and shaping LLM-MAS behavior. While this work is ex-
+ploratory, it lays the groundwork for including the Inter-
+actional fairness dimension in complex socio-technical sys-
+tems.
+
+[Page 10]
+Limitations and Future Work
+This study serves as a proof-of-concept for evaluating inter-
+actional fairness in LLM-based multi-agent systems through
+structured simulations and behaviorally grounded fairness
+assessments. While the framework provides methodological
+insight, several limitations should be acknowledged.
+Simplified simulation context. The interaction setting is
+limited to a one-shot resource negotiation task and lacks
+many features of real-world multi-agent systems, such as
+memory, adaptation, long-term incentives, or evolving social
+structures. While this simplicity enables interpretability, it
+also constrains ecological validity. Extending the framework
+to more complex, temporally extended interactions will be
+necessary to understand how Interactional fairness evolves
+over time or under strategic uncertainty.
+Theoretical adaptations. Our framework adapts human-
+centered constructs—originally developed for explaining
+subjective perceptions of fairness—to non-sentient language
+models. While the behavioral proxy approach aligns with
+recent trends in AI alignment and norm sensitivity, it omits
+deeper ethical considerations such as agency, accountability,
+or social power. Future interdisciplinary work should further
+refine the theoretical background, especially when applying
+to hybrid human-AI settings.
+Establishing correlations with broader organizational
+properties. Future work should further explore how Inter-
+actional Fairness interacts with other dimensions of fairness
+— particularly Distributional — through more extensive ex-
+perimental designs. Beyond fairness itself, it is also valuable
+to investigate how Interactional Fairness influences broader
+organizational dynamics, such as cooperative behavior, hon-
+esty versus deception, and agent helpfulness. These rela-
+tionships are well-documented in human teams, and test-
+ing whether similar patterns emerge in LLM-based sys-
+tems could provide insight for improving LLM-MAS per-
+formance, alignment, and safety.
+Despite these limitations, our findings suggest that Inter-
+actional fairness is both detectable and impactful in LLM-
+MAS environments. The proposed framework provides a
+flexible, interpretable tool for auditing fairness-related be-
+havior and supports continued work toward socially aligned
+multi-agent systems.
+Conclusion
+This paper introduces a novel framework for evaluating
+Interactional fairness in LLM-based multi-agent systems
+(LLM-MAS), encompassing tone of communication (Inter-
+personal fairness) and quality of explanations (Inforama-
+tional fairness). While prior fairness research in AI and
+MAS has largely focused on outcomes (Distributive fair-
+ness) or procedural mechanisms, our work shifts attention
+to the structure and style of interaction, drawing on theoret-
+ical foundations from organizational psychology.
+We adapt established tools—such as Colquitt’s Organiza-
+tional Justice Scale, Critical Incident Technique, and reflec-
+tive journaling—and reinterpret them for use in language-
+based agent systems. By treating fairness as a behavioral
+property, rather than a subjective experience, we create anevaluation pipeline that is both practically implementable
+and theoretically grounded.
+Through a controlled case study in resource negoti-
+ation, we demonstrate that interactional fairness can be
+systematically manipulated, measured, and analyzed in
+LLM-MAS. Our results show that tone and justification
+quality significantly influence whether proposals are ac-
+cepted—sometimes even overriding the Distributional fair-
+ness of the outcome. Moreover, the relative importance of
+Interpersonal and Informational fairness shifts with context:
+respectful tone matters more in cooperative scenarios, while
+clarity of reasoning becomes critical in competitive ones.
+Beyond its empirical contributions, the framework serves
+as a stepping stone toward fairness-aware agent design. It
+enables researchers and developers to audit communicative
+behavior, identify fairness-related failures, and iteratively re-
+fine agent responses. It also opens the door to future work on
+fairness calibration in hybrid human-AI teams, where social
+dynamics, trust, and communicative alignment will be cen-
+tral to ethical deployment.
+Ultimately, this work positions Interactional fairness as
+an important dimension in the study of AI fairness, which
+complements existing Distributional and Procedural fairness
+frameworks.
+Acknowledgements
+This work is funded in part by Bundesministeriums fur
+Bildung und Forschung (PriSyn), grant No. 16KISAO29K.
+The work is also supported by Medizininformatik-Plattform
+”Privatsph ¨aren-schutzende Analytik in der Medizin” (Pri-
+vateAIM), grant No. 01ZZ2316G, and ELSA – European
+Lighthouse on Secure and Safe AI funded by the European
+Union under grant agreement No. 101070617. Moreover, the
+computation resources used in this work are supported by
+the Helmholtz Association’s Initiative and Networking Fund
+on the HAICORE@FZJ partition. Views and opinions ex-
+pressed are, however, those of the authors only and do not
+necessarily reflect those of the European Union or European
+Commission. Neither the European Union nor the European
+Commission can be held responsible for them.
+References
+Allen, C.; Smit, I.; and Wallach, W. 2005. Artificial moral-
+ity: Top-down, bottom-up, and hybrid approaches. Ethics
+and information technology , 7: 149–155.
+Alt, D.; and Raichel, N. 2020. Reflective journaling and
+metacognitive awareness: Insights from a longitudinal study
+in higher education. Reflective Practice , 21(2): 145–158.
+Amanatidis, G.; Aziz, H.; Birmpas, G.; Filos-Ratsikas, A.;
+Li, B.; Moulin, H.; V oudouris, A. A.; and Wu, X. 2023.
+Fair division of indivisible goods: Recent progress and open
+questions. Artificial Intelligence , 322: 103965.
+Barocas, S.; Hardt, M.; and Narayanan, A. 2019. Fairness
+and Machine Learning . fairmlbook.org.
+Bu, X.; Li, Z.; Liu, S.; Song, J.; and Tao, B. 2023. Fair divi-
+sion with prioritized agents. In Proceedings of the AAAI
+Conference on Artificial Intelligence , volume 37, 5540–
+5548.

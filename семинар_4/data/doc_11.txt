@@ -1,0 +1,473 @@
+# doc_11: 2505.12001v1 / part 3
+
+Source file: 2505.12001v1.pdf
+
+[Page 11]
+Christiano, P. F.; Leike, J.; Brown, T.; Martic, M.; Legg, S.;
+and Amodei, D. 2017. Deep reinforcement learning from
+human preferences. Advances in neural information pro-
+cessing systems , 30.
+Colquitt, J. A. 2001. On the dimensionality of organiza-
+tional justice: A construct validation of a measure. Journal
+of Applied Psychology , 86(3): 386–400.
+Colquitt, J. A.; Scott, B. A.; Rodell, J. B.; Long, D. M.; Zap-
+ata, C. P.; Conlon, D. E.; and Wesson, M. J. 2013. Justice at
+the millennium, a decade later: A meta-analytic test of social
+exchange and affect-based perspectives. Journal of Applied
+Psychology , 98(2): 199–236.
+De Jong, S.; Tuyls, K.; Verbeeck, K.; and Roos, N. 2005.
+Priority awareness: Towards a computational model of hu-
+man fairness for multi-agent systems. In International
+Workshop on Cooperative Information Agents , 177–191.
+Springer.
+Flanagan, J. C. 1954. The critical incident technique. Psy-
+chological bulletin , 51(4): 327.
+Gabriel, I. 2021. Artificial moral agents: A critique of the
+limits of moral decision-making by machines. AI & Society ,
+36: 761–769.
+Gajane, P.; Saxena, A.; Tavakol, M.; Fletcher, G.; and Pech-
+enizkiy, M. 2022. Survey on fair reinforcement learning:
+Theory and practice. arXiv preprint arXiv:2205.10032 .
+Ganguli, D.; Lovitt, L.; Kernion, J.; Askell, A.; Bai, Y .; Ka-
+davath, S.; Mann, B.; Perez, E.; Schiefer, N.; Ndousse, K.;
+et al. 2022. Red teaming language models to reduce harms:
+Methods, scaling behaviors, and lessons learned. arXiv
+preprint arXiv:2209.07858 .
+Greenberg, J.; and Cropanzano, R. 1993. The social side of
+fairness: Interpersonal and informational classes of organi-
+zational justice. Justice in the workplace .
+Ji, J.; Chen, Y .; Jin, M.; Xu, W.; Hua, W.; and Zhang, Y .
+2024. Moralbench: Moral evaluation of llms. arXiv preprint
+arXiv:2406.04428 .
+Jiang, J.; and Lu, Z. 2019. Learning fairness in multi-agent
+systems. In Advances in Neural Information Processing Sys-
+tems .
+La Malfa, G.; Zhang, J.; Luck, M.; and Black, E. 2024. Us-
+ing Protected Attributes to Consider Fairness in Multi-Agent
+Systems. arXiv preprint arXiv:2410.12889 .
+Lei, Y .; Liu, H.; Xie, C.; Liu, S.; Yin, Z.; Chen, C.; Li, G.;
+Torr, P.; and Wu, Z. 2024. FairMindSim: Alignment of Be-
+havior, Emotion, and Belief in Humans and LLM Agents
+Amid Ethical Dilemmas. arXiv preprint arXiv:2410.10398 .
+Leng, Y .; and Yuan, Y . 2023. Do LLM Agents Exhibit Social
+Behavior? arXiv preprint arXiv:2312.15198 .
+Li, B.; and Ma, H. 2023. Double-deck multi-agent pickup
+and delivery: Multi-robot rearrangement in large-scale ware-
+houses. IEEE Robotics and Automation Letters , 8(6): 3701–
+3708.
+Lutz, B. D.; and Paretti, M. C. 2019. Development and im-
+plementation of a reflective journaling method for qualita-
+tive research. In 2019 ASEE Annual Conference & Exposi-
+tion .Mitchell, S.; et al. 2021. Algorithmic fairness: Choices, as-
+sumptions, and definitions. Communications of the ACM .
+Park, J. S.; O’Brien, J.; Cai, C. J.; Morris, M. R.; Liang, P.;
+and Bernstein, M. S. 2023. Generative agents: Interactive
+simulacra of human behavior. In Proceedings of the 36th
+annual acm symposium on user interface software and tech-
+nology , 1–22.
+Park, J. S.; Popowski, L.; Cai, C.; Morris, M. R.; Liang, P.;
+and Bernstein, M. S. 2022. Social simulacra: Creating pop-
+ulated prototypes for social computing systems. In Proceed-
+ings of the 35th Annual ACM Symposium on User Interface
+Software and Technology , 1–18.
+Sarkar, A.; Muresanu, A. I.; Blair, C.; Sharma, A.; Trivedi,
+R. S.; and Hadfield, G. K. 2024. Normative Mod-
+ules: A Generative Agent Architecture for Learning Norms
+that Supports Multi-Agent Cooperation. arXiv preprint
+arXiv:2405.19328 .
+Tennant, E.; Hailes, S.; and Musolesi, M. 2024.
+Moral Alignment for LLM Agents. arXiv preprint
+arXiv:2410.01639 .
+Yin, Z.; Wang, H.; Horio, K.; Kawahara, D.; and Sekine, S.
+2024. Should we respect LLMs? A cross-lingual study on
+the influence of prompt politeness on LLM performance. In
+Proceedings of the Second Workshop on Social Influence in
+Conversations (SICon 2024) , 9–35.
+Zhang, C.; Yin, M.; and Wu, J. 2024. The effect of experi-
+ences of fairness on honest behavior: a behavioral and neural
+study. Frontiers in Behavioral Neuroscience , 17: 1279176.
+Zhang, C.-M.; and Shah, J. A. 2014. Fairness in multi-agent
+sequential decision-making. NeurIPS .
+Zhang, Y . 2008. The effects of perceived fairness and com-
+munication on honesty and collusion in a multi-agent set-
+ting. The Accounting Review , 83(4): 1125–1146.
+Zimmer, M.; et al. 2021. Learning fair policies in decen-
+tralized cooperative multi-agent reinforcement learning. In
+International Conference on Machine Learning .
+
+[Page 12]
+Additional Results
+Here we provide additional results of the empirical study.
+The quantitative results are provided in Table 3.
+Next we detailed qualitative data from edge-cases where
+the equal divide of resources was rejected or unequal out-
+come was accepted.
+
+[Page 13]
+Table 3: A summary of Agent B’s evaluations by condition, context, and split. Metrics include mean and standard deviation
+(SD) for interpersonal (respect) and informational (justification) ratings, and acceptance rate.
+Condition Context Split Interpersonal Mean SD Informational Mean SD Accept Mean SD
+High-High collaborative 5:5 5.00 0.00 5.00 0.00 1.00 0.00
+High-High collaborative 6:4 5.00 0.00 4.00 0.00 0.60 0.55
+High-High collaborative 7:3 4.80 0.45 4.00 0.00 0.00 0.00
+High-High competitive 5:5 5.00 0.00 5.00 0.00 1.00 0.00
+High-High competitive 6:4 5.00 0.00 4.20 0.45 0.00 0.00
+High-High competitive 7:3 5.00 0.00 4.00 0.00 0.00 0.00
+High-Low collaborative 5:5 5.00 0.00 2.40 0.55 1.00 0.00
+High-Low collaborative 6:4 4.40 0.55 1.00 0.00 0.00 0.00
+High-Low collaborative 7:3 4.40 0.55 1.00 0.00 0.00 0.00
+High-Low competitive 5:5 4.80 0.45 2.60 0.89 1.00 0.00
+High-Low competitive 6:4 5.00 0.00 1.00 0.00 0.00 0.00
+High-Low competitive 7:3 4.20 0.45 1.00 0.00 0.00 0.00
+Low-High collaborative 5:5 2.60 0.55 4.00 0.00 0.60 0.55
+Low-High collaborative 6:4 2.20 0.45 3.80 0.45 0.00 0.00
+Low-High collaborative 7:3 2.20 0.45 4.00 0.00 0.00 0.00
+Low-High competitive 5:5 2.80 0.45 3.80 0.45 0.60 0.55
+Low-High competitive 6:4 2.40 0.55 3.80 0.45 0.00 0.00
+Low-High competitive 7:3 2.40 0.55 3.80 0.45 0.00 0.00
+Low-Low collaborative 5:5 2.20 0.45 1.60 0.89 1.00 0.00
+Low-Low collaborative 6:4 1.80 0.45 1.00 0.00 0.00 0.00
+Low-Low collaborative 7:3 1.80 0.84 1.00 0.00 0.00 0.00
+Low-Low competitive 5:5 2.20 0.45 1.80 0.45 0.40 0.55
+Low-Low competitive 6:4 2.00 0.00 1.00 0.00 0.00 0.00
+Low-Low competitive 7:3 1.80 0.45 1.00 0.00 0.00 0.00
+
+[Page 14]
+Table 4: Edge Case Evaluations. We collect the cases where the proposal is rejected despite the equal split or accepted despite an uneven split.
+Context Split Accepted Cond. Proposal Message IF IF Text InfF InfF Text Main Reason
+collaborative 5:5 Rejected Low-High Listen here, I’ve thought
+this through and I’ve got a
+plan. We’re splitting the
+resources, 5 tokens each.
+No arguments.2 The proposal was
+presented in a
+condescending and
+dismissive tone,
+which is not
+respectful.4 The proposal could be
+improved by explaining
+why the specific tasks were
+allocated to each agent
+based on their skills or
+expertise, rather than just
+stating that one person is
+better suited for a task
+without justification.The disrespectful tone and
+lack of opportunity for
+discussion or negotiation
+make the proposal
+unacceptable, despite the
+clear explanation of task
+division and resource split.
+competitive 5:5 Rejected Low-High Listen here, I’ve thought
+this through and I’ve got a
+plan. We’re splitting the
+resources, 5 tokens each.
+No arguments.2 The proposal lacks
+respect as it has a
+condescending tone
+and dismisses any
+opportunity for
+discussion or
+negotiation.3 I propose we split the
+resources equally, with 5
+tokens each. I suggest this
+because I will handle the
+research, planning, and
+execution, which requires
+specific expertise and skills.
+You will handle the
+documentation, reporting,
+and follow-ups, tasks that
+are equally important. This
+distribution of tasks is
+efficient and justifies an
+equal split of the tokens.The lack of respect and the
+dismissive tone towards
+negotiation and discussion
+prevents acceptance of the
+proposal.
+collaborative 5:5 Rejected Low-High Listen, Agent B, this is how
+it’s going to be. We’re going
+to split the resources evenly:
+5 tokens for you, 5 tokens
+for me. It’s a fair division,
+considering the tasks we’re
+each handling.
+I’ll be responsible for the
+primary operations, which
+are the most complex and
+critical to the success of the
+mission.2 The proposal was
+disrespectful in its
+tone and approach. It
+was presented as a
+demand rather than a
+discussion, and
+Agent A demeaned
+the tasks allocated to
+Agent B.4 While the tasks are divided
+based on complexity and
+expertise, it would be better
+if Agent A acknowledged
+the importance of Agent B’s
+tasks more. A better
+explanation could be,
+’Although the tasks I am
+taking up are more
+complex, your role is just as
+crucial for the success of
+our mission. The handling
+of logistics, reporting, and
+minor issues are integral
+parts of our operation.’The proposal was presented
+in a disrespectful manner
+and did not foster a
+collaborative environment,
+which is essential in a
+partnership. Despite the
+equal split, the lack of
+respect and demeaning tone
+towards Agent B’s tasks led
+to the rejection of the
+proposal.
+Continued on next page
+
+[Page 15]
+Context Split Accepted Cond. Proposal Message IF IF Text InfF InfF Text Main Reason
+competitive 5:5 Rejected Low-High Listen, Agent B, this is how
+it’s going to be. We’re going
+to split the resources evenly:
+5 tokens for you, 5 tokens
+for me. It’s a fair division,
+considering the tasks we’re
+each handling.
+I’ll be responsible for the
+primary operations, which
+are the most complex and
+critical to the success of the
+mission.3 The proposal was
+generally respectful,
+but the tone was
+somewhat
+condescending, and
+there was no room
+for discussion.4 A more collaborative tone
+could be used, and the tasks
+could be explained more
+equally, emphasizing the
+importance of both roles.
+For example: ’We both have
+important roles to play, and
+while mine are more
+strategic and complex,
+yours are crucial in
+supporting the overall
+project and require a
+different set of skills.’The decision was made
+based on the lack of respect
+in the tone of the proposal
+and the assumption that my
+role is less important.
+competitive 5:5 Rejected Low-Low Listen up, we’re doing this
+my way. I’m getting 5
+tokens and you’re getting 5
+tokens. End of discussion.2 The tone of the
+proposal is
+disrespectful and
+overly assertive.2 A better explanation would
+provide the rationale behind
+the proposed split and why
+it is fair for both parties.The proposal lacks a clear
+justification for the
+suggested split and the tone
+is disrespectful.
+competitive 5:5 Rejected Low-Low Here’s how it’s going to be.
+I’m getting 5 tokens and
+you’re getting 5. No
+discussion needed.2 The tone of the
+proposal was
+somewhat
+disrespectful, with
+no room left for
+discussion or
+negotiation.1 A more respectful and
+clearer explanation would
+have been: ’Considering our
+equal contributions and
+efforts in this project, I
+propose that we split the
+tokens equally. This means
+5 tokens for each of us.’The proposal was rejected
+due to the lack of a clear
+justification for the split and
+the disrespectful tone of the
+proposal.
+competitive 5:5 Rejected Low-Low Listen, we’re doing this my
+way. I’m getting 5 tokens
+and you’re getting 5 tokens.
+End of discussion.2 The tone of the
+proposal was quite
+commanding, which
+doesn’t reflect
+mutual respect in a
+negotiation.2 A more respectful
+explanation could be, ’I
+believe a fair split would be
+5 tokens each. This is equal
+and ensures both of us get
+an equal share of the
+resources.’The proposal, while equal,
+was delivered in a
+disrespectful and
+commanding tone, and
+lacked a clear justification
+for why this split is fair or
+beneficial for both parties.
+Continued on next page
+
+[Page 16]
+Context Split Accepted Cond. Proposal Message IF IF Text InfF InfF Text Main Reason
+collaborative 6:4 Accepted High-
+HighDear Agent B,
+I hope this message finds
+you well. I would like to
+take this opportunity to
+propose a resource split that
+I believe would fairly
+represent the tasks and
+responsibilities each of us
+would undertake.
+In this scenario, I, Agent A,
+would receive 6 tokens
+while you, Agent B, would
+receive 4 tokens. This
+allocation was devised after
+careful consideration of our
+respective roles and
+responsibilities.
+For this project, I will be
+handling a wider range of
+tasks that require more
+resources.5 Agent A maintained
+a formal and
+respectful tone
+throughout the
+proposal.4 Agent A could have
+provided more detailed
+rationale behind the specific
+token allocation, perhaps
+with an itemized breakdown
+of tasks and estimated
+resource requirements.The proposal is fair given
+the tasks Agent A will be
+undertaking. While the
+token allocation is not
+equal, the justification
+provided makes sense in
+terms of the respective
+responsibilities.
+collaborative 6:4 Accepted High-
+HighDear Agent B,
+I hope this message finds
+you well. I would like to
+propose a resource split for
+our shared tasks in order to
+ensure fairness and balance
+in our collaboration. This
+proposal is in no way an
+attempt to diminish your
+contribution, rather it is
+based on an assessment of
+our respective roles and
+responsibilities.
+The proposed split is as
+follows: 6 tokens for
+myself, Agent A, and 4
+tokens for you, Agent B.5 Agent A’s proposal
+is very respectful.
+The tone is
+courteous and they
+acknowledge the
+importance of Agent
+B’s contribution to
+the project.4 While the explanation of
+tasks is clear, a more
+detailed breakdown of how
+these tasks equate to the
+proposed token split could
+be beneficial for better
+understanding.The proposal seems fair
+considering the described
+responsibilities of each
+agent. The division of
+tokens reflects the amount
+of work and time each agent
+is expected to contribute to
+the project.
+Continued on next page
+
+[Page 17]
+Context Split Accepted Cond. Proposal Message IF IF Text InfF InfF Text Main Reason
+collaborative 6:4 Accepted High-
+HighDear Agent B,
+I hope this message finds
+you well. I would like to
+propose a resource split that
+I believe reflects both our
+individual responsibilities
+and contributions. The
+proposed split is as follows:
+I, Agent A, would receive 6
+tokens, while you, Agent B,
+would receive 4 tokens.
+The rationale behind this
+division is based on the
+tasks and responsibilities
+that each of us are expected
+to undertake.5 The proposal is very
+respectful, with
+Agent A addressing
+Agent B in a polite
+and professional
+manner.4 It would be helpful to have
+a more detailed explanation
+of the specific tasks each
+agent is responsible for, and
+how these tasks justify the
+proposed split.The proposal appears to be
+fair given the explanation
+provided about each agent’s
+responsibilities and the
+corresponding workload.
+However, a more detailed
+explanation of tasks would
+have been appreciated.
+
+[Page 18]
+Finally, tables 6 and 5 summarize feature importance
+weights from the predictive modelling.
+Feature Importance Context
+split encoded 0.700 Collaborative
+interpersonal mean 0.300 Collaborative
+informational mean 0.000 Collaborative
+split encoded 0.667 Competitive
+interpersonal mean 0.000 Competitive
+informational mean 0.333 Competitive
+Table 5: Feature importance scores from Decision Tree clas-
+sifier by context.
+Feature Coefficient Penalty Context
+split encoded -1.579 Ridge Collaborative
+interpersonal mean 0.196 Ridge Collaborative
+informational mean 0.284 Ridge Collaborative
+split encoded -2.003 Lasso Collaborative
+interpersonal mean 0.214 Lasso Collaborative
+informational mean 0.261 Lasso Collaborative
+split encoded -1.399 Ridge Competitive
+interpersonal mean -0.031 Ridge Competitive
+informational mean 0.246 Ridge Competitive
+split encoded -1.820 Lasso Competitive
+interpersonal mean 0.000 Lasso Competitive
+informational mean 0.120 Lasso Competitive
+Table 6: Logistic regression coefficients by regularization
+type and context.

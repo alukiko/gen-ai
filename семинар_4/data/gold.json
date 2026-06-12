@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "type": "прямой",
+    "question": "Что такое GAIA и сколько вопросов входит в этот benchmark?",
+    "gold_sources": ["doc_01"]
+  },
+  {
+    "id": 2,
+    "type": "точный артикул",
+    "question": "Какой результат показывают люди и GPT-4 с плагинами на GAIA?",
+    "gold_sources": ["doc_01", "doc_02"]
+  },
+  {
+    "id": 3,
+    "type": "синоним",
+    "question": "Почему авторы GAIA считают, что тест должен проверять практическую устойчивость ассистента, а не только экспертные экзамены?",
+    "gold_sources": ["doc_01"]
+  },
+  {
+    "id": 4,
+    "type": "прямой",
+    "question": "Какие три решения принимает MasRouter при построении multi-agent system routing?",
+    "gold_sources": ["doc_05"]
+  },
+  {
+    "id": 5,
+    "type": "точный артикул",
+    "question": "На каких benchmark MasRouter улучшает качество и где снижает overhead по сравнению с SOTA?",
+    "gold_sources": ["doc_05"]
+  },
+  {
+    "id": 6,
+    "type": "перефраз",
+    "question": "Чем multi-agent routing отличается от single-agent routing в статье про MasRouter?",
+    "gold_sources": ["doc_05"]
+  },
+  {
+    "id": 7,
+    "type": "прямой",
+    "question": "Что такое interactional fairness и на какие две части она делится?",
+    "gold_sources": ["doc_09"]
+  },
+  {
+    "id": 8,
+    "type": "синоним",
+    "question": "Какие инструменты из организационной психологии адаптируются для аудита справедливого общения между LLM-агентами?",
+    "gold_sources": ["doc_09"]
+  },
+  {
+    "id": 9,
+    "type": "multi-hop",
+    "question": "Как MasRouter и работа про interactional fairness по-разному расширяют анализ multi-agent systems?",
+    "gold_sources": ["doc_05", "doc_09"]
+  },
+  {
+    "id": 10,
+    "type": "прямой",
+    "question": "Как в LangGraph предлагается увидеть, какие модели или ресурсы выбирались на каждом шаге?",
+    "gold_sources": ["doc_12"]
+  },
+  {
+    "id": 11,
+    "type": "точный артикул",
+    "question": "Какой защитный fallback предлагается, если Oracle не выдал resources для части задач?",
+    "gold_sources": ["doc_12"]
+  },
+  {
+    "id": 12,
+    "type": "multi-hop",
+    "question": "Какие минимальные добавки нужны, чтобы мультиагентная система лучше покрывала GAIA, и как это связано с обсуждением mar_catalog?",
+    "gold_sources": ["doc_12", "doc_14"]
+  }
+]

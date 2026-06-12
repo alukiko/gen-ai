@@ -1,0 +1,623 @@
+# doc_07: 2502.11133v1 / part 3
+
+Source file: 2502.11133v1.pdf
+
+[Page 11]
+Shengran Hu, Cong Lu, and Jeff Clune. 2024b. Auto-
+mated Design of Agentic Systems. arXiv preprint .
+ArXiv:2408.08435.
+Quzhe Huang, Zhenwei An, Nan Zhuang, Mingxu Tao,
+Chen Zhang, Yang Jin, Kun Xu, Kun Xu, Liwei Chen,
+Songfang Huang, and Yansong Feng. 2024. Harder
+tasks need more experts: Dynamic routing in moe
+models. Preprint, arXiv:2403.07652.
+Yoichi Ishibashi and Yoshimasa Nishimura. 2024. Self-
+organized agents: A llm multi-agent framework to-
+ward ultra large-scale code generation and optimiza-
+tion. arXiv preprint arXiv:2404.02183.
+Pierre Lepagnol, Thomas Gerald, Sahar Ghannay,
+Christophe Servan, and Sophie Rosset. 2024. Small
+language models are good too: An empirical
+study of zero-shot classification. In Proceedings
+of the 2024 Joint International Conference on
+Computational Linguistics, Language Resources
+and Evaluation (LREC-COLING 2024) , pages
+14923–14936, Torino, Italia. ELRA and ICCL.
+Tian Liang, Zhiwei He, Wenxiang Jiao, Xing Wang,
+Yan Wang, Rui Wang, Yujiu Yang, Zhaopeng Tu, and
+Shuming Shi. 2023. Encouraging divergent thinking
+in large language models through multi-agent debate.
+Work in progress.
+Zijun Liu, Yanzhe Zhang, Peng Li, Yang Liu, and Diyi
+Yang. 2023. Dynamic llm-agent network: An llm-
+agent collaboration framework with agent team opti-
+mization. CoRR, abs/2310.02170.
+Shervin Minaee, Tomas Mikolov, Narjes Nikzad,
+Meysam Chenaghlu, Richard Socher, Xavier Am-
+atriain, and Jianfeng Gao. 2024. Large language
+models: A survey. Preprint, arXiv:2402.06196.
+Alireza Mohammadshahi, Arshad Rafiq Shaikh, and
+Majid Yazdani. 2024. Routoo: Learning to route
+to large language models effectively. Preprint ,
+arXiv:2401.13979.
+Isaac Ong, Amjad Almahairi, Vincent Wu, Wei-Lin Chi-
+ang, Tianhao Wu, Joseph E. Gonzalez, M Waleed
+Kadous, and Ion Stoica. 2024. Routellm: Learn-
+ing to route llms with preference data. Preprint ,
+arXiv:2406.18665.
+OpenAI. 2024. Gpt-4o mini: Advancing cost-efficient
+intelligence.
+Joon Sung Park, Joseph C. O’Brien, Carrie J. Cai,
+Meredith Ringel Morris, Percy Liang, and Michael S.
+Bernstein. 2023. Generative agents: Interactive sim-
+ulacra of human behavior.
+Rafael Pina, Varuna De Silva, and Corentin Ar-
+taud. 2023. Discovering causality for efficient
+cooperation in multi-agent environments. CoRR ,
+abs/2306.11846.Chen Qian, Xin Cong, Cheng Yang, Weize Chen,
+Yusheng Su, Juyuan Xu, Zhiyuan Liu, and Maosong
+Sun. 2023. Communicative agents for software de-
+velopment. 25 pages, 9 figures, 2 tables.
+Chen Qian, Zihao Xie, Yifei Wang, Wei Liu, Yu-
+fan Dang, Zhuoyun Du, Weize Chen, Cheng Yang,
+Zhiyuan Liu, and Maosong Sun. 2024. Scaling
+large-language-model-based multi-agent collabora-
+tion. arXiv preprint arXiv:2406.07155.
+Frederike Ramin, Christoph Matthies, and Ralf Teusner.
+2020. More than code: Contributions in scrum
+software engineering teams. In Proceedings of
+the IEEE/ACM 42nd International Conference on
+Software Engineering Workshops , ICSE ’20, page
+137–140. ACM.
+N Reimers. 2019. Sentence-bert: Sentence embed-
+dings using siamese bert-networks. arXiv preprint
+arXiv:1908.10084.
+Reworkd. 2023. Agentgpt. https://github.com/
+reworkd/AgentGPT .
+Toran Bruce Richards and et al. 2023. Auto-gpt: An au-
+tonomous gpt-4 experiment. https://github.com/
+Significant-Gravitas/Auto-GPT .
+Yu Shang, Yu Li, Keyu Zhao, Likai Ma, Jiahe Liu,
+Fengli Xu, and Yong Li. 2024. Agentsquare: Au-
+tomatic llm agent search in modular design space.
+Preprint, arXiv:2410.06153.
+Weizhou Shen, Chenliang Li, Hongzhan Chen, Ming
+Yan, Xiaojun Quan, Hehong Chen, Ji Zhang, and Fei
+Huang. 2024. Small llms are weak tool learners: A
+multi-llm agent. arXiv preprint arXiv:2401.07324.
+Noah Shinn, Beck Labash, and Ashwin Gopinath.
+2023. Reflexion: an autonomous agent with dy-
+namic memory and self-reflection. arXiv preprint ,
+abs/2303.11366.
+KV Aditya Srivatsa, Kaushal Kumar Maurya, and Eka-
+terina Kochmar. 2024. Harnessing the power of
+multiple minds: Lessons learned from llm routing.
+Preprint, arXiv:2405.00467.
+Dimitris Stripelis, Zhaozhuo Xu, Zijian Hu, Alay Dilipb-
+hai Shah, Han Jin, Yuhang Yao, Jipeng Zhang,
+Tong Zhang, Salman Avestimehr, and Chaoyang He.
+2024. TensorOpera router: A multi-model router
+for efficient LLM inference. In Proceedings ofthe
+2024 Conference on Empirical Methods inNatural
+Language Processing: Industry Track , pages 452–
+462, Miami, Florida, US. Association for Compu-
+tational Linguistics.
+Melanie Swan, Takashi Kido, Eric Roland, and Renato P.
+dos Santos. 2023. Math agents: Computational in-
+frastructure, mathematical embedding, and genomics.
+Preprint, arXiv:2307.02502.
+11
+
+[Page 12]
+Gemini Team, Petko Georgiev, Ving Ian Lei, Ryan
+Burnell, Libin Bai, Anmol Gulati, Garrett Tanzer,
+Damien Vincent, Zhufeng Pan, Shibo Wang, et al.
+2024. Gemini 1.5: Unlocking multimodal un-
+derstanding across millions of tokens of context.
+Preprint, arXiv:2403.05530.
+Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Man-
+dlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and
+Anima Anandkumar. 2023. V oyager: An Open-
+Ended Embodied Agent with Large Language Mod-
+els. arXiv e-prints, arXiv:2305.16291.
+Wenhui Wang, Furu Wei, Li Dong, Hangbo Bao, Nan
+Yang, and Ming Zhou. 2020. Minilm: Deep self-
+attention distillation for task-agnostic compression
+of pre-trained transformers. Advances inNeural
+Information Processing Systems, 33:5776–5788.
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc V Le,
+Ed H. Chi, Sharan Narang, Aakanksha Chowdhery,
+and Denny Zhou. 2023a. Self-consistency improves
+chain of thought reasoning in language models. In
+The Eleventh International Conference on Learning
+Representations.
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc V .
+Le, Ed H. Chi, Sharan Narang, Aakanksha Chowd-
+hery, and Denny Zhou. 2023b. Self-consistency im-
+proves chain of thought reasoning in language mod-
+els. In ICLR. OpenReview.net.
+Zhenhailong Wang, Shaoguang Mao, Wenshan Wu, Tao
+Ge, Furu Wei, and Heng Ji. 2024. Unleashing the
+emergent cognitive synergy in large language mod-
+els: A task-solving agent through multi-persona self-
+collaboration. In NAACL . Association for Computa-
+tional Linguistics.
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten
+Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, and
+Denny Zhou. 2022. Chain-of-thought prompting elic-
+its reasoning in large language models.
+Ronald J Williams. 1992. Simple statistical gradient-
+following algorithms for connectionist reinforcement
+learning. Machine learning, 8:229–256.
+Anita Williams Woolley, Christopher F. Chabris, Alex
+Pentland, Nada Hashmi, and Thomas W. Malone.
+2010. Evidence for a collective intelligence fac-
+tor in the performance of human groups. Science ,
+330(6004):686–688.
+Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu,
+Shaokun Zhang, Erkang Zhu, Beibin Li, Li Jiang,
+Xiaoyun Zhang, and Chi Wang. 2023. Autogen: En-
+abling next-gen llm applications via multi-agent con-
+versation framework.
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak
+Shafran, Karthik R Narasimhan, and Yuan Cao. 2023.
+React: Synergizing reasoning and acting in language
+models. In The Eleventh International Conference
+on Learning Representations.Zhangyue Yin, Qiushi Sun, Cheng Chang, Qipeng
+Guo, Junqi Dai, Xuanjing Huang, and Xipeng Qiu.
+2023. Exchange-of-thought: Enhancing large lan-
+guage model capabilities through cross-model com-
+munication. Preprint, arXiv:2312.01823.
+Longhui Yu, Weisen Jiang, Han Shi, Jincheng Yu,
+Zhengying Liu, Yu Zhang, James T. Kwok, Zhen-
+guo Li, Adrian Weller, and Weiyang Liu. 2024.
+Metamath: Bootstrap your own mathematical
+questions for large language models. Preprint ,
+arXiv:2309.12284.
+Guibin Zhang, Kaijie Chen, Guancheng Wan, Heng
+Chang, Hong Cheng, Kun Wang, Shuyue Hu, and Lei
+Bai. 2025. Evoflow: Evolving diverse agentic work-
+flows on the fly. arXiv preprint arXiv:2502.07373.
+Guibin Zhang, Yanwei Yue, Zhixun Li, Sukwon Yun,
+Guancheng Wan, Kun Wang, Dawei Cheng, Jef-
+frey Xu Yu, and Tianlong Chen. 2024a. Cut
+the crap: An economical communication pipeline
+for llm-based multi-agent systems. Preprint ,
+arXiv:2410.02506.
+Guibin Zhang, Yanwei Yue, Zhixun Li, Sukwon Yun,
+Guancheng Wan, Kun Wang, Dawei Cheng, Jef-
+frey Xu Yu, and Tianlong Chen. 2024b. Cut
+the crap: An economical communication pipeline
+for llm-based multi-agent systems. arXiv preprint
+arXiv:2410.02506.
+Jiayi Zhang, Jinyu Xiang, Zhaoyang Yu, Fengwei Teng,
+Xionghui Chen, Jiaqi Chen, Mingchen Zhuge, Xin
+Cheng, Sirui Hong, Jinlin Wang, Bingnan Zheng,
+Bang Liu, Yuyu Luo, and Chenglin Wu. 2024c.
+AFlow: Automating Agentic Workflow Generation.
+arXiv preprint. ArXiv:2410.10762.
+Jintian Zhang, Xin Xu, and Shumin Deng. 2023. Ex-
+ploring collaboration mechanisms for llm agents:
+A social psychology view. arXiv preprint
+arXiv:2310.02124.
+Qinlin Zhao, Jindong Wang, Yixuan Zhang, Yiqiao Jin,
+Kaijie Zhu, Hao Chen, and Xing Xie. 2023. Com-
+peteai: Understanding the competition behaviors in
+large language model-based agents. arXiv preprint
+arXiv:2310.17512.
+Mingchen Zhuge, Wenyi Wang, Louis Kirsch,
+Francesco Faccio, Dmitrii Khizbullin, and Jürgen
+Schmidhuber. 2024. Gptswarm: Language agents
+as optimizable graphs. In Forty-first International
+Conference onMachine Learning.
+Christian Zingg, Alexander von Gernler, Carsten Arzig,
+Frank Schweitzer, and Christoph Gote. 2023. De-
+tecting and optimising team interactions in software
+development. Preprint, arXiv:2302.14609.
+A Notations
+We conclude the commonly used notations in Ta-
+ble 4 for reference.
+12
+
+[Page 13]
+Notation Definition
+S={M,R,T} Candidate space containing LLM pool M, roles set R, and collaboration modes set T
+M Pool of available LLM backbones
+R Set of predefined agent roles (e.g., Analyst, Developer, Tester)
+T Set of collaboration modes (e.g., Chain, Tree, Debate)
+k Number of agents in the multi-agent system
+S={{M i}k
+i=1,{R i}k
+i=1,T } Multi-agent system with LLMs M i, roles Ri, and collaboration mode T
+M i Selected LLM backbone for the i-th agent
+Ri Selected role for the i-th agent
+Q Input query to the multi-agent system
+a Oracle answer corresponding to the query Q
+f:M × R × T → S MASR mapping function assigning components to queries
+π(S) Probability of selecting system Sgiven query Q
+U(S;Q, a) Utility function measuring MAS performance
+C(S;Q) Cost function quantifying token expenditure
+λ Trade-off parameter between utility and cost
+Fθ=Fθt◦Fθr◦Fθm Controller network for collaboration, role allocation, and LLM routing
+H Latent variable capturing query-collaboration semantics
+˜Hτ Refined representation of the candidate collaboration mode T
+τ Temperature parameter in probability decoding
+γ Hyperparameter for maximum number of agents
+p(a|Q) Conditional likelihood of generating answer avia MAS
+Γ(z) Gamma function approximating non-integer factorials
+δ(H) Complexity mapping function determining the number of agents
+fψ(·) Encoder extracting semantic information from the query Q
+gϕ(·) Fusion module producing refined representations
+Table 4: The notations that are commonly used throughout the manuscript.
+B Algorithm Workflow
+We conclude the overall algorithm workflow of
+MasRouter in Algorithm 1.
+C Case Study
+As shown in Tables 5 to 9, we visualize the cus-
+tomized MAS designed by MasRouter for varying
+query difficulties on the five benchmarks.
+D Detailed Cost-Performance Data
+D.1 Inference Cost
+In this section, we present the specific overhead
+and performance of various baselines on the MBPP
+(Table 10) and HumanEval (Table 11) datasets. The
+scatter plot with Pareto Front on HumanEval is
+shown in Figure 6.
+D.2 Training Cost
+In Table 12, we compare the training overhead
+of the SOTA methods that require training with
+MasRouter on MATH and MMLU.
+E The Module Profile
+In this section, we present the profiles of each
+module. We generate the LLM profile following
+Figure 6: The comparison of the performance and infer-
+ence cost on the HumanEval dataset. Different shapes
+of the scatter points represent various types of baselines,
+while the different colors of the points indicate the use
+of different LLM backbones.
+GraphRouter (Feng et al., 2024) and construct the
+role pool following the method of Macnet (Qian
+et al., 2024). We have selected three distinct roles
+for each task, as presented in the “LLM Profile”
+and “Role Profile” boxes.
+13
+
+[Page 14]
+Algorithm 1 Workflow of MasRouter
+Input : Benchmark D, encoder fψ(·), fusion module gϕ(·), learning rate α, search space S={M,R,T}
+for query Q ∈ D do
+for iteration t∈ { 1,2,··· , K}do
+/* Collaboration Mode Determination */
+Sample latent vector H∼ N (µt(Q),diag (σ2
+t(Q))) ▷Eq.(7)
+Compute collaboration mode probability: p(T |H)∝exp( fψ(Q)⊤˜Hτ/τ)
+Determine agent count: k=⌈δ(H)·γ⌉ ▷Dynamic scaling
+/* Agent Role Allocation */
+for ℓ= 1 tokdo
+Compute role probability: πrℓ∝exp(H⊤
+Rℓ−1HRℓ/τ)
+Select role Rℓvia cascaded inference // Eq.(9)
+/* Agent LLM Routing */
+Aggregate context: HM=FFN (H⊕HT⊕PHRi)
+for each agent i∈ { 1, ..., k }do
+Compute LLM compatibility: πm(M i)∝exp(H⊤
+MHMi/τ) // Eq.(11)
+Assign LLM M iwith multinomial sampling
+/* Optimization */
+Compute reward R=U(S;Q, a)−λ·C(S;Q) // Eq.(3)
+Update θvia policy gradient: θ←θ−α∇θE[−R] // Section 4.4
+14
+
+[Page 15]
+Query MasRouter Workflow
+Bentham defines the fecundity of a pleasure or pain as:
+Option A: its chance of occurring. Option B: the degree to
+which it is felt. Option C: its chance of being followed by
+sensations of the same kind. Option D: how long it lasts.
+Reflector
+Wiki
+SearcherCriticKnowledge
+Expert
+IO
+This jurisdiction has the following bribery statute in ef-
+fect:"Any person who offers or gives a thing of value to a
+government officeholder in exchange for official action is
+guilty of bribery. "A real estate developer owned a large
+parcel of land in the suburbs. Although the developer
+wanted to build an office building on the property, the
+land was zoned residential. Due to the residential zoning,
+the developer could not pursue his planned development
+unless he received a variance from the building commis-
+sion. The developer held a meeting with a member of the
+building commission to solicit his approval in securing a
+zoning variance. To do so, the developer gave the com-
+mission member $10,000 in exchange for his support in
+approving the zoning variance. Thereupon, the commis-
+sion member voted to approve the variance, thus making
+it possible for the developer to commence construction
+of the office building. The developer was subsequently
+prosecuted for conspiracy to commit bribery. During the
+course of the trial, the commission member testified that
+he faked the agreement with the developer and would have
+approved the zoning variance regardless of whether the
+developer gave him any money. Furthermore, in his de-
+fense, the developer presented evidence that the other six
+members of the building commission voted affirmatively
+to approve the variance. If the jury believed that the com-
+mission member would have approved the variance even
+had he not received the $10,000, the developer should be
+found Option A: guilty, because the commission member’s
+agreement to accept the $10,000 was sufficient to form
+a conspiratorial objective. Option B: guilty, because he
+gave the commission member the $10,000 in exchange
+for his approval of the zoning variance. Option C: not
+guilty, because the commission member did not receive a
+thing of value, since he would have approved the variance
+regardless of receiving any payment from the developer.
+Option D: not guilty, because there was no true agreement
+between the parties.
+Economist
+Historian
+Reflector
+Knowledge
+Expert
+LLM-Debate
+Table 5: MMLU dataset
+15
+
+[Page 16]
+Query MasRouter Workflow
+Grandma Jones baked 5 apple pies for the fireman’s lun-
+cheon. She cut each pie into 8 pieces and set the five
+pies out on the buffet table for the guests to serve them-
+selves. At the end of the evening, after the guests had
+taken and eaten their pieces of pie, there were 14 pieces
+of pie remaining. How many pieces were taken by the
+guests?
+MathSolver
+InspectorMathematician
+MathTeacher
+Chain
+The combined age of Peter, Paul and Jean is 100 years old.
+Find the age of Peter knowing that Paul is 10 years older
+than John and that Peter’s age is equal to the sum of Paul
+and John’s age.
+EngineerSoftware
+Developer
+Mathematician
+ MathSolver
+MathSolver
+Complete Graph
+Table 6: GSM8K dataset
+Query MasRouter Workflow
+What is the value of (4×12)−(4 + 12) ?
+MathematicianMathTeacher
+MathAnalyst
+CoT
+In the diagram, K,Oand M are the centers of the three
+semi-circles. Also, OC = 32 and CB = 36 . [asy]
+pair A, K, O, C, M, B, X, Y , Z; O=(0,0); C=(32,0);
+M=(50,0); B=(68,0); A=(-68,0); K=(A+C)/2; X=(0,68);
+Y=(-18,50); Z=(50,18); path nom, bigc, middlec, smallc;
+nom=A–B–(100,100)–(-100,100)–cycle; bigc=A..X..B–
+cycle; middlec=A..Y ..C–cycle; smallc=C..Z..B–cycle;
+fill(bigc, gray(.5)); fill(middlec, white); fill(smallc, white);
+draw(smallc); draw(middlec); draw(bigc); draw(A–B);
+label("A", A, S); label("K", K, S); label("O", O, S); la-
+bel("M", M, S); label("C", C, S); label("B", B, S); dot(K);
+dot(O); dot(M); [/asy] What is the length of $AC$?
+MathAnalyst
+Engineer
+MathSolver
+Scientist MathTeacher
+Complete GraphMathematician
+Table 7: MATH dataset
+16
+
+[Page 17]
+Query MasRouter Workflow
+def is_bored(S: str) -> int:
+"""
+You'll be given a string of words, and your task is to count the number
+of boredoms. A boredom is a sentence that starts with the word "I".
+Sentences are delimited by '.', '?' or '!'.
+For example:
+>>> is_bored('Hello world')
+0
+>>> is_bored('The sky is blue. The sun is shining. I love this weather')
+1
+"""
+Programming
+Expert
+BugFixer
+Test
+Analyst
+Reflection
+def car_race_collision(n: int) -> int:
+"""
+Imagine a road that's a perfectly straight infinitely long line.
+n cars are driving left to right; simultaneously , a dif ferent set of n cars
+are driving right to left. The two sets of cars start out being very far
+from each other . All cars move in the same speed. Two cars are said to
+collide when a car that's moving left to right hits a car that's moving
+right to left. However , the cars are infinitely sturdy and strong; as a
+result, they continue moving in their trajectory as if they did not
+collide.
+This function outputs the number of such collisions.
+"""
+BugFixer PlanSolver
+Programming
+Expert
+Test 
+Analyst
+Algorithm
+Designer
+Reflect
+Programmer
+Complete Graph
+Table 8: HumanEval dataset
+Query MasRouter Workflow
+Write a function to sort the given list based on the occurrence of first
+element of tuples.
+Your code should pass these tests:
+assert sort_on_occurence([(1, 'Jake'), (2, 'Bob'), (1, 'Cara')]) == [(1,
+'Jake', 'Cara', 2), (2, 'Bob', 1)];
+assert sort_on_occurence([('b', 'ball'), ('a', 'arm'), ('b', 'b'), ('a', 'ant')]) ==
+[('b', 'ball', 'b', 2), ('a', 'arm', 'ant', 2)];
+assert sort_on_occurence([(2, 'Mark'), (3, 'Maze'), (2, 'Sara')]) == [(2,
+'Mark', 'Sara', 2), (3, 'Maze', 1)] 
+Algorithm
+Designer
+Reflect
+Programmer
+PlanSolver
+Reflection
+Write a function to find out the maximum sum such that no two chosen
+numbers are adjacent for the given rectangular grid of dimension 2 x n.
+Your code should pass these tests:
+assert max\_sum\_rectangular\_grid([[1, 4, 5], [2, 0, 0 ] ], 3) == 7
+assert max\_sum\_rectangular\_grid([[ 1, 2, 3, 4, 5], [ 6, 7, 8, 9, 10] ], 5)
+== 24;
+assert max\_sum\_rectangular\_grid([ [7, 9, 1 1, 15, 19], [21, 25, 28, 31,
+32] ], 5) == 81.
+Programming
+Expert
+BugFixerPlanSolver
+Algorithm
+Designer
+ChainReflect
+ProgrammerTest
+Analyst
+Table 9: MBPP dataset
+17
+
+[Page 18]
+Method LLM Score(%) Cost($)
+IO gpt-4o-mini 72.20 0.143
+IO claude-3.5-haiku 73.40 0.146
+IO gemini-1.5-flash 73.00 0.157
+IO llama-3.1-70b 68.20 0.105
+SC(CoT) gpt-4o-mini 73.00 0.449
+SC(CoT) gemini-1.5-flash 72.00 0.548
+SC(ComplexCoT) gpt-4o-mini 75.60 0.487
+SC(ComplexCoT) gemini-1.5-flash 73.60 0.633
+LLM Debate gpt-4o-mini 73.60 4.427
+LLM Debate gemini-1.5-flash 73.40 4.529
+Macnet(Complete Graph) gpt-4o-mini 75.20 2.932
+Macnet(Complete Graph) gemini-1.5-flash 74.20 3.088
+Agentprune gpt-4o-mini 75.00 1.215
+Agentprune gemini-1.5-flash 75.60 1.352
+AFlow gpt-4o-mini 82.20 1.723
+AFlow gemini-1.5-flash 76.00 1.832
+FragalGPT llm pool 74.40 0.139
+RouterDC llm pool 75.20 0.145
+MasRouter llm pool 84.00 1.039
+Table 10: Inference Cost-Performance on MBPP Dataset
+Method LLM Score(%) Cost($)
+IO gpt-4o-mini 85.71 0.025
+IO claude-3.5-haiku 86.33 0.025
+IO gemini-1.5-flash 82.61 0.032
+IO llama-3.1-70b 80.75 0.013
+SC(CoT) gpt-4o-mini 87.58 0.218
+SC(CoT) gemini-1.5-flash 80.75 0.306
+SC(ComplexCoT) gpt-4o-mini 88.19 0.241
+SC(ComplexCoT) gemini-1.5-flash 81.99 0.335
+LLM Debate gpt-4o-mini 84.38 0.624
+LLM Debate gemini-1.5-flash 79.38 0.693
+Macnet(Complete Graph) gpt-4o-mini 85.00 0.488
+Macnet(Complete Graph) gemini-1.5-flash 83.75 0.568
+Agentprune gpt-4o-mini 86.80 0.254
+Agentprune gemini-1.5-flash 82.55 0.271
+AFlow gpt-4o-mini 90.15 0.363
+AFlow gemini-1.5-flash 85.69 0.386
+FragalGPT llm pool 87.31 0.026
+RouterDC llm pool 87.75 0.023
+MasRouter llm pool 90.52 0.185
+Table 11: Inference Cost-Performance on HumanEval Dataset
+18
+
+[Page 19]
+Method MATH MMLU
+Prompt
+tokenCompletion
+tokenTotal
+cost ($)Prompt
+tokenCompletion
+tokenTotal
+cost ($)
+GPTSwarm 23,031 ,287 6 ,943 ,173 7 .63$ 15 ,525 ,155 3 ,983 ,745 4 .70$
+AFlow 321 ,813 ,314 28 ,083 ,445 21 .75$ 13 ,085 ,019 11 ,239 ,502 8 .67$
+MasRouter 3,235 ,288 2,499 ,530 3.56$ 4,459 ,674 2,904 ,656 1.43$
+Table 12: Training Cost comparison between MasRouter and state-of-the-art baselines on MATH and MMLU.
+19
+
+[Page 20]
+LLM Profile
+llm_profile = [
+{
+'Name ':'gpt -4o- mini ',
+'Description ':'GPT -4o Mini is a smaller version of the GPT -4o language
+model , designed for faster inference and reduced memory usage . It
+retains the same capabilities as the full - size model , but with fewer
+parameters .
+The model costs $0 .15 per million input tokens and $0 .6 per million output
+tokens .
+In General Q&A Benchmark MMLU , GPT -4o- mini achieves an accuracy of 77.8.
+In Reasoning Benchmark GPQA , GPT -4o- mini achieves an accuracy of 40.2.
+In Coding Benchmark HumanEval , GPT -4o- mini achieves an accuracy of 85.7.
+In Math Benchmark MATH , GPT -4o- mini achieves an accuracy of 66.09. '
+},
+{
+'Name ':'claude -3 -5 - haiku -20241022 ',
+'Description ':'The new Claude 3.5 Haiku combines rapid response times
+with improved reasoning capabilities , making it ideal for tasks that
+require both speed and intelligence . Claude 3.5 Haiku improves on its
+predecessor and matches the performance of Claude 3 Opus .
+The model costs $0 .1 per million input tokens and $0 .5 per million output
+tokens .
+In General Q&A Benchmark MMLU , claude -3 -5 - haiku achieves an accuracy of
+67.9.
+In Reasoning Benchmark GPQA , claude -3 -5 - haiku achieves an accuracy of
+41.6.
+In Coding Benchmark HumanEval , claude -3 -5 - haiku achieves an accuracy of
+86.3.
+In Math Benchmark MATH , claude -3 -5 - haiku achieves an accuracy of 65.9. '
+},
+{
+'Name ':'gemini -1.5 - flash - latest ',
+'Description ':'Gemini 1.5 Flash was purpose - built as our fastest , most
+cost - efficient model yet for high volume tasks , at scale , to address
+developers feedback asking for lower latency and cost .
+The model costs $0 .15 per million input tokens and $0 .6 per million output
+tokens .
+In General Q&A Benchmark MMLU , gemini -1.5 - flash achieves an accuracy of
+80.0.
+In Reasoning Benchmark GPQA , gemini -1.5 - flash achieves an accuracy of
+39.5.
+In Coding Benchmark HumanEval , gemini -1.5 - flash achieves an accuracy of
+82.6.
+In Math Benchmark MATH , gemini -1.5 - flash achieves an accuracy of 74.4. '
+},
+{
+'Name ':'Meta -Llama -3.1 -70B- Instruct ',
+'Description ':'The Meta Llama 3.1 multilingual large language model ( LLM )
+is a pretrained and instruction tuned generative model in 70B ( text in
+/ text out ).
+The model costs $0 .2 per million input tokens and $0 .2 per million output
+tokens .
+In General Q&A Benchmark MMLU , Llama 3.1 achieves an accuracy of 79.1.
+In Reasoning Benchmark GPQA , Llama 3.1 achieves an accuracy of 46.7.
+In Coding Benchmark HumanEval , Llama 3.1 achieves an accuracy of 80.7.
+In Math Benchmark MATH , Llama 3.1 achieves an accuracy of 60.3. '
+},
+{
+'Name ':'deepseek - chat ',
+'Description ':'DeepSeek -V3 is a cutting -edge , large - scale language model
+designed for advanced natural language processing ( NLP ) tasks .
+The model costs $0 .27 per million input tokens and $1 .1 per million output
+tokens .
+In General Q&A Benchmark MMLU , deepseek achieves an accuracy of 88.5.
+In Reasoning Benchmark GPQA , deepseek achieves an accuracy of 59.1.
+In Coding Benchmark HumanEval , deepseek achieves an accuracy of 88.4.
+In Math Benchmark MATH , deepseek achieves an accuracy of 85.1 '
+20

@@ -1,0 +1,491 @@
+# doc_06: 2502.11133v1 / part 2
+
+Source file: 2502.11133v1.pdf
+
+[Page 6]
+Method LLM Mul. Rout. MMLU GSM8K MATH HumanEval MBPP Avg.
+gpt-3.5-turbo % % 69.28 77.97 44.12 72.05 70.20 66.72
+gpt-4o-mini % % 77.81 93.17 66.09 85.71 72.20 79.00
+claude-3.5-haiku % % 67.97 92.16 65.89 86.33 73.40 77.15
+gemini-1.5-flash % % 80.04 92.67 74.39 82.61 73.00 80.54Vanilla
+llama-3.1-70b % % 79.08 92.68 60.31 80.75 68.20 76.20
+gpt-4o-mini % % 78.43 93.68 67.24 86.69 69.60 79.13CoT (Wei et al., 2022)gemini-1.5-flash % % 81.35 92.92 74.34 81.37 73.00 80.60
+gpt-4o-mini % % 81.05 93.43 67.05 87.58 75.80 80.98ComplexCoT (Fu et al., 2022)gemini-1.5-flash % % 80.74 92.01 75.11 80.12 71.80 79.96
+gpt-4o-mini % % 81.05 93.32 66.28 87.58 73.00 80.25SC(CoT) (Wang et al., 2023a)gemini-1.5-flash % % 81.66 93.43 74.37 80.75 72.00 80.44
+gpt-4o-mini % % 82.35 93.94 66.86 88.19 75.80 81.43SC(ComplexCoT) (Wang et al., 2023a)gemini-1.5-flash % % 82.39 92.98 75.31 81.99 73.60 81.25
+gpt-4o-mini ! % 82.01 94.40 64.72 85.63 75.40 80.43Chain (Qian et al., 2024)gemini-1.5-flash ! % 83.01 93.13 72.10 82.50 73.20 80.79
+gpt-4o-mini ! % 82.98 93.89 65.11 87.50 75.60 81.02Tree (Qian et al., 2024)gemini-1.5-flash ! % 81.74 94.91 71.36 77.50 73.60 79.82
+gpt-4o-mini ! % 83.06 94.66 67.63 85.00 75.20 81.11Complete Graph (Qian et al., 2024)gemini-1.5-flash ! % 81.35 94.40 68.60 83.75 74.20 80.46
+gpt-4o-mini ! % 81.04 94.66 64.68 84.38 73.60 79.67LLM-Debate (Du et al., 2023)gemini-1.5-flash ! % 80.40 93.98 72.45 79.38 73.40 79.92
+gpt-4o-mini ! % 82.80 94.66 68.85 86.28 75.40 81.60GPTSwarm (Zhuge et al., 2024)gemini-1.5-flash ! % 83.22 93.98 73.35 82.36 74.80 81.54
+gpt-4o-mini ! % 83.02 94.89 68.45 86.80 75.40 81.71Agentprune (Zhang et al., 2024b)gemini-1.5-flash ! % 83.10 93.88 73.54 82.55 75.80 81.77
+gpt-4o-mini ! % 83.10 92.30 73.35 90.06 82.20 84.20AFlow (Zhang et al., 2024c)gemini-1.5-flash ! % 82.35 94.91 72.70 85.69 76.00 82.33
+PromptLLM (Feng et al., 2024) LLM Pool % ! 78.43 93.92 73.03 86.33 73.60 81.06
+RouteLLM (Ong et al., 2024) LLM Pool % ! 81.04 93.42 71.29 83.85 72.60 80.44
+FragalGPT (Chen et al., 2023a) LLM Pool % ! 76.24 90.76 67.05 87.31 74.40 79.15
+RouterDC (Chen et al., 2024) LLM Pool % ! 82.01 93.68 73.46 87.75 75.20 82.42
+MasRouter (Ours ) LLM Pool ! ! 84.25 95.45 75.42 90.62 84.00 85.93
+Table 1: Performance comparison with vanilla, single agent, multi-agent, and single-agent routing methods. The best results are
+highlighted in bold, and the runner-ups are underlined. The LLM pool includes the economical and advanced LLMs mentioned
+in Section 5.1. "Mul." and "Rout." indicate whether the method supports a multi-agent setting and whether it supports the LLM
+routing, respectively. %and! indicate whether these features are supported.
+4.4 Optimization
+The optimization objective of MasRouter is pre-
+sented as follows:
+min
+θE(Q,a)∼D ,
+S∼Fθ
+−p(a|Q) + λ·C(S;Q)
+(13)
+where C(·)represents the cost evaluation of multi-
+agent systems, and λis the trade-off parameter.
+The term p(a|Q)in Equation (13) corresponds to
+Equation (4), which was computed in the previous
+sections. Through this optimization objective, we
+balance effectiveness and efficiency by maximiz-
+ing the probability of generating correct solutions
+while minimizing token expenditure. Then follow-
+ing standard approaches in multi-agent structure
+design (Zhuge et al., 2024; Zhang et al., 2024b),
+we apply policy gradient (Williams, 1992) to ap-
+proximate and optimize Equation (13).
+We summarize the notations in Appendix A,
+with the algorithmic workflow in Appendix B.
+5 Experiments
+5.1 Experimental Setup
+Dataset and Benchmarks We opt
+for MMLU (Hendrycks et al., 2021a),GSM8K (Cobbe et al., 2021), MATH (Hendrycks
+et al., 2021b), HumanEval (Chen et al., 2021),
+MBPP (Austin et al., 2021), covering a diverse
+range of reasoning and problem-solving tasks. For
+the MATH dataset, we select 519 problems from
+different levels using stratified sampling.
+Baselines We compare our method with (1)
+single-agent approaches, including COT (Wei
+et al., 2022), ComplexCoT (Fu et al., 2022),
+Self-Consistency (Wang et al., 2023b); (2)
+fixed multi-agent topologies including Chain ,
+Tree , and Complete Graph (formally defined
+in (Qian et al., 2024)), LLM-Debate (Chan
+et al., 2023); (3) dynamic multi-agent systems
+like GPTSwarm (Zhuge et al., 2024), Agent-
+Prune (Zhang et al., 2024b) and AFlow (Zhang
+et al., 2024c); (4) single LLM routers including
+PromptLLM introduced in (Feng et al., 2024),
+RouteLLM (Ong et al., 2024), FrugalGPT (Chen
+et al., 2023a) and RouterDC (Chen et al., 2024).
+LLM Backbones We select LLMs with
+varying sizes and capacities, including
+gpt-4o-mini-0718 (OpenAI, 2024),
+claude-3.5-haiku (Anthropic, 2024),
+gemini-1.5-flash (Team et al., 2024) and
+6
+
+[Page 7]
+Figure 3: The comparison of the performance and in-
+ference cost on the MBPP dataset. Different shapes of
+the scatter points represent various types of baselines,
+while the different colors of the points indicate the use
+of different LLM backbones.
+llama-3.1-70b (Dubey et al., 2024) as the
+llm pool. Deepseek-v3 (DeepSeek-AI et al.,
+2024) is used to validate MasRouter ’s inductive
+capabilities. The temperature is always set as 1.
+Implementation Details We set the learning rate
+α= 0 .01, the temperature τ= 1 , the cost
+penalty λ∈ { 5,15,25}and the num of iteration
+K∈ { 5,10}, the agent’s maximum amount γ= 6 .
+In the MAS baselines, the number of agents equals
+γ. We use all the LLMs mentioned in the LLM
+Backbones as the candidate LLM pool for the rout-
+ing method. The collaboration modes repository
+includes CoT, Reflection, self-consistency, LLM
+debate, and Macnet (Chain & Complete graph).
+The role pool comprises 26 roles with diverse capa-
+bilities, such as programmers using compilers and
+researchers with access to Wikipedia. The details
+of the candidate pools can be found in Appendix E.
+5.2 Performance & Cost Analysis
+In this section, we compare MasRouter with
+twenty baselines across five benchmarks. We ver-
+ify that MasRouter is:
+High-performing. The experimental results in
+Table 1 demonstrates that MasRouter excels
+at constructing an effective multi-agent system.
+Specifically, MasRouter achieves the best perfor-
+mance across all of the five datasets, outperform-
+ing RouterDC, the SOTA LLM routing method,
+by 3.51% on average. On the MBPP dataset,
+MasRouter outperforms AgentPrune and AFlow
+by8.20% and 1.80% at pass@1, respectively.
+Token-economical. As shown in Figure 3,
+MasRouter achieves the best performance on theDataset Method LLM Performance Cost
+MMLUMADgpt 81.50 $25 .56
+gemini 80.94 $27 .02
++MasRouter 82.20(↑0.70) $19 .39
+gpt 86.05 $1.248MADgemini 82.95 $1.526 HumanEval
++MasRouter 87.60(↑1.55) $1.096
+GSM8KMADgpt 94.60 $5 .664
+gemini 94.40 $5 .492
++MasRouter 94.91(↑0.31) $4 .702
+gpt 82.98 $7.812MacNetgemini 81.74 $8.482 MMLU
++MasRouter 83.40(↑0.36) $5.892
+HumanEvalMacNetgpt 86.82 $0 .488
+gemini 83.72 $0 .568
++MasRouter 88.37(↑1.55) $0 .404
+gpt 94.69 $2.142MacNetgemini 94.31 $2.016 GSM8K
++MasRouter 94.89(↑0.20) $1.774
+Table 2: Comparison of performance and cost be-
+fore and after integrating with MasRouter .gpt and
+gemini are abbreviations for gpt-4o-mini and
+gemini-1.5-flash , respectively. The MacNet
+method uses the optimal structure reported in the paper.
+Pareto front of cost-effectiveness on the MBPP
+dataset. Compared to AFlow, MasRouter not only
+achieves a 1.8%∼8.0% improvement in perfor-
+mance but also reduces the inference overhead by
+40.22% ∼43.78% .
+Training resource-saving. As shown in Ta-
+ble 12, compared to trainable MAS pipelines like
+GPTSwarm and AFlow, we achieve savings of
+69.57% and 83.51% on the MMLU dataset, respec-
+tively. This is because our method does not require
+exhaustive traversal and validation of each agentic
+structure. We present the detailed cost-performance
+data in Appendix D.
+5.3 Plug-in to Existing MAS
+Considering that contemporary MAS is often LLM-
+homogeneous, i.e., relying exclusively on a sin-
+gle powerful model like gpt-4o ,MasRouter can
+serve as a plug-and-play solution, seamlessly as-
+signing an optimal LLM backbone to each agent
+within them, resulting in significantly less infer-
+ence cost and comparable performance. In Table 2,
+we combine MasRouter with the well-established
+MAS methods MAD (Du et al., 2023) and MacNet.
+MasRouter improves the performance of MAD
+by1.55% at pass@1 on the Humaneval dataset
+while reducing cost by 17.21% ∼28.17% . On
+larger datasets, the significant reduction in over-
+head is even more notable; when integrated with
+MAD, MasRouter saves the inference cost by
+6.17∼7.63$ on MMLU. Overall, MasRouter can
+7
+
+[Page 8]
+Figure 4: The selected LLM distribution of MasRouter
+on MMLU and MATH benchmark.
+serve as a plugin to support economical multi-agent
+development.
+5.4 Inductive Ability Analysis
+In this section, we validate that MasRouter can
+easily generalize to unseen LLMs without inten-
+sive re-training resources. Figure 4 illustrates the
+distribution of LLMs selected by MasRouter be-
+fore and after the addition of Deepseek-v3 on
+MMLU and MATH, with the new model being
+chosen 12.17% and 27.19% the time, respectively.
+By intelligently selecting the new, stronger model,
+MasRouter improved the accuracy on MMLU
+from 84.25% to85.40% and also improved the
+accuracy on HumanEval from 90.62% to91.41% .
+Dataset GSM8K MATH
+MetricAccuracy
+(%)Cost
+($)Accuracy
+(%)Cost
+($)
+Vanilla MasRouter 95.45 1 .59 75.42 3 .58
+MasRouter w/oFθt 93.84 2 .38 72.77 4 .48
+MasRouter w/oFθr 94.70 1 .67 73.01 3 .63
+MasRouter w/oFθm 93.36 1 .98 71.08 4 .16
+MasRouter w/o C(·) 95.63 2 .45 75.18 5 .07
+Table 3: Ablation study of MasRouter .
+5.5 Framework Analysis
+Ablation Study We conduct an ablation study on
+the four key modules in MasRouter :(1) w/o Fθt,
+which replaces the collaboration determination Fθt
+with random selection, (2) w/oFθr, which replaces
+the role allocator Fθrwith random selection, (3)
+w/oFθm, which replaces the LLM router Fθrwith
+random selection, and (4) w/o C(·), which remove
+the cost evaluation in Equation (13). As shown in
+Table 3, removing the Fθmresults in the largest
+performance decline by 2.09% and 4.34% . This
+is because the performance of the base models on
+the dataset varies significantly, making selecting
+The max number of agents 𝛾 Cost penalty λFigure 5: Sensitivity analysis of MasRouter on Hu-
+manEval. The unit of cost per query (right) and perfor-
+mance (left) is 10−3·$and pass @1 (%) , respectively.
+the appropriate LLM to solve the problem crucial.
+Removing C(·)does not significantly impact the
+performance, but it disrupts the adaptive capability
+ofMasRouter to query difficulty, leading to an
+increase in overhead by 54.09% and 41.62% .
+Sensitivity Analysis We analyze the sensitivity
+ofMasRouter to two core parameters: the max-
+imum number of the agents γ, the cost penalty
+coefficient λin Equation (13). The results are
+presented in Figure 5. For the parameter γ, we
+observe a significant performance improvement
+asγincreases from 2 to 6 ( 88.50% →90.62% ).
+However, further increases from 6 to 10 yield only
+marginal performance gains while incurring the
+1.5×per-query inference costs. Considering both
+performance and cost, we select γ= 6 .For the
+parameter λ, as λincreases from 5 to 25, we find
+that larger values lead MasRouter to favor more
+cost-efficient solutions, reducing the overhead by
+17.78%, albeit with a slight performance degrada-
+tion of approximately 1.3% . We balance effective-
+ness and cost by dynamically adjusting this value.
+5.6 Case Study
+We present a detailed case study and visualization
+of the routing process of MasRouter across five
+benchmarks. We sincerely refer the readers to Ap-
+pendix C for details.
+6 Conclusion
+In this paper, we for the first time introduce
+Multi-Agent System Routing (MASR) , which
+aims to intelligently allocate collaboration patterns,
+agent roles, and LLMs for each query, thereby
+constructing a customized MAS. Based on this
+concept, we present MasRouter , the first high-
+performing, economical, and inductive MASR so-
+lution. MasRouter progressively builds a list of
+mutually adaptive roles, selects an LLM proficient
+8
+
+[Page 9]
+in the task domain, and ultimately achieves a bal-
+ance between effectiveness and efficiency. We be-
+lieve MasRouter paves the way for the automation,
+economization, and scalability of MAS, contribut-
+ing to the development of large-scale collective
+intelligence.
+References
+Marah Abdin, Jyoti Aneja, Hany Awadalla, Ahmed
+Awadallah, Ammar Ahmad Awan, Nguyen Bach,
+Amit Bahree, Arash Bakhtiari, Jianmin Bao, Harkirat
+Behl, Alon Benhaim, Misha Bilenko, Johan Bjorck,
+Sébastien Bubeck, Martin Cai, Qin Cai, Vishrav
+Chaudhary, Dong Chen, Dongdong Chen, Weizhu
+Chen, Yen-Chun Chen, Yi-Ling Chen, Hao Cheng,
+Parul Chopra, Xiyang Dai, Matthew Dixon, Ro-
+nen Eldan, Victor Fragoso, Jianfeng Gao, Mei Gao,
+Min Gao, Amit Garg, Allie Del Giorno, Abhishek
+Goswami, Suriya Gunasekar, Emman Haider, Jun-
+heng Hao, Russell J. Hewett, Wenxiang Hu, Jamie
+Huynh, Dan Iter, Sam Ade Jacobs, Mojan Javaheripi,
+Xin Jin, Nikos Karampatziakis, Piero Kauffmann,
+Mahoud Khademi, Dongwoo Kim, Young Jin Kim,
+Lev Kurilenko, James R. Lee, Yin Tat Lee, Yuanzhi
+Li, Yunsheng Li, Chen Liang, Lars Liden, Xihui
+Lin, Zeqi Lin, Ce Liu, Liyuan Liu, Mengchen Liu,
+Weishung Liu, Xiaodong Liu, Chong Luo, Piyush
+Madan, Ali Mahmoudzadeh, David Majercak, Matt
+Mazzola, Caio César Teodoro Mendes, Arindam Mi-
+tra, Hardik Modi, Anh Nguyen, Brandon Norick,
+Barun Patra, Daniel Perez-Becker, Thomas Portet,
+Reid Pryzant, Heyang Qin, Marko Radmilac, Liliang
+Ren, Gustavo de Rosa, Corby Rosset, Sambudha Roy,
+Olatunji Ruwase, Olli Saarikivi, Amin Saied, Adil
+Salim, Michael Santacroce, Shital Shah, Ning Shang,
+Hiteshi Sharma, Yelong Shen, Swadheen Shukla, Xia
+Song, Masahiro Tanaka, Andrea Tupini, Praneetha
+Vaddamanu, Chunyu Wang, Guanhua Wang, Lijuan
+Wang, Shuohang Wang, Xin Wang, Yu Wang, Rachel
+Ward, Wen Wen, Philipp Witte, Haiping Wu, Xiaoxia
+Wu, Michael Wyatt, Bin Xiao, Can Xu, Jiahang Xu,
+Weijian Xu, Jilong Xue, Sonali Yadav, Fan Yang,
+Jianwei Yang, Yifan Yang, Ziyi Yang, Donghan Yu,
+Lu Yuan, Chenruidong Zhang, Cyril Zhang, Jianwen
+Zhang, Li Lyna Zhang, Yi Zhang, Yue Zhang, Yunan
+Zhang, and Xiren Zhou. 2024. Phi-3 technical report:
+A highly capable language model locally on your
+phone. Preprint, arXiv:2404.14219.
+Maryam Akhavan Aghdam, Hongpeng Jin, and Yanzhao
+Wu. 2024. Da-moe: Towards dynamic expert al-
+location for mixture-of-experts models. Preprint ,
+arXiv:2409.06669.
+Marija akota, Maxime Peyrard, and Robert West. 2024.
+Fly-swat or cannon? cost-effective language model
+choice via meta-modeling. In Proceedings ofthe
+17th ACM International Conference on Web Search
+and Data Mining , WSDM ’24, page 606–615. ACM.
+Anthropic. 2024. Model card addendum: Claude 3.5haiku and upgraded claude 3.5 sonnet. Technical
+report, Anthropic.
+Jacob Austin, Augustus Odena, Maxwell Nye, Maarten
+Bosma, Henryk Michalewski, David Dohan, Ellen
+Jiang, Carrie Cai, Michael Terry, Quoc Le, and
+Charles Sutton. 2021. Program synthesis with large
+language models. Preprint, arXiv:2108.07732.
+Simone Barandoni, Filippo Chiarello, Lorenzo Cascone,
+Emiliano Marrale, and Salvatore Puccio. 2024. Au-
+tomating customer needs analysis: A comparative
+study of large language models in the travel industry.
+Preprint, arXiv:2404.17975.
+Chi-Min Chan, Weize Chen, Yusheng Su, Jianxuan Yu,
+Wei Xue, Shanghang Zhang, Jie Fu, and Zhiyuan Liu.
+2023. ChatEval: Towards Better LLM-based Evalua-
+tors through Multi-Agent Debate. arXiv e-prints.
+Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu,
+Linyi Yang, Kaijie Zhu, Hao Chen, Xiaoyuan Yi,
+Cunxiang Wang, Yidong Wang, Wei Ye, Yue Zhang,
+Yi Chang, Philip S. Yu, Qiang Yang, and Xing Xie.
+2023. A survey on evaluation of large language mod-
+els. Preprint, arXiv:2307.03109.
+Lingjiao Chen, Matei Zaharia, and James Zou. 2023a.
+Frugalgpt: How to use large language models while
+reducing cost and improving performance. Preprint ,
+arXiv:2305.05176.
+Mark Chen, Jerry Tworek, Heewoo Jun, Qiming
+Yuan, Henrique Ponde de Oliveira Pinto, Jared Ka-
+plan, Harri Edwards, Yuri Burda, Nicholas Joseph,
+Greg Brockman, Alex Ray, Raul Puri, Gretchen
+Krueger, Michael Petrov, Heidy Khlaaf, Girish Sas-
+try, Pamela Mishkin, Brooke Chan, Scott Gray,
+Nick Ryder, Mikhail Pavlov, Alethea Power, Lukasz
+Kaiser, Mohammad Bavarian, Clemens Winter,
+Philippe Tillet, Felipe Petroski Such, Dave Cum-
+mings, Matthias Plappert, Fotios Chantzis, Eliz-
+abeth Barnes, Ariel Herbert-V oss, William Heb-
+gen Guss, Alex Nichol, Alex Paino, Nikolas Tezak,
+Jie Tang, Igor Babuschkin, Suchir Balaji, Shan-
+tanu Jain, William Saunders, Christopher Hesse, An-
+drew N. Carr, Jan Leike, Josh Achiam, Vedant Misra,
+Evan Morikawa, Alec Radford, Matthew Knight,
+Miles Brundage, Mira Murati, Katie Mayer, Peter
+Welinder, Bob McGrew, Dario Amodei, Sam McCan-
+dlish, Ilya Sutskever, and Wojciech Zaremba. 2021.
+Evaluating large language models trained on code.
+Shuhao Chen, Weisen Jiang, Baijiong Lin, James T
+Kwok, and Yu Zhang. 2024. Routerdc: Query-
+based router by dual contrastive learning for as-
+sembling large language models. arXiv preprint
+arXiv:2409.19886.
+Weize Chen, Yusheng Su, Jingwei Zuo, Cheng Yang,
+Chenfei Yuan, Chen Qian, Chi-Min Chan, Yujia Qin,
+Yaxi Lu, Ruobing Xie, Zhiyuan Liu, Maosong Sun,
+and Jie Zhou. 2023b. Agentverse: Facilitating multi-
+agent collaboration and exploring emergent behav-
+iors in agents. Preprint, arXiv:2308.10848.
+9
+
+[Page 10]
+Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian,
+Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias
+Plappert, Jerry Tworek, Jacob Hilton, Reiichiro
+Nakano, Christopher Hesse, and John Schulman.
+2021. Training verifiers to solve math word prob-
+lems. arXiv prepring, abs/2110.14168.
+Xiangxiang Dai, Jin Li, Xutong Liu, Anqi Yu, and
+John C. S. Lui. 2024. Cost-effective online multi-
+llm selection with versatile reward models. Preprint ,
+arXiv:2405.16587.
+DeepSeek-AI, Aixin Liu, Bei Feng, Bing Xue, Bingx-
+uan Wang, Bochao Wu, Chengda Lu, Chenggang
+Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan,
+Damai Dai, Daya Guo, Dejian Yang, Deli Chen,
+Dongjie Ji, Erhang Li, Fangyun Lin, Fucong Dai,
+Fuli Luo, Guangbo Hao, Guanting Chen, Guowei
+Li, H. Zhang, Han Bao, Hanwei Xu, Haocheng
+Wang, Haowei Zhang, Honghui Ding, Huajian Xin,
+Huazuo Gao, Hui Li, Hui Qu, J. L. Cai, Jian Liang,
+Jianzhong Guo, Jiaqi Ni, Jiashi Li, Jiawei Wang,
+Jin Chen, Jingchang Chen, Jingyang Yuan, Junjie
+Qiu, Junlong Li, Junxiao Song, Kai Dong, Kai Hu,
+Kaige Gao, Kang Guan, Kexin Huang, Kuai Yu, Lean
+Wang, Lecong Zhang, Lei Xu, Leyi Xia, Liang Zhao,
+Litong Wang, Liyue Zhang, Meng Li, Miaojun Wang,
+Mingchuan Zhang, Minghua Zhang, Minghui Tang,
+Mingming Li, Ning Tian, Panpan Huang, Peiyi Wang,
+Peng Zhang, Qiancheng Wang, Qihao Zhu, Qinyu
+Chen, Qiushi Du, R. J. Chen, R. L. Jin, Ruiqi Ge,
+Ruisong Zhang, Ruizhe Pan, Runji Wang, Runxin
+Xu, Ruoyu Zhang, Ruyi Chen, S. S. Li, Shanghao
+Lu, Shangyan Zhou, Shanhuang Chen, Shaoqing Wu,
+Shengfeng Ye, Shengfeng Ye, Shirong Ma, Shiyu
+Wang, Shuang Zhou, Shuiping Yu, Shunfeng Zhou,
+Shuting Pan, T. Wang, Tao Yun, Tian Pei, Tianyu Sun,
+W. L. Xiao, Wangding Zeng, Wanjia Zhao, Wei An,
+Wen Liu, Wenfeng Liang, Wenjun Gao, Wenqin Yu,
+Wentao Zhang, X. Q. Li, Xiangyue Jin, Xianzu Wang,
+Xiao Bi, Xiaodong Liu, Xiaohan Wang, Xiaojin Shen,
+Xiaokang Chen, Xiaokang Zhang, Xiaosha Chen,
+Xiaotao Nie, Xiaowen Sun, Xiaoxiang Wang, Xin
+Cheng, Xin Liu, Xin Xie, Xingchao Liu, Xingkai Yu,
+Xinnan Song, Xinxia Shan, Xinyi Zhou, Xinyu Yang,
+Xinyuan Li, Xuecheng Su, Xuheng Lin, Y . K. Li,
+Y . Q. Wang, Y . X. Wei, Y . X. Zhu, Yang Zhang, Yan-
+hong Xu, Yanhong Xu, Yanping Huang, Yao Li, Yao
+Zhao, Yaofeng Sun, Yaohui Li, Yaohui Wang, Yi Yu,
+Yi Zheng, Yichao Zhang, Yifan Shi, Yiliang Xiong,
+Ying He, Ying Tang, Yishi Piao, Yisong Wang, Yix-
+uan Tan, Yiyang Ma, Yiyuan Liu, Yongqiang Guo,
+Yu Wu, Yuan Ou, Yuchen Zhu, Yuduan Wang, Yue
+Gong, Yuheng Zou, Yujia He, Yukun Zha, Yunfan
+Xiong, Yunxian Ma, Yuting Yan, Yuxiang Luo, Yuxi-
+ang You, Yuxuan Liu, Yuyang Zhou, Z. F. Wu, Z. Z.
+Ren, Zehui Ren, Zhangli Sha, Zhe Fu, Zhean Xu,
+Zhen Huang, Zhen Zhang, Zhenda Xie, Zhengyan
+Zhang, Zhewen Hao, Zhibin Gou, Zhicheng Ma, Zhi-
+gang Yan, Zhihong Shao, Zhipeng Xu, Zhiyu Wu,
+Zhongyu Zhang, Zhuoshu Li, Zihui Gu, Zijia Zhu,
+Zijun Liu, Zilin Li, Ziwei Xie, Ziyang Song, Ziyi
+Gao, and Zizheng Pan. 2024. Deepseek-v3 technical
+report. Preprint, arXiv:2412.19437.Jacob Devlin, Ming-Wei Chang, Kenton Lee, and
+Kristina Toutanova. 2019. Bert: Pre-training of deep
+bidirectional transformers for language understand-
+ing. Preprint, arXiv:1810.04805.
+Dujian Ding, Ankur Mallick, Chi Wang, Robert Sim,
+Subhabrata Mukherjee, Victor Ruhle, Laks V . S. Lak-
+shmanan, and Ahmed Hassan Awadallah. 2024. Hy-
+brid llm: Cost-efficient and quality-aware query rout-
+ing. Preprint, arXiv:2404.14618.
+Yilun Du, Shuang Li, Antonio Torralba, Joshua B.
+Tenenbaum, and Igor Mordatch. 2023. Improving
+factuality and reasoning in language models through
+multiagent debate. CoRR, abs/2305.14325.
+Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey,
+Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman,
+Akhil Mathur, Alan Schelten, Amy Yang, Angela
+Fan, et al. 2024. The llama 3 herd of models. arXiv
+preprint arXiv:2407.21783.
+Tao Feng, Yanzhen Shen, and Jiaxuan You. 2024.
+Graphrouter: A graph-based router for llm selections.
+Preprint, arXiv:2410.03834.
+Yao Fu, Hao Peng, Ashish Sabharwal, Peter Clark, and
+Tushar Khot. 2022. Complexity-based prompting for
+multi-step reasoning. In The Eleventh International
+Conference onLearning Representations.
+Daya Guo, Qihao Zhu, Dejian Yang, Zhenda Xie, Kai
+Dong, Wentao Zhang, Guanting Chen, Xiao Bi,
+Y . Wu, Y . K. Li, Fuli Luo, Yingfei Xiong, and Wen-
+feng Liang. 2024. Deepseek-coder: When the large
+language model meets programming – the rise of
+code intelligence. Preprint, arXiv:2401.14196.
+Rui Hao, Linmei Hu, Weijian Qi, Qingliu Wu, Yirui
+Zhang, and Liqiang Nie. 2023. Chatllm network:
+More brains, more intelligence.
+Dan Hendrycks, Collin Burns, Steven Basart, Andy
+Zou, Mantas Mazeika, Dawn Song, and Jacob Stein-
+hardt. 2021a. Measuring massive multitask language
+understanding. Proceedings of the International
+Conference onLearning Representations (ICLR).
+Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul
+Arora, Steven Basart, Eric Tang, Dawn Song, and
+Jacob Steinhardt. 2021b. Measuring mathematical
+problem solving with the math dataset. NeurIPS.
+Sirui Hong, Xiawu Zheng, Jonathan Chen, Yuheng
+Cheng, Jinlin Wang, Ceyao Zhang, Zili Wang, Steven
+Ka Shing Yau, Zijuan Lin, Liyang Zhou, Chenyu Ran,
+Lingfeng Xiao, and Chenglin Wu. 2023. Metagpt:
+Meta programming for multi-agent collaborative
+framework.
+Qitian Jason Hu, Jacob Bieker, Xiuyu Li, Nan Jiang,
+Benjamin Keigwin, Gaurav Ranganath, Kurt Keutzer,
+and Shriyash Kaustubh Upadhyay. 2024a. Router-
+bench: A benchmark for multi-llm routing system.
+Preprint, arXiv:2403.12031.
+10

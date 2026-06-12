@@ -1,0 +1,578 @@
+[
+  {
+    "strategy": "fixed",
+    "backend": "sentence-transformers",
+    "k": 5,
+    "chunks": 150,
+    "hit_rate": 0.75,
+    "rows": [
+      {
+        "id": 1,
+        "type": "прямой",
+        "question": "Что такое GAIA и сколько вопросов входит в этот benchmark?",
+        "gold_sources": [
+          "doc_01"
+        ],
+        "retrieved_ids": [
+          "doc_01__7",
+          "doc_01__10",
+          "doc_03__9",
+          "doc_03__10",
+          "doc_02__6"
+        ],
+        "retrieved_sources": [
+          "doc_01",
+          "doc_01",
+          "doc_03",
+          "doc_03",
+          "doc_02"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 2,
+        "type": "точный артикул",
+        "question": "Какой результат показывают люди и GPT-4 с плагинами на GAIA?",
+        "gold_sources": [
+          "doc_01",
+          "doc_02"
+        ],
+        "retrieved_ids": [
+          "doc_03__13",
+          "doc_02__5",
+          "doc_06__0",
+          "doc_07__11",
+          "doc_01__4"
+        ],
+        "retrieved_sources": [
+          "doc_03",
+          "doc_02",
+          "doc_06",
+          "doc_07",
+          "doc_01"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 3,
+        "type": "синоним",
+        "question": "Почему авторы GAIA считают, что тест должен проверять практическую устойчивость ассистента, а не только экспертные экзамены?",
+        "gold_sources": [
+          "doc_01"
+        ],
+        "retrieved_ids": [
+          "doc_01__7",
+          "doc_09__9",
+          "doc_03__9",
+          "doc_10__5",
+          "doc_01__8"
+        ],
+        "retrieved_sources": [
+          "doc_01",
+          "doc_09",
+          "doc_03",
+          "doc_10",
+          "doc_01"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 4,
+        "type": "прямой",
+        "question": "Какие три решения принимает MasRouter при построении multi-agent system routing?",
+        "gold_sources": [
+          "doc_05"
+        ],
+        "retrieved_ids": [
+          "doc_05__4",
+          "doc_06__3",
+          "doc_13__2",
+          "doc_05__0",
+          "doc_05__3"
+        ],
+        "retrieved_sources": [
+          "doc_05",
+          "doc_06",
+          "doc_13",
+          "doc_05",
+          "doc_05"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 5,
+        "type": "точный артикул",
+        "question": "На каких benchmark MasRouter улучшает качество и где снижает overhead по сравнению с SOTA?",
+        "gold_sources": [
+          "doc_05"
+        ],
+        "retrieved_ids": [
+          "doc_06__4",
+          "doc_06__3",
+          "doc_06__5",
+          "doc_13__13",
+          "doc_06__6"
+        ],
+        "retrieved_sources": [
+          "doc_06",
+          "doc_06",
+          "doc_06",
+          "doc_13",
+          "doc_06"
+        ],
+        "score": 0.0
+      },
+      {
+        "id": 6,
+        "type": "перефраз",
+        "question": "Чем multi-agent routing отличается от single-agent routing в статье про MasRouter?",
+        "gold_sources": [
+          "doc_05"
+        ],
+        "retrieved_ids": [
+          "doc_05__4",
+          "doc_06__3",
+          "doc_05__0",
+          "doc_05__1",
+          "doc_05__6"
+        ],
+        "retrieved_sources": [
+          "doc_05",
+          "doc_06",
+          "doc_05",
+          "doc_05",
+          "doc_05"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 7,
+        "type": "прямой",
+        "question": "Что такое interactional fairness и на какие две части она делится?",
+        "gold_sources": [
+          "doc_09"
+        ],
+        "retrieved_ids": [
+          "doc_09__11",
+          "doc_10__10",
+          "doc_10__0",
+          "doc_10__11",
+          "doc_09__1"
+        ],
+        "retrieved_sources": [
+          "doc_09",
+          "doc_10",
+          "doc_10",
+          "doc_10",
+          "doc_09"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 8,
+        "type": "синоним",
+        "question": "Какие инструменты из организационной психологии адаптируются для аудита справедливого общения между LLM-агентами?",
+        "gold_sources": [
+          "doc_09"
+        ],
+        "retrieved_ids": [
+          "doc_09__11",
+          "doc_09__8",
+          "doc_10__9",
+          "doc_09__1",
+          "doc_11__2"
+        ],
+        "retrieved_sources": [
+          "doc_09",
+          "doc_09",
+          "doc_10",
+          "doc_09",
+          "doc_11"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 9,
+        "type": "multi-hop",
+        "question": "Как MasRouter и работа про interactional fairness по-разному расширяют анализ multi-agent systems?",
+        "gold_sources": [
+          "doc_05",
+          "doc_09"
+        ],
+        "retrieved_ids": [
+          "doc_09__11",
+          "doc_06__3",
+          "doc_10__1",
+          "doc_09__1",
+          "doc_09__8"
+        ],
+        "retrieved_sources": [
+          "doc_09",
+          "doc_06",
+          "doc_10",
+          "doc_09",
+          "doc_09"
+        ],
+        "score": 0.5
+      },
+      {
+        "id": 10,
+        "type": "прямой",
+        "question": "Как в LangGraph предлагается увидеть, какие модели или ресурсы выбирались на каждом шаге?",
+        "gold_sources": [
+          "doc_12"
+        ],
+        "retrieved_ids": [
+          "doc_13__2",
+          "doc_05__2",
+          "doc_05__3",
+          "doc_06__2",
+          "doc_07__6"
+        ],
+        "retrieved_sources": [
+          "doc_13",
+          "doc_05",
+          "doc_05",
+          "doc_06",
+          "doc_07"
+        ],
+        "score": 0.0
+      },
+      {
+        "id": 11,
+        "type": "точный артикул",
+        "question": "Какой защитный fallback предлагается, если Oracle не выдал resources для части задач?",
+        "gold_sources": [
+          "doc_12"
+        ],
+        "retrieved_ids": [
+          "doc_12__3",
+          "doc_12__2",
+          "doc_12__1",
+          "doc_13__9",
+          "doc_07__5"
+        ],
+        "retrieved_sources": [
+          "doc_12",
+          "doc_12",
+          "doc_12",
+          "doc_13",
+          "doc_07"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 12,
+        "type": "multi-hop",
+        "question": "Какие минимальные добавки нужны, чтобы мультиагентная система лучше покрывала GAIA, и как это связано с обсуждением mar_catalog?",
+        "gold_sources": [
+          "doc_12",
+          "doc_14"
+        ],
+        "retrieved_ids": [
+          "doc_12__11",
+          "doc_01__7",
+          "doc_12__10",
+          "doc_02__6",
+          "doc_05__3"
+        ],
+        "retrieved_sources": [
+          "doc_12",
+          "doc_01",
+          "doc_12",
+          "doc_02",
+          "doc_05"
+        ],
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "strategy": "recursive",
+    "backend": "sentence-transformers",
+    "k": 5,
+    "chunks": 931,
+    "hit_rate": 0.9166666666666666,
+    "rows": [
+      {
+        "id": 1,
+        "type": "прямой",
+        "question": "Что такое GAIA и сколько вопросов входит в этот benchmark?",
+        "gold_sources": [
+          "doc_01"
+        ],
+        "retrieved_ids": [
+          "doc_01__65",
+          "doc_01__42",
+          "doc_01__44",
+          "doc_02__35",
+          "doc_01__18"
+        ],
+        "retrieved_sources": [
+          "doc_01",
+          "doc_01",
+          "doc_01",
+          "doc_02",
+          "doc_01"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 2,
+        "type": "точный артикул",
+        "question": "Какой результат показывают люди и GPT-4 с плагинами на GAIA?",
+        "gold_sources": [
+          "doc_01",
+          "doc_02"
+        ],
+        "retrieved_ids": [
+          "doc_03__83",
+          "doc_02__22",
+          "doc_02__21",
+          "doc_01__61",
+          "doc_03__81"
+        ],
+        "retrieved_sources": [
+          "doc_03",
+          "doc_02",
+          "doc_02",
+          "doc_01",
+          "doc_03"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 3,
+        "type": "синоним",
+        "question": "Почему авторы GAIA считают, что тест должен проверять практическую устойчивость ассистента, а не только экспертные экзамены?",
+        "gold_sources": [
+          "doc_01"
+        ],
+        "retrieved_ids": [
+          "doc_02__11",
+          "doc_01__44",
+          "doc_01__59",
+          "doc_02__46",
+          "doc_01__3"
+        ],
+        "retrieved_sources": [
+          "doc_02",
+          "doc_01",
+          "doc_01",
+          "doc_02",
+          "doc_01"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 4,
+        "type": "прямой",
+        "question": "Какие три решения принимает MasRouter при построении multi-agent system routing?",
+        "gold_sources": [
+          "doc_05"
+        ],
+        "retrieved_ids": [
+          "doc_05__25",
+          "doc_05__23",
+          "doc_05__8",
+          "doc_05__22",
+          "doc_05__35"
+        ],
+        "retrieved_sources": [
+          "doc_05",
+          "doc_05",
+          "doc_05",
+          "doc_05",
+          "doc_05"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 5,
+        "type": "точный артикул",
+        "question": "На каких benchmark MasRouter улучшает качество и где снижает overhead по сравнению с SOTA?",
+        "gold_sources": [
+          "doc_05"
+        ],
+        "retrieved_ids": [
+          "doc_05__4",
+          "doc_05__28",
+          "doc_06__24",
+          "doc_06__19",
+          "doc_06__36"
+        ],
+        "retrieved_sources": [
+          "doc_05",
+          "doc_05",
+          "doc_06",
+          "doc_06",
+          "doc_06"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 6,
+        "type": "перефраз",
+        "question": "Чем multi-agent routing отличается от single-agent routing в статье про MasRouter?",
+        "gold_sources": [
+          "doc_05"
+        ],
+        "retrieved_ids": [
+          "doc_05__22",
+          "doc_05__35",
+          "doc_05__23",
+          "doc_05__24",
+          "doc_05__8"
+        ],
+        "retrieved_sources": [
+          "doc_05",
+          "doc_05",
+          "doc_05",
+          "doc_05",
+          "doc_05"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 7,
+        "type": "прямой",
+        "question": "Что такое interactional fairness и на какие две части она делится?",
+        "gold_sources": [
+          "doc_09"
+        ],
+        "retrieved_ids": [
+          "doc_10__21",
+          "doc_10__56",
+          "doc_10__9",
+          "doc_09__56",
+          "doc_09__42"
+        ],
+        "retrieved_sources": [
+          "doc_10",
+          "doc_10",
+          "doc_10",
+          "doc_09",
+          "doc_09"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 8,
+        "type": "синоним",
+        "question": "Какие инструменты из организационной психологии адаптируются для аудита справедливого общения между LLM-агентами?",
+        "gold_sources": [
+          "doc_09"
+        ],
+        "retrieved_ids": [
+          "doc_10__67",
+          "doc_09__47",
+          "doc_09__43",
+          "doc_09__56",
+          "doc_09__21"
+        ],
+        "retrieved_sources": [
+          "doc_10",
+          "doc_09",
+          "doc_09",
+          "doc_09",
+          "doc_09"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 9,
+        "type": "multi-hop",
+        "question": "Как MasRouter и работа про interactional fairness по-разному расширяют анализ multi-agent systems?",
+        "gold_sources": [
+          "doc_05",
+          "doc_09"
+        ],
+        "retrieved_ids": [
+          "doc_10__69",
+          "doc_09__70",
+          "doc_09__44",
+          "doc_09__71",
+          "doc_10__54"
+        ],
+        "retrieved_sources": [
+          "doc_10",
+          "doc_09",
+          "doc_09",
+          "doc_09",
+          "doc_10"
+        ],
+        "score": 0.5
+      },
+      {
+        "id": 10,
+        "type": "прямой",
+        "question": "Как в LangGraph предлагается увидеть, какие модели или ресурсы выбирались на каждом шаге?",
+        "gold_sources": [
+          "doc_12"
+        ],
+        "retrieved_ids": [
+          "doc_13__30",
+          "doc_12__9",
+          "doc_12__10",
+          "doc_06__12",
+          "doc_12__17"
+        ],
+        "retrieved_sources": [
+          "doc_13",
+          "doc_12",
+          "doc_12",
+          "doc_06",
+          "doc_12"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 11,
+        "type": "точный артикул",
+        "question": "Какой защитный fallback предлагается, если Oracle не выдал resources для части задач?",
+        "gold_sources": [
+          "doc_12"
+        ],
+        "retrieved_ids": [
+          "doc_12__21",
+          "doc_12__22",
+          "doc_12__14",
+          "doc_12__7",
+          "doc_12__10"
+        ],
+        "retrieved_sources": [
+          "doc_12",
+          "doc_12",
+          "doc_12",
+          "doc_12",
+          "doc_12"
+        ],
+        "score": 1.0
+      },
+      {
+        "id": 12,
+        "type": "multi-hop",
+        "question": "Какие минимальные добавки нужны, чтобы мультиагентная система лучше покрывала GAIA, и как это связано с обсуждением mar_catalog?",
+        "gold_sources": [
+          "doc_12",
+          "doc_14"
+        ],
+        "retrieved_ids": [
+          "doc_12__79",
+          "doc_01__65",
+          "doc_12__62",
+          "doc_01__41",
+          "doc_03__62"
+        ],
+        "retrieved_sources": [
+          "doc_12",
+          "doc_01",
+          "doc_12",
+          "doc_01",
+          "doc_03"
+        ],
+        "score": 0.5
+      }
+    ]
+  }
+]

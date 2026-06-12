@@ -1,0 +1,579 @@
+# doc_05: 2502.11133v1 / part 1
+
+Source file: 2502.11133v1.pdf
+
+[Page 1]
+MasRouter: Learning to Route LLMs for Multi-Agent Systems
+Yanwei Yue⋆†Guibin Zhang⋆†Boyang Liu⋆†Guancheng Wan♣
+Kun Wang♠Dawei Cheng⋆Yiyan Qi♦
+⋆Tongji University♣Wuhan University♠Nanyang Technological University♦IDEA
+/envel⌢pePrimary Contact: edwinmars77@gmail.com
+Abstract
+Multi-agent systems (MAS) powered by Large
+Language Models (LLMs) have been demon-
+strated to push the boundaries of LLM capa-
+bilities, yet they often incur significant costs
+and face challenges in dynamic LLM selec-
+tion. Current LLM routing methods effectively
+reduce overhead in single-agent scenarios by
+customizing LLM selection for each query, but
+they overlook the critical decisions regarding
+collaboration modes and agent roles in MAS.
+In response to this challenge, we first introduce
+the problem of Multi-Agent System Routing
+(MASR) , which integrates all components of
+MAS into a unified routing framework. To-
+ward this goal, we propose MasRouter , the
+first high-performing, cost-effective, and in-
+ductive MASR solution. MasRouter employs
+collaboration mode determination, role allo-
+cation, and LLM routing through a cascaded
+controller network, progressively constructing
+a MAS that balances effectiveness and effi-
+ciency. Extensive experiments demonstrate that
+MasRouter is(1) high-performing , achieving
+a1.8% ∼8.2% improvement over the state-
+of-the-art method on MBPP; (2) economical ,
+reducing overhead by up to 52.07% compared
+to SOTA methods on HumanEval; and (3) plug-
+and-play , seamlessly integrating with main-
+stream MAS frameworks, reducing overhead
+by17.21% ∼28.17% via customized rout-
+ing. The code is available at https://github.
+com/yanweiyue/masrouter .
+1 Introduction
+Recent advances in Large Language Model (LLM)
+based agents (Park et al., 2023; Yao et al., 2023;
+Richards and et al., 2023) have demonstrated re-
+markable success across various tasks, including
+code generation (Wu et al., 2023; Guo et al., 2024),
+mathematical reasoning (Swan et al., 2023; Yu
+et al., 2024), and embodied actions (Wang et al.,
+†These authors contributed equally.
+Single Agent Routing Multi Agent Routing
+🤔 Query🤔 Query
+Collaboration
+Determiner Role
+Allocator LLM 
+Router
+Star
+ManagerProgrammer
+Physicist Scientist🖥 
+🧮
+No one can do
+everything! 
+I need help!
+ But everyone can do something! LLM Router
+Programmer
+Manager
+Scientist PhysicistFigure 1: Paradigm comparison between single-agent
+routing and multi-agent routing.
+2023). Building on the impressive capabilities of
+single agents, the LLM-based Multi-Agent Sys-
+tem (MAS) has been proposed (Park et al., 2023;
+Du et al., 2023; Hong et al., 2023) to harness the
+collective intelligence and specialized expertise of
+multiple agents. As the pool of available LLMs
+continues to grow (Chang et al., 2023; Minaee
+et al., 2024), how to select the appropriate LLM to
+power single agents or MAS has increasingly cap-
+tured the attention of the research community (Hu
+et al., 2024a; akota et al., 2024). One might assume
+that, disregarding cost, choosing the largest LLM
+would always yield the best performance. How-
+ever, larger LLMs have been shown to not always
+outperform their smaller counterparts (Abdin et al.,
+2024; Lepagnol et al., 2024; Shen et al., 2024). At
+times, smaller LLMs can achieve superior perfor-
+mance at a lower computational cost. Given this
+context, how to dynamically route the most appro-
+priate LLM to empower an agent in a query-aware
+manner emerges as a highly compelling problem.
+To address this, LLM routing is proposed to intel-
+ligently assign the optimal LLM for each query (Hu
+et al., 2024a; Srivatsa et al., 2024). Early attempts
+employ a router, typically based on encoder models
+like BERT (Devlin et al., 2019), to make a binary
+decision on whether to select a larger LLM (Chen
+et al., 2023a; Ding et al., 2024; Ong et al., 2024).
+More recent practices construct a router to assess
+1arXiv:2502.11133v1 [cs.LG] 16 Feb 2025
+
+[Page 2]
+the performance and cost of multiple LLMs, sub-
+sequently selecting the model that optimizes the
+trade-off between exploration and exploitation (Dai
+et al., 2024; Mohammadshahi et al., 2024; Feng
+et al., 2024). Although existing LLM routing meth-
+ods (Hu et al., 2024a; Stripelis et al., 2024) have
+been proven effective in directing the most ap-
+propriate LLM for input queries, they are limited
+to single-agent scenarios (Wei et al., 2022; Shinn
+et al., 2023; Reworkd, 2023) yet not ready for MAS.
+However, we argue that the availability of a routing
+method for MAS is even more essential. On the
+performance perspective, multi-agent systems have
+been proven to outperform single-agent approaches
+significantly (Chen et al., 2023b; Pina et al., 2023).
+On the cost perspective, though impressive in per-
+formance, existing multi-agent pipelines inherently
+introduce substantial token overhead and increased
+economic costs (Zhuge et al., 2024), which further
+necessitates the use of routing to mitigate overhead.
+In this context, there is a critical need to address
+this gap: How can we effectively route LLMs for
+MAS to balance performance and costs?
+A seemingly intuitive solution is to directly trans-
+fer single-agent LLM routing methods to MAS.
+However, MAS needs to select the appropriate
+agent collaboration modes (Du et al., 2023; Zhang
+et al., 2024c) for different tasks and establish a rea-
+sonable division of labor (Hong et al., 2023; Zhang
+et al., 2023), which previous routing methods fail
+to achieve. For example, for software development
+tasks, an ideal MAS routing method could design a
+hierarchical workflow with sequential steps such as
+requirements analysis, algorithm design, code de-
+velopment, and testing, each requiring correspond-
+ing role profiles (Ramin et al., 2020; Zingg et al.,
+2023). Against this backdrop, we argue that rout-
+ing in MAS involves more tasks than just LLM
+recommendations: ❶Collaboration Mode De-
+termination: Choosing the optimal communica-
+tion mechanisms ( e.g. , Chain (Qian et al., 2023),
+Tree (Ishibashi and Nishimura, 2024), Graph (Hao
+et al., 2023)) for varying task complexities. This in-
+volves identifying the most efficient and adaptable
+multi-agent topology (Zhuge et al., 2024; Zhang
+et al., 2024a) that minimizes overhead while en-
+suring flexibility and scalability in more complex
+scenarios. ❷Dynamic Agent Number: Determin-
+ing the number of expert agents required (Huang
+et al., 2024; Aghdam et al., 2024) based on the
+difficulty of the input. ❸Agent Role Allocation:
+Selecting suitable role to the agent according tothe query domain (Chen et al., 2023b; Feng et al.,
+2024) to ensure efficient task division, creating a
+system greater than the sum of its parts (Shang
+et al., 2024). ❹Agent LLM Routing: Assigning
+each agent the appropriate LLM based on the col-
+laborative topology and the role of each LLM (Feng
+et al., 2024).
+In light of the scrutinizing challenges, we for
+the first time introduce the concept of LLM-based
+::Multi-::Agent:System::Routing (MASR):
+Multi-Agent Systems Routing (MASR): Given
+a pool of available LLMs, collaborative com-
+munication modes, and possible agent roles, an
+optimal MAS Router for any query qshould: (1)
+identify appropriate multi-agent collaboration
+modes, (2) allocate agent roles efficiently, and
+(3) assign the appropriate LLM to each agent,
+thereby balancing performance and cost.
+The formal definition of MASR is provided in
+Section 3. To construct a router that ideally adheres
+to the MASR principles, we propose an effective,
+token-economical, and inductive LLM-powered
+::Multi-:Agent:System::::::Router , termed MasRouter .
+Technically, MasRouter integrates collaboration
+mode determiner, agent role allocator, and agent
+LLM router into a unified routing framework: ❶
+Collaboration determiner employs a variational
+latent variable model to route the user query to a
+suitable collaboration module; ❷Role allocator
+progressively generates agent roles through a struc-
+tured probabilistic cascade; ❸LLM router models
+the LLM backbone recommendation for each agent
+as a multinomial distribution problem. Ultimately,
+MasRouter constructs a MAS that simultaneously
+balances effectiveness and efficiency .
+Our contributions can be summarized as follows:
+•Problem Definition. We for the first time
+formally define Multi-Agent System Routing
+(MASR), which specifies the requirements for
+MAS routing: assigning the appropriate collab-
+oration mode, agent roles, and LLMs to each
+query, thereby improving response quality and
+reducing unnecessary overhead.
+•Practical Solution. We propose MasRouter ,
+a modular MASR solution that utilizes a cas-
+caded controller network to construct a high-
+performing and resource-efficient MAS progres-
+sively. Besides, MasRouter can seamlessly inte-
+grate with mainstream MAS to achieve efficient
+routing with significantly lower inference cost.
+•Experimental Validation. Extensive experiments
+2
+
+[Page 3]
+across five benchmarks show that MasRouter is:
+(I) high-performing , surpassing RouterDC, the
+state-of-the-art routing method, by 3.51% on av-
+erage; (II) economical , reducing the overhead on
+HumanEval from 0.363$ to0.185$ ;(III) induc-
+tive and plug-and-play , generalizing to unseen
+LLM backbones and collaboration modes and
+seamlessly combining with mainstream multi-
+agent systems with 17% ∼28% ↓fewer cost.
+2 Related Work
+Multi-Agent System. Contemporary LLM-
+based multi-agent systems (MAS) can be broadly
+categorized into two paradigms: (1) Fixed agentic
+networks with pre-established, manually crafted
+architectures, from debate (Chan et al., 2023;
+Liang et al., 2023), collaboration (Yin et al., 2023;
+Wang et al., 2024) to competetive (Zhao et al.,
+2023). MacNet (Qian et al., 2024) systemati-
+cally analyzed typical multi-agent collaboration
+topologies such as chain, tree, graph, etc. ;(2)
+Dynamic agentic networks that configure their
+structure and communication strategies based on
+real-time feedback and observations. ADAS (Hu
+et al., 2024b) and its follow-up works (Zhang
+et al., 2024c; Shang et al., 2024) leverage search
+methods such as Monte Carlo Tree Search (MCTS)
+and evolutionary algorithm (Zhang et al., 2025) to
+discover effective agent strategies. Other works
+like DyLAN (Liu et al., 2023), GPTSwarm (Zhuge
+et al., 2024) and AgentPrune (Zhang et al.,
+2024a) dynamically optimize the inter-agent
+topologies. Nevertheless, contemporary MAS is
+often LLM-homogeneous, i.e., relying exclusively
+on the same LLM backbone, failing to collectively
+organize heterogenous LLM-agents.
+Single LLM Routing Efficient routing strategies
+for single LLMs have been extensively explored
+to balance computational cost and model perfor-
+mance. Early attempts on LLM routing include
+HybridLLM (Ding et al., 2024), RouteLLM (Ong
+et al., 2024) and FrugalGPT (Chen et al., 2023a),
+which primarily focus on binary routing and
+leverage techniques like sequential pipelines or
+preference-driven routing to enhance decision-
+making performance. More recent practices, in-
+cluding Rootoo (Dai et al., 2024), C2MAB-V (Mo-
+hammadshahi et al., 2024), GraphRouter (Feng
+et al., 2024) and RouterDC (Chen et al., 2024) have
+shifted towards multi-choice selection frameworks.
+However, existing routing methodologies mainlyfocus on single-agent scenarios, and their unaware-
+ness of inter-agent topology constrains their appli-
+cability to more complex tasks and limits scalabil-
+ity in larger systems.
+3 Formalization
+In this section, we formalize our proposed LLM-
+based Multi-Agent System Routing (MASR) and
+introduce its optimization objectives.
+3.1 Notation Establishment
+Search Space. We first define the search space
+of a multi-agent system as S= (M,R,T), where
+M denotes the pool of Nmavailable LLM back-
+bones, Rrepresents the set of Nrpredefined agent
+roles ( e.g. , analyst, programmer, and tester), and
+Tdenotes the set of Ntcollaboration modes, in-
+cluding structures like Chain, Tree, LLM-Debate,
+etc. Within the search space, a multi-agent system
+instance is defined as follows:
+Definition 1 (Multi-Agent System) The MAS S
+combines several specific LLM-powered agents
+with distinct identities, working together collab-
+oratively:
+S={{M i}k
+i=1,{R i}k
+i=1,T },
+M i∈M,Ri∈R,T ∈ T,(1)
+where M corresponds to the selected LLM back-
+bones and, similarly, Rand Trepresent the cho-
+sen role and collaboration mode respectively. k
+denotes the number of the LLM agents.
+3.2 Definition of MASR
+Based on the MAS defined above, we formalize
+Multi-Agent Systems Routing (MASR):
+Definition 2 (MASR) MASR can be represented
+by the mapping function f, which maps from S=
+(M,R,T)to a MAS Stailored for the query Q:
+f:M×R×T− → S ,
+π(S) = Pn
+{M i}k
+i=1,{R i}k
+i=1,To
+| Q
+,
+M i∈M,Ri∈R,T ∈ T, S⊂S(2)
+where π(S)represents the probability of selecting
+multi-agent system S, conditioned on Q.
+Optimization Objective. Given a benchmark D
+consisting of multiple queries Qand corresponding
+oracle answers a, the ideal MASR aims to optimize
+3
+
+[Page 4]
+Collaboration Modes Agent Routing Optimize
+Query-specific
+ Collab representation
+SC Ensemble Macnet(Chain) Star LLM Debate
+Module EncoderCollaboration Assignment
+Sentence Bert;
+MiniLM; ...As a physicist, I would
+apply the physical
+principles to analyze the
+query . The key physical
+formula is: 
+and 
+As a test engineer ,
+I will verify if the
+programmer's code
+conforms to the
+problem logic and give
+the checked code:
+[Python Code] Collaborative
+reasoning
+Workflow
+Solution to task 
+Based on the discussions, the answer is a speed
+of approximately 1.53 m/s at which the motor
+can lift 6 kg mass.▶ Input query 
+▶ Collaboration Determination
+▶ Agent Role Allocation
+▶ Agent LLM Routing
+▶ Collaborative ReasoningMaterials
+🤔 Query/Problem 
+An electric motor has a label on
+it that reads: Input: 120V AC, 1.0
+Amps, 60 Hz - Ef ficiency - 75%.
+At what constant speed can the
+motor lift up a 6 kg mass?
+🤖 LLM set 
+🧰 Collaboration Repo 🎭 Role pool 
+Programmer
+ Math  Analyst
+ Physicist...
+Test Engineer
+Macnet(Chain)
+Self-Consistency
+Ensemble
+... ... (Other Collaboration Modes)
+LLM Debate
+ Macnet(Star)
+Difficulty
+Measure
+Agent Count Mode Prob. Distribution1 2 3 4 5 6
+Collaboration Determiner: 
+SC is not sufficiently effective
+Debate  incurs excessive costs
+Chain has achieved a balance
+Agent Role & LLM Routing
+Role Router: 
+LLM Router :
+Programmer
+Math Analyst
+Test EngineerPhysicistAs a mathematician, I
+will follow the physicist's
+analysis and perform
+calculations step by step :
+...
+As a programmer , I will list
+the code according to the
+mathematician's formula to
+prevent calculation errors:
+[Python Code]
+Output solution
+The agent needs a role
+to conduct an overall analysis
+of this physics problem
+ProgrammerMath
+AnalystPhysicistTest
+Engineer
+gpt-4o-mini qwen-math deepseek-coder llama3
+Qwen-math is instruction-tuned on
+the math datasets, making it
+suitable for tasks as a math analyst.Sampling per
+Prob. 
+Sampling per
+Prob. Agents Roles LLMsFigure 2: The overall framework of our proposed MasRouter .
+a strategy to jointly balance performance and cost.
+The objective function is defined as:
+max
+P(S|Q )E (Q,a)∼D ,
+S∈S∼P(S|Q )
+U(S;Q, a)|{z }
+Utility−λ·C(S;Q)|{z}
+Cost
+, (3)
+where P(S|Q )represents the probability distri-
+bution of Sconditioned on Q. The utility term
+U(S;q, a )measures the performance of the MAS,
+while the cost term C(S;q)quantifies the expected
+cost ( e.g. , LLM calls, API cost, token cost). λis a
+trade-off parameter.
+4 MasRouter
+Figure 2 illustrates the overall framework of
+MasRouter . For a given query, MasRouter sam-
+ples the customized components of the MAS,
+through the collaboration determiner ( ▷Sec-
+tion 4.1), role allocator ( ▷Section 4.2), and agent
+LLM router ( ▷Section 4.3), together forming a
+task-adaptive MAS S. After executing the sam-
+pled MAS, MasRouter jointly optimizes the pa-
+rameters of each selection module based on the
+performance/cost feedback ( ▷Section 4.4).
+4.1 Collaboration Mode Determination
+Given a query Q, the core objective of MasRouter
+is to customize an appropriate MAS from the
+search space Sbased on the complexity and do-
+main of the query, thereby generating a sufficiently
+high-quality response:
+p(a|Q) =Z
+O(a|S)Fθ(S|Q )dS,S ⊂ S,(4)where Fθrepresents the controller network param-
+eterized by θ, which takes Qand computes the
+underlying distribution of S.O(·|·)denotes the
+conditional likelihood of obtaining the solution a
+by executing S.Fθis formulated as follows:
+Fθ=Fθm◦Fθr◦Fθt, (5)
+where Fθt:Q → T is the collaboration mode
+determiner, Fθr: (Q,T)→ {R i}k
+i=1 denotes
+the role allocator, and Fθm: (Q,T,{R i}k
+i=1)→
+{M i}k
+i=1 represent the LLM backbone router. In-
+spired by human collaboration (Woolley et al.,
+2010; Chen et al., 2023b), MasRouter first con-
+structs a team management framework for the MAS
+using Fθt, then recruits suitable talents and defines
+the division of tasks using Fθr, and finally endows
+each agent with the unique intelligence through
+Fθm. For Fθt, since the relationship between col-
+laborative modes and queries is generally difficult
+to characterize explicitly, we employ a variational
+latent model to capture their underlying semantic
+associations:
+Fθt(T | Q ) =Z
+pg(T |H)ph(H| Q)dH,T ∈ T (6)
+where ph(H|Q)denotes the prior probability distri-
+bution of the latent representation, and pg(T |H)
+decodes the probability of collaborative patterns,
+implemented as follows:
+ph(H| Q) =N(H;µt(Q),diag (σ2
+t(Q))),
+pg(T |H)∝exp (fT
+ψ(Q)eHT
+τ), τ > 0(7)
+4
+
+[Page 5]
+where µt(·)and σ2
+t(·)obtains the mean and vari-
+ance of H, respectively, and eHT=gϕ(fψ(T),H)
+embeds the relationship between the query and the
+collaborative patterns into the latent space. Here,
+fψ:Q → RDis a text encoder ( e.g. , Sentence-
+BERT (Reimers, 2019), MiniLM (Wang et al.,
+2020)) that extracts the semantic information of
+the query. gϕ:RD×RD→RDproduces the
+refined representation of the candidate T.
+With Fθt, we have now customized the collab-
+orative patterns for Q. Nevertheless, the number
+of agents utilized in Tremains undetermined. We
+leverage the hidden embedding of the query to de-
+rive the number of agents k=⌈δ(H)·γ⌉, where
+δ:RD→[0,1]is a learnable complexity mapping
+function, and γis the hyperparameter representing
+the maximum number of agents.
+4.2 Agent Role Allocation
+For a MAS S={{M i}k
+i=1,{R i}k
+i=1,T } , Sec-
+tion 4.1 has specified Tand k. Subsequently, we
+will assign the appropriate role Rito each agent
+inS. Roles among different agents often have a
+sequential order and interdependencies. For exam-
+ple, we first need a programmer to write the code,
+and then a test engineer to validate and debug it.
+Correspondingly, the role allocator Fθrformalizes
+role generation through a structured probabilistic
+cascade:
+Fθr({R i}k
+i=1|Q,T) =kY
+ℓ=1πrℓ(Rℓ|Q,{R j}ℓ−1
+j=1,T),(8)
+where πrℓdenotes the probability of generating the
+ℓ-th role is based on Q, the selected T, and the
+prior ℓ−1role profiles. We iteratively compute it
+as follows:
+πrℓ(Rℓ|Q,T,{R j}ℓ−1
+j=1)∝exp (HT
+Rℓ−1eHRℓ
+τ),
+Rℓ∈R, τ > 0,(9)
+where HRℓ−1= FFN( H∥eHT∥Pℓ−1
+j=1eHRj
+ℓ−1)de-
+notes the implicit representation of the accumu-
+lated semantics from the role allocation process of
+the first ℓ−1roles under the Qand T.eHRℓ=
+gϕ(fψ(Rℓ),HRℓ−1)captures the dynamic features
+exhibited by the current candidate role within the
+context of the previously assigned roles. Through
+Equation (9), MasRouter progressively determines
+the roles for all agents in S. Afterward, the remain-
+ing task is to provide each agent with its driving
+force by routing to an appropriate LLM backbone.4.3 Agent LLM Routing
+Each LLMs have its own strengths and draw-
+backs (Barandoni et al., 2024), and the goal of
+LLM routing is to leverage their unique capabili-
+ties. For example, for mathematical problems, we
+would opt for an LLM that is particularly proficient
+in mathematics or one that has been specifically
+fine-tuned. Therefore, we posit that assigning an
+LLM to a specific agent primarily depends on the
+task’s domain and difficulty, as well as their corre-
+sponding role. We implement Fθmby computing
+the probability of selecting M ibased on the query
+and the preceding role routing. It then views the
+process of LLM routing for multiple agents as a
+multinomial distribution problem:
+Fθm({M i}k
+i=1| Q,T,{R i}k
+i=1)
+= k
+n1,n2,...,n Nm
+·NmY
+ℓ=1πnℓm(M ℓ| Q,T,{R i}k
+i=1),(10)
+where k
+n1,n2,...,n Nm
+=k!
+n1!n2!...n Nm!is the multi-
+nomial coefficient. It represents the number of
+ways to assign kagents to Nmdifferent LLMs,
+with the i-th LLM selected nitimes. πmdenotes
+the probability of each LLM being selected in the
+global context:
+πm(M ℓ|Q,T,{R i}k
+i=1)∝exp (HT
+MeHMℓ
+τ), (11)
+where HM= FFN( H∥eHT∥Pk
+j=1eHj
+k)aggregates
+the embedding of the query, collaborative patterns,
+and selected roles. eHMℓ=gϕ(fψ(M ℓ),HM)
+computes the latent representation of each LLM.
+Based on HM and eHMℓ, the compatibility be-
+tween each LLM and the constructed system is
+obtained, which is proportional to the probability
+of selecting Mℓ.
+As stated above, we have customized a MAS
+for the query. Only one final hurdle is left be-
+fore achieving end-to-end training: the number
+of agents kbecomes non-differentiable due to the
+rounding operation. To ensure smooth gradient
+flow, we replace kwith its pre-rounded floating-
+point value and approximate the multinomial coef-
+ficient in Equation (10) as follows:
+ k
+n1,n2,...,n NM
+≈Γ(δ(H)·γ+ 1)
+Γ(n1+ 1)Γ( n2+ 1) ...Γ(nNM+ 1),
+(12)
+where Γ(·)denotes the Gamma function.
+5

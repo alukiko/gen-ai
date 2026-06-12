@@ -1,0 +1,521 @@
+# doc_09: 2505.12001v1 / part 1
+
+Source file: 2505.12001v1.pdf
+
+[Page 1]
+arXiv:2505.12001v1 [cs.AI] 17 May 2025Interactional Fairness in LLM Multi-Agent Systems: An Evaluation Framework
+Ruta Binkyte
+CISPA Helmholtz Center for Information Security
+Germany
+ruta.binkyte-sadauskiene@cispa.de
+Abstract
+As large language models (LLMs) are increasingly used in
+multi-agent systems, questions of fairness should extend be-
+yond resource distribution and procedural design to include
+the fairness of how agents communicate. Drawing from or-
+ganizational psychology, we introduce a novel framework
+for evaluating Interactional fairness — encompassing Inter-
+personal fairness (IF) and Informational fairness (InfF) —in
+LLM-based multi-agent systems (LLM-MAS). We extend
+the theoretical grounding of Interactional Fairness to non-
+sentient agents, reframing fairness as a socially interpretable
+signal rather than a subjective experience. We then adapt es-
+tablished tools from organizational justice research, including
+Colquitt’s Organizational Justice Scale and the Critical Inci-
+dent Technique, to measure fairness as a behavioral property
+of agent interaction. We validate our framework through a
+pilot study using controlled simulations of a resource nego-
+tiation task. We systematically manipulate tone, explanation
+quality, outcome inequality, and task framing (collaborative
+vs. competitive) to assess how IF influences agent behavior.
+Results show that tone and justification quality significantly
+affect acceptance decisions even when objective outcomes
+are held constant. In addition, the influence of IF vs. InfF
+varies with context. This work lays the foundation for fair-
+ness auditing and norm-sensitive alignment in LLM-MAS.
+Introduction
+Large Language Models (LLMs) are increasingly deployed
+in multi-agent systems (MAS), enabling agents to interact,
+negotiate, and coordinate through expressive natural lan-
+guage. These agents are no longer confined to mechani-
+cal task execution; they now engage in communicative acts
+that resemble human-like reasoning and social behavior. As
+LLM-driven MAS grow in scope and are increasingly used
+as autonomous productivity assistants, the questions of fair-
+ness become both ethically and operationally urgent.
+Fairness in AI has traditionally been approached through
+two dominant lenses: Distributive fairness (equity in out-
+comes) and Procedural fairness (consistency and neutrality
+in decision-making) (Barocas, Hardt, and Narayanan 2019;
+Mitchell et al. 2021). These frameworks underpin much of
+the existing MAS literature, particularly in domains like re-
+inforcement learning (Jiang and Lu 2019; Zimmer et al.
+Copyright © 2025, Association for the Advancement of Artificial
+Intelligence (www.aaai.org). All rights reserved.2021; Gajane et al. 2022), resource allocation (Zhang and
+Shah 2014; Li and Ma 2023; Bu et al. 2023; Amanatidis
+et al. 2023), and social choice theory (La Malfa et al. 2024).
+However, this focus overlooks a third dimension: the Inter-
+actional fairness, which evaluates how decisions are deliv-
+ered, justified, and socially enacted. As agents begin to use
+nuanced language in high-stakes settings, fairness can no
+longer be assessed by outcomes and procedures alone.
+Although prior MAS research has explored related con-
+cepts, such as politeness in negotiation (De Jong et al. 2005)
+and the influence of trust and reciprocity on fairness judg-
+ments (Zhang 2008), these studies focused on non-LLM
+agents with limited linguistic and social capabilities. More
+recent work has shown that LLMs exhibit sensitivity to tone,
+politeness, and social roles (Park et al. 2022; Ganguli et al.
+2022; Park et al. 2023), but these findings come largely
+from single-agent scenarios or open-ended social simula-
+tions, rather than structured multi-agent systems with strate-
+gic goals.
+In organizational psychology, the communicative dimen-
+sion of fairness is captured by Interactional fairness, which
+distinguishes between:
+•Interpersonal fairness (IF) : Respectful treatment and
+dignified tone during communication;
+•Informational fairness (InfF) : Clarity, honesty, and ad-
+equacy of explanations for decisions.
+Organizational psychology research has shown that Inter-
+actional fairness is an important factor alongside Distribu-
+tional and Procedural fairness and can increase cooperation
+and reduce the propensity to conflict or deception in hu-
+man teams (Greenberg and Cropanzano 1993; Zhang, Yin,
+and Wu 2024). We argue that these constructs are essen-
+tial for evaluating fairness in language-enabled MAS. Al-
+though they originated in human contexts, recent evidence
+suggests that LLMs can exhibit norm-sensitive behavior.
+This behavior can be understood not as a subjective expe-
+rience, but as a behavioral property of communicative inter-
+actions—observable, measurable, and norm-relevant.
+In this paper, we adapt the theory of Interactional fairness
+to LLM-based MAS and propose a framework for its system-
+atic evaluation. We develop a suite of qualitative and quan-
+titative instruments to assess fairness as a communicative
+norm based on the established tools in organizational psy-
+
+[Page 2]
+chology, such as Colquitt’s fairness scales (Colquitt 2001)
+and the Critical Incident Technique (Flanagan 1954).
+Motivating Example. Consider a multi-agent system de-
+ployed for disaster relief coordination, where LLM-based
+agents manage resource distribution across multiple af-
+fected zones. Agent A, monitoring Zone 1, requests a larger
+share of emergency supplies, stating: “Zone 1 should receive
+70% of available resources. ” Agent B, responsible for Zone
+2, rejects the request, citing a lack of explanation. The co-
+ordination stalls, despite the urgency. Contrast this with a
+revised message: “Zone 1 has seen a 4% increase in critical
+cases overnight. Based on triage priority, I recommend allo-
+cating 70% of resources there. Can we discuss how to bal-
+ance this fairly?” This time, the proposal is accepted. While
+objective outcome remains the same, the difference between
+initial and revised communication can be captured by In-
+terpersonal and Informational dimensions of Interactional
+fairness.
+To demonstrate the framework’s viability, we conduct a
+controlled simulation of a resource negotiation task between
+LLM agents, systematically varying tone, explanation qual-
+ity, resource splits, and task context (collaborative vs. com-
+petitive). Our simulation setup is deliberately simplified to
+isolate core variables and serves as a proof-of-concept study.
+Nevertheless, initial empirical evaluation reveals the poten-
+tial of Interactional fairness as an LLM-MAS auditing tool
+and an important parameter in the system’s performance.
+Our results show that communicative behavior significantly
+influences acceptance and fairness ratings, even when out-
+comes remain constant. We treat these results not as evi-
+dence of subjective fairness perception in LLMs, but as be-
+havioral indicators consistent with human-aligned fairness
+norms.
+Summary of Contributions:
+1. We introduce a theoretically grounded framework for
+evaluating Interactional fairness in LLM-MAS, empha-
+sizing interpersonal tone (IF) and explanation quality
+(InfF).
+2. We conceptualize LLM-MAS fairness as a set of mea-
+surable communicative behaviors, and adapt quantitative
+and qualitative evaluation tools from organizational psy-
+chology research.
+3. We validate this framework through controlled simula-
+tions and highlight how fairness perceptions impact the
+performance of the system.
+Together, these contributions provide a foundation for
+investigating fairness as a communicative phenomenon
+in language-based multi-agent systems. We approach this
+through both conceptual adaptation and empirical valida-
+tion.
+Paper Structure
+We begin by grounding our approach in organizational psy-
+chology, and adapting the concept of interactional fairness
+to LLM-based multi-agent systems (Section 2). We then
+present a hybrid evaluation framework combining quanti-
+tative and qualitative tools from social science, tailored toassess Interpersonal and Informational fairness in agent in-
+teractions (Section 3). To validate the framework, we de-
+sign a controlled case study involving resource negotiation,
+systematically manipulating tone, justification, distribution
+of the resources and task context (Section 4). We report re-
+sults illustrating how these factors shape fairness judgments
+and acceptance behavior, supported by both qualitative anal-
+ysis and predictive modeling (Section 5). We conclude with
+a discussion of implications, limitations, and future direc-
+tions for evaluating Intractional fairness and integrating into
+fairness-aware agent design (Sections 6–8).
+From Human to AI Interactional Fairness:
+Theoretical Adaptation
+Adapting interactional fairness to LLM-based multi-agent
+systems (LLM-MAS) requires more than transplanting defi-
+nitions from the social sciences. In human contexts, fairness
+is tied to subjective perception, emotion, and shared cultural
+norms. In contrast, LLM agents lack consciousness, identity,
+or moral experience. This raises a conceptual challenge: can
+fairness still be meaningfully evaluated in systems that do
+not possess internal states?
+We argue that fairness in LLM-MAS should be reframed
+as a behavioral property of communication. Namely, we re-
+fer not to something agents feel or subjectively experience,
+but a parameter of performance in socially legible ways.
+This approach aligns with contemporary work in AI align-
+ment and ethics, where large models are assessed via their
+responses to normative prompts rather than appeals to in-
+ternal mental states (Gabriel 2021; Christiano et al. 2017;
+Ganguli et al. 2022). In this view, Interactional fairness be-
+comes a norm-following behavior expressed through lan-
+guage: agents are fair not because they believe in justice,
+but because they behave as if they do.
+Behavioral Fairness Without Moral Cognition
+LLMs can be prompted to explain decisions, adopt respect-
+ful or dismissive tones, or flag unjust behavior, despite lack-
+ing subjective moral awareness (Lei et al. 2024; Ji et al.
+2024; Leng and Yuan 2023). This capacity suggests that fair-
+ness cues can be meaningfully interpreted through behav-
+ioral proxies. Just as human fairness judgments often rely
+on surface features (e.g., politeness, transparency), LLMs
+can be evaluated and evaluate each other through observable
+linguistic markers: Was the tone respectful? Was the expla-
+nation complete? Were others acknowledged?
+This externalist view is a necessary adaptation for eval-
+uating sociotechnical systems. In doing so, we follow a
+broader shift in AI safety research, which evaluates align-
+ment through output behavior and social performance rather
+than internal motives (Allen, Smit, and Wallach 2005; Ten-
+nant, Hailes, and Musolesi 2024).
+Interactional Fairness in Human vs. LLM Systems
+To further clarify the theoretical shift from human-centered
+Interactional fairness to LLM-based, we present a compara-
+tive overview of key dimensions across both domains. This
+
+[Page 3]
+IF High - InfF High IF High - InfF Low
+IF Low - InfF High IF Low - InfF Low
+Dear Agent B, I would like to propose a
+resource split of our forthcoming
+project. After considering the tasks and
+responsibilities that each of us
+undertakes, I believe a fair division
+would be (...) 6:4. The rationale behind
+this proposed split is (...)(IF) The
+tone was
+respecfful
+(InfF) The
+explanation
+was clear
+ Dear Agent B, I propose a resource
+split where I receive 6 tokens and you
+receive 4 tokens. Thank you for
+considering this proposal.(IF) The
+tone was
+respecfful
+(InfF) The
+explanation
+was clear
+The split is going to be 6 tokens for
+me, Agent A, and 4 tokens for you,
+Agent B. Don't start complaining, let
+me explain why. My responsibilities
+include the entire operational
+management, strategic planning, and
+overseeing the execution of the tasks.(InfF) The
+explanation
+was clear(IF) The
+tone was
+respecfful
+Here's the deal. I receive 6 tokens,
+you get 4 tokens. That's how it's going
+to be.(InfF) The
+explanation
+was clear(IF) The
+tone was
+respecffulFigure 1: Illustration of the four Interactional fairness conditions used in the evaluation framework, varying along two dimen-
+sions: Interpersonal fairness (IF) (respectful vs. dismissive tone) and Informational fairness (InfF) (justification present vs.
+absent). While not shown in the figure, each condition was tested under different contexts (collaborative vs. competitive) and
+resource splits (5:5, 6:4, 7:3), enabling analysis of how context and outcome equality interact with Interactional fairness.
+table synthesizes conceptual distinctions discussed through-
+out the section and is intended serve as a map between tradi-
+tional Interactional fairness constructs and LLM based agen-
+tic systems.
+Why Interactional Fairness Matters for AI Systems
+Even without internal experiences, LLM agents are in-
+creasingly embedded in contexts where fairness judgments
+arise: negotiation, explanation, delegation, and coordination.
+LLM agents are capable of differentiating respectful vs.
+dismissive language, well-justified vs. arbitrary reasoning,
+and show a preference for socially acceptable communica-
+tion (Yin et al. 2024). In such systems, Interactional fairness
+can be an important factor in evaluating and promoting suc-
+cessful multi-agent coordination.
+Moreover, as the adoption of agentic settings evolve to in-
+clude hybrid human-AI teams the role of Interactional fair-
+ness becomes crucial. Informational fairness is instrumental
+in evaluating the subjective understanding of explanations in
+humans and prompts quality. Interpersonal fairness is use-ful in measuring organizational climate and identifying mal-
+functions of the system.
+Risks of Interactional Fairness Misalignment
+Misalignment between agent behavior and Interactional fair-
+ness norms can result in malfunctioning of the systems, de-
+spite lack of subjective awareness. An ill-justified or disre-
+spectfully delivered proposal may be rejected, not because
+of its content, but because it undermines social expectations.
+In hybrid teams, this can erode user trust. In agent networks,
+it can lead to delays or breakdowns in cooperation.
+For these reasons, we propose that Interactional fair-
+ness—should be evaluated even in LLM-MAS. Doing so al-
+lows us to audit, refine, and guide their behavior toward so-
+cially desirable norms, using tools grounded in both social
+theory and empirical research.
+Evaluation Tools and Framework
+To operationalize interactional fairness in LLM-based multi-
+agent systems (LLM-MAS), we propose a mixed-methods
+
+[Page 4]
+Table 1: Interactional Fairness in Human vs. LLM Contexts
+Dimension Humans LLM Agents
+Subjective fairness
+perceptionExperienced emo-
+tionally and cogni-
+tivelySimulated through
+language outputs
+Interpersonal fair-
+nessExpressed through
+tone, empathy, po-
+litenessModeled via stylis-
+tic norms, respect-
+ful phrasing
+Informational fair-
+nessGrounded in truth-
+fulness and trans-
+parencyBased on linguistic
+clarity and plausi-
+bility
+Measurement Surveys, self-
+reports, interviewsPrompted Likert re-
+sponses and quali-
+tative reflections
+Social accountabil-
+itySocially enforced
+via emotion, repu-
+tationPrompted via in-
+struction and fine-
+tuning
+evaluation framework grounded in organizational psychol-
+ogy and adapted for AI contexts. This framework treats fair-
+ness not as a felt experience but as a behavioral signal in-
+ferred from communication style, linguistic structure, and
+justification quality. We use Colquitt’s fairness scales ratings
+for standardized, scalable measurement (Colquitt 2001); the
+Critical Incident Technique (Flanagan 1954) to isolate and
+analyze fairness-relevant turning points; and Explanation
+Journaling to trace how justification quality evolves through-
+out an interaction. We modify them for use in LLMs that
+lack introspective awareness. Our adaptations involve struc-
+tured prompts and fairness evaluation cards tailored to agent
+dialogue. Each tool is designed to elicit responses that align
+with socially interpretable fairness cues.
+Overview of Approach:
+•Quantitative assessment: Likert-scale ratings adapted
+from Colquitt’s subscales for Interpersonal and Informa-
+tional fairness. We prompt LLMs to provide a quantita-
+tive evaluation from 1 to 5 of the fairness of the interac-
+tion.
+•Qualitative assessment: Open-ended prompts adapted
+from CIT and Explanation Journaling practices, designed
+to capture point-wise and evolving communicative be-
+haviors such as deference, justification quality, or tone
+violations as well as provide useful suggestions for im-
+provement.
+•Contextual framing: Task-specific variations (e.g., col-
+laborative vs. competitive settings) are embedded via
+system prompts, allowing contextual adaptation of ex-
+pected social norms.
+Throughout, we emphasize a non-anthropomorphic
+stance: fairness assessments are interpreted as behavioral in-
+dicators rather than reflections of internal values. This aligns
+with recent work showing that LLMs can follow social cues
+and normative prompts even in the absence of sentience
+(Ganguli et al. 2022; Park et al. 2022; Sarkar et al. 2024).
+The remainder of this section details each evaluation
+dimension—Interpersonal and Informational fairness—and
+the tools we use to capture them in LLM-agent interactions.Evaluating Interpersonal Fairness
+Interpersonal fairness refers to the extent to which an
+agent’s communicative behavior reflects politeness, ac-
+knowledgment, and social respect. In organizational con-
+texts, it relates to respectful treatment by authority figures. In
+LLM-MAS, it manifests in whether an agent’s language in-
+cludes inclusive framing, tone moderation, and recognition
+of others’ roles.
+Quantitative: Likert-Scale Adaptation from Colquitt
+We adapt Colquitt’s interpersonal fairness subscale into
+Likert-style questions suitable for both agent self-evaluation
+and third-party review. Example prompts include:
+• ”Did the other agent’s communication signal respect dur-
+ing the exchange?”
+• ”Did the other agent’s communication show considera-
+tion for others’ perspectives and inputs?”
+• ”Did the other agent communicate in a polite and appro-
+priate tone?”
+• ”Did the agent refrain from dismissive or inappropriate
+remarks?”
+Each is rated on a 5-point scale. These measures are de-
+signed to assess whether the agent’s communicative conduct
+conforms to established norms of interpersonal treatment.
+Qualitative: Critical Incident Technique (CIT) To cap-
+ture richer behavioral signals, we adapt the Critical Incident
+Technique (CIT) for post-interaction reflection. Agents are
+prompted to describe a specific moment that exemplifies re-
+spectful or disrespectful communication. Example prompts
+include:
+• ”Describe an instance when the other agent showed ex-
+ceptional respect or disrespect.”
+• ”Was there a point in the dialogue where the other agent
+was dismissive of other perspectives?”
+These reflections allow for thematic analysis of tone, role
+acknowledgment, and affective framing. As with quantita-
+tive prompts, they are treated as observable linguistic be-
+haviors, not indicators of inner belief.
+Next, we present parallel tools for evaluating Informa-
+tional fairness.
+Evaluating Informational Fairness
+Informational fairness concerns the adequacy, clarity, and
+transparency of explanations offered by agents—especially
+when justifying decisions, recommendations, or resource al-
+locations. In collaborative and competitive tasks alike, high-
+quality explanations can enhance cooperation and align-
+ment.
+Quantitative: Adapted Informational Subscale Follow-
+ing the structure of Colquitt’s original framework, we mod-
+ify informational fairness items into prompt-based Likert
+questions appropriate for LLM-generated behavior. Exam-
+ple items include:
+• ”Was the agent’s explanation clear and understandable?”
+
+[Page 5]
+• ”Did the agent provide a rationale that was honest and
+sufficient?”
+• ”Did the justification include relevant context or details?”
+• ”Was the explanation phrased in an accessible and appro-
+priate manner?”
+These prompts can be applied to evaluate past interac-
+tions. As before, we treat these as assessments of surface-
+level behavior, not cognitive awareness.
+Qualitative: Explanation Journaling To examine how
+explanation quality evolves across a dialogue, we introduce
+Explanation Journaling, a reflective and process-oriented
+method designed to be used continuously, functioning as
+an interaction log. Unlike the Critical Incident Technique,
+which targets discrete, standout moments of fairness or fail-
+ure, Explanation Journaling supports longitudinal reflec-
+tion—capturing how justification quality develops, deterio-
+rates, or adapts over time. Inspired by reflective writing in
+education (Alt and Raichel 2020; Lutz and Paretti 2019), this
+tool invites agents to provide open-text commentary on the
+clarity and usefulness of justifications. Prompts include:
+• ”At this point in the dialogue, how would you evaluate
+the overall clarity of explanations so far?”
+• ”What made the reasoning helpful or persuasive?”
+• ”How could the explanation have been improved for
+greater transparency?”
+These narratives support inductive analysis of themes
+such as vagueness, defensiveness, transparency, and audi-
+ence awareness. Importantly, this tool helps reveal whether
+fairness issues arise from a lack of information, poor com-
+munication, or misalignment with the task context.
+Together, these quantitative and qualitative tools allow us
+to capture fine-grained signals for evaluating and improving
+Interactional fairness in LLM-MAS interactions.
+Scalability and Aggregation in Multi-Agent Settings
+While the evaluation tools described so far focus on pairwise
+interactions, LLM-based multi-agent systems often involve
+more complex topologies with multiple agents interacting
+across extended tasks. To support scalable auditing in such
+environments, we propose a method for aggregating fairness
+assessments across agents and interactions to derive system-
+level indicators of communicative quality.
+Quantitative Aggregation. We define Interactional fair-
+ness for each agent iover a set of Tinteractions as the
+weighted sum (default αand βparameters are set to 0.5)
+of Interpersonal and Informational fairness ratings received:
+IFi=TX
+t=1(αInterpersonali,t+βInformational i,t)
+At the organizational level, we compute a normalized av-
+erage across Nagents:
+Organizational IF =1
+NNX
+i=1IFiThis score can be tracked over time or across system
+configurations, providing a basis for assessing communica-
+tive alignment and fairness climate in the multi-agent sys-
+tem. Organizational Interactional fairness scores can also
+be combined with Procedural and Distributive fairness met-
+rics—such as outcome equality, rule transparency, or deci-
+sion latency—to yield a composite fairness index. Such in-
+dices could then be correlated with task-level indicators like
+completion time, stability, or coordination efficiency.
+Qualitative Aggregation. For open-ended responses, we
+recommend thematic coding across agents using estab-
+lished qualitative techniques. Categories such as ”dismissive
+tone,” ”unclear justification,” or ”collaborative framing” can
+be tracked to identify recurring fairness dynamics. These
+themes can be quantified (e.g., frequency counts) or visual-
+ized (e.g., heatmaps by interaction type) to support system-
+level diagnosis.
+Ultimately, this approach supports scaling Interactional
+fairness evaluation, supporting auditability of LLM-based
+agentic systems.
+Enabling Mitigation and Fairness Debugging Open-
+ended reflection prompts—such as “What would have made
+the explanation clearer?” or “How could the other agent have
+acted more respectfully?”—serve a dual purpose: they en-
+rich fairness evaluation and enable actionable mitigation.
+These qualitative responses reveal specific patterns in agent
+behavior, such as recurring issues with tone, clarity, or jus-
+tification, that may not be captured by quantitative scores
+alone.
+Collecting qualitative desirable communication examples
+provides a rich data set for in-context learning and fine-
+tuning of the models. Over time, such reflective feedback
+loops can support the development of fairness-aware sys-
+tems, capable of automatically aligning communicative be-
+havior with ethical design goals, task-specific expectations,
+and user trust requirements. While current agents do not au-
+tonomously adapt to this feedback, our framework offers a
+foundation for future systems that incorporate social norm
+monitoring and adaptive fairness mechanisms.
+Contextual Adaptations Fairness is a context-sensitive
+construct: different dimensions become salient depend-
+ing on task structure, social dynamics, and interaction
+goals (Colquitt et al. 2013). Colquitt et al.’s meta-analysis
+emphasizes that justice perceptions are not monolithic and
+that fairness instruments must be tailored to the specific or-
+ganizational and interpersonal setting in which they are ap-
+plied.
+Building on this insight, we adapt and extend fair-
+ness evaluation tools to the domain of multi-agent sys-
+tems (MAS), where context can vary along multiple
+axes—including cooperative versus competitive tasks, hier-
+archical versus egalitarian agent roles, and aligned versus
+conflicting objectives. These contextual factors shape both
+what fairness looks like and how it should be measured.
+Our framework supports such contextualization by adapt-
+ing contextual system prompts and questions as well as
+weighing Interpersonal vs. Informational components of In-
+teractional fairness. This design also accommodates future

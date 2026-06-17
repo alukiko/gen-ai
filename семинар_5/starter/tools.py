@@ -20,6 +20,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import date as _date
 from datetime import datetime
+from calendar import monthrange
 from pathlib import Path
 
 import sympy  # noqa: F401  (пригодится в calculate)
@@ -45,6 +46,18 @@ def _parse_date(s: str | None) -> _date:
     if isinstance(s, _date):
         return s
     return datetime.strptime(s, "%Y-%m-%d").date()
+
+
+def _parse_period(s: str, *, end_of_month: bool = False) -> tuple[_date, int, int]:
+    """Принять YYYY-MM или YYYY-MM-DD и вернуть дату + год/месяц."""
+    if not isinstance(s, str):
+        raise ValueError("period должен быть строкой YYYY-MM или YYYY-MM-DD")
+    if re.fullmatch(r"\d{4}-\d{2}", s):
+        year, month = map(int, s.split("-"))
+        day = monthrange(year, month)[1] if end_of_month else 1
+        return _date(year, month, day), year, month
+    d = _parse_date(s)
+    return d, d.year, d.month
 
 
 # ===========================================================================
@@ -258,6 +271,81 @@ def get_unemployment(year: int, month: int) -> dict:
                     "source": "rosstat_csv",
                 }
     return {"error": f"нет данных по безработице на {year}-{month:02d}"}
+
+
+# ===========================================================================
+# 3c. Сравнение двух периодов
+# ===========================================================================
+
+
+def compare_periods(metric: str, period_a: str, period_b: str) -> dict:
+    """
+    Сравнить значение метрики в двух периодах.
+
+    Args:
+        metric: "key_rate" | "fx_USD" | "fx_EUR" | "fx_CNY" | "cpi" | "unemployment"
+        period_a: "YYYY-MM" или "YYYY-MM-DD"
+        period_b: "YYYY-MM" или "YYYY-MM-DD"
+
+    Returns:
+        {"metric": ..., "a": {"date": ..., "value": ...}, "b": {"date": ..., "value": ...},
+         "delta": b.value - a.value, "ratio": b.value / a.value, "source": "..."}
+    """
+    metric = metric.strip()
+
+    def read_value(period: str) -> tuple[str, float, str]:
+        if metric.startswith("fx_"):
+            d, _, _ = _parse_period(period)
+            currency = metric.removeprefix("fx_").upper()
+            obs = get_fx_rate(currency, d.isoformat())
+            if "error" in obs:
+                raise ValueError(obs["error"])
+            return obs["date"], float(obs["rate"]), obs.get("source", "unknown")
+
+        if metric == "key_rate":
+            d, _, _ = _parse_period(period)
+            obs = get_key_rate(d.isoformat())
+            if "error" in obs:
+                raise ValueError(obs["error"])
+            return obs["date"], float(obs["rate"]), obs.get("source", "unknown")
+
+        if metric == "cpi":
+            _, year, month = _parse_period(period, end_of_month=True)
+            obs = get_inflation(year, month)
+            if "error" in obs:
+                raise ValueError(obs["error"])
+            return f"{year}-{month:02d}", float(obs["cpi_yoy"]), obs.get("source", "unknown")
+
+        if metric == "unemployment":
+            _, year, month = _parse_period(period, end_of_month=True)
+            obs = get_unemployment(year, month)
+            if "error" in obs:
+                raise ValueError(obs["error"])
+            return f"{year}-{month:02d}", float(obs["unemployment"]), obs.get("source", "unknown")
+
+        raise ValueError(
+            "metric должен быть одним из: key_rate, fx_USD, fx_EUR, fx_CNY, cpi, unemployment"
+        )
+
+    try:
+        date_a, value_a, source_a = read_value(period_a)
+        date_b, value_b, source_b = read_value(period_b)
+        ratio = None if value_a == 0 else value_b / value_a
+        return {
+            "metric": metric,
+            "a": {"date": date_a, "value": value_a},
+            "b": {"date": date_b, "value": value_b},
+            "delta": round(value_b - value_a, 6),
+            "ratio": None if ratio is None else round(ratio, 6),
+            "source": "+".join(sorted({source_a, source_b})),
+        }
+    except Exception as e:
+        return {
+            "metric": metric,
+            "a": {"period": period_a},
+            "b": {"period": period_b},
+            "error": f"{type(e).__name__}: {e}",
+        }
 
 
 # ===========================================================================

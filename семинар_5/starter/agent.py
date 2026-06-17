@@ -21,6 +21,7 @@ import argparse
 import datetime
 import json
 import sys
+import uuid
 from concurrent.futures import ThreadPoolExecutor
 from json.decoder import JSONDecodeError
 from pathlib import Path
@@ -32,7 +33,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from llm_client import get_model, make_client, make_raw_client
 from schemas import TOOL_SCHEMAS
-from tools import calculate, get_fx_rate, get_inflation, get_key_rate, get_unemployment
+from tools import (
+    calculate,
+    compare_periods,
+    get_fx_rate,
+    get_inflation,
+    get_key_rate,
+    get_unemployment,
+)
 
 # набор инструментов
 TOOLS_IMPL = {
@@ -40,6 +48,7 @@ TOOLS_IMPL = {
     "get_key_rate": get_key_rate,
     "get_inflation": get_inflation,
     "get_unemployment": get_unemployment,
+    "compare_periods": compare_periods,
     "calculate": calculate,
 }
 
@@ -104,23 +113,27 @@ _BASE_RULES = """\
 - get_key_rate: ключевая ставка Цб на дату
 - get_inflation: ИПЦ (% г/г) на конец месяца
 - get_unemployment: безработица (% рабочей силы) на конец месяца
+- compare_periods: сравнение одной метрики в двух датах/месяцах, сразу даёт delta и ratio
 - calculate: безопасный калькулятор для арифметики над полученными числами
 
 Алгоритм:
 1. Разложи вопрос: какие числа нужны и в каком порядке. Если несколько чисел
    независимы — запрашивай их в одном шаге (несколько вызовов сразу).
 2. Арифметику считай ТОЛЬКО через calculate.
-3. Реальная ставка = номинальная ставка − инфляция г/г.
-4. Реальная доходность вклада ≈ (1 + ставка/100) / (1 + инфляция/100) − 1.
-5. Индекс нищеты = инфляция г/г + безработица.
-6. Кросс-курс «сколько B за 1 A» = (рублей за 1 A) / (рублей за 1 B).
+3. Если вопрос сравнивает одну метрику между двумя датами/месяцами
+   ("во сколько раз", "на сколько изменилась", "с X по Y"), зови
+   compare_periods вместо ручной пары get_* + calculate.
+4. Реальная ставка = номинальная ставка − инфляция г/г.
+5. Реальная доходность вклада ≈ (1 + ставка/100) / (1 + инфляция/100) − 1.
+6. Индекс нищеты = инфляция г/г + безработица.
+7. Кросс-курс «сколько B за 1 A» = (рублей за 1 A) / (рублей за 1 B).
    Пример: «юаней за доллар» = (рублей за доллар) / (рублей за юань).
 """
 
 SYSTEM_PROMPT = (
     _BASE_RULES
     + """\
-7. Когда данных достаточно — выдай финальный ответ обычным текстом бЕЗ вызовов
+8. Когда данных достаточно — выдай финальный ответ обычным текстом бЕЗ вызовов
    инструментов. Одна-две фразы, с числами и единицами. Если число из
    fallback_csv — оговорись, что Цб в моменте недоступен.
 Формат даты — YYYY-MM-DD.
@@ -131,7 +144,7 @@ SYSTEM_PROMPT = (
 SYSTEM_PROMPT_PRO = (
     _BASE_RULES
     + """\
-7. Когда данных достаточно — НЕ пиши текст, а вызови submit_answer со структурой
+8. Когда данных достаточно — НЕ пиши текст, а вызови submit_answer со структурой
    (answer, value, unit, sources, confidence).
 Формат даты — YYYY-MM-DD.
 """
@@ -250,6 +263,7 @@ def run_agent(
     use_cache: bool = False,
     track_cost: bool = False,
     verbose: bool = True,
+    trace_path: Path | None = None,
 ) -> dict[str, Any]:
     """ReAct-цикл. базовый режим — финал текстом; флаги включают блоки 6-10."""
     client = make_raw_client()
@@ -263,6 +277,17 @@ def run_agent(
     ]
     trace: list[dict[str, Any]] = []
     usage_log: list[dict[str, Any]] = []  # блок 10 — токены по шагам
+    run_id = str(uuid.uuid4())
+    trace_file = trace_path or (Path(__file__).resolve().parent / "trace.jsonl")
+
+    def write_trace(event: dict[str, Any]) -> None:
+        row = {
+            "run_id": run_id,
+            "ts": datetime.datetime.now().replace(microsecond=0).isoformat(),
+            **event,
+        }
+        with open(trace_file, "a", encoding="utf-8") as f:
+            f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
     for step in range(1, max_iter + 1):
         resp = client.chat.completions.create(
@@ -295,6 +320,7 @@ def run_agent(
 
         if not msg.tool_calls:
             trace.append({"step": step, "final": msg.content})
+            write_trace({"step": step, "final": msg.content})
             return _finish(
                 {
                     "answer": msg.content,
@@ -329,6 +355,9 @@ def run_agent(
                     }
                 )
                 trace.append(
+                    {"step": step, "call": tc.function.name, "args": args, "obs": obs}
+                )
+                write_trace(
                     {"step": step, "call": tc.function.name, "args": args, "obs": obs}
                 )
                 if verbose:
@@ -366,6 +395,8 @@ def run_agent(
             messages.append(
                 {"role": "tool", "tool_call_id": submit.id, "content": "ответ принят"}
             )
+            trace.append({"step": step, "final": ans.answer})
+            write_trace({"step": step, "final": ans.answer})
             return _finish(
                 {
                     "answer": ans.answer,
@@ -379,6 +410,7 @@ def run_agent(
                 verbose=verbose,
             )
 
+    write_trace({"step": max_iter, "final": None, "error": f"исчерпан лимит шагов max_iter={max_iter}"})
     return _finish(
         {
             "answer": None,
@@ -437,6 +469,7 @@ def main():
         use_critic=a.critic,
         use_cache=a.cache,
         track_cost=a.cost,
+        trace_path=a.trace,
     )
 
     print("\n=== ВОПРОС ===")

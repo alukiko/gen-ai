@@ -44,6 +44,48 @@ CASES = [
         "must_have": ["год"],
         "comment": "Вычисление с формулой: 72 / ставка = годы.",
     },
+    {
+        "id": 5,
+        "query": "Во сколько раз вырос курс USD с января 2022 по апрель 2026?",
+        "expected_tools": ["compare_periods"],
+        "must_have": [],
+        "comment": "Новый инструмент: сравнение курса в двух периодах и ratio.",
+    },
+    {
+        "id": 6,
+        "query": "Через compare_periods посчитай, на сколько процентных пунктов изменилась ключевая ставка с марта 2022 по июнь 2024?",
+        "expected_tools": ["compare_periods"],
+        "must_have": [],
+        "comment": "Новый инструмент: сравнение ключевой ставки в двух месяцах.",
+    },
+    {
+        "id": 7,
+        "query": "Сравни инфляцию в феврале 2022 и феврале 2023: где была выше и на сколько пунктов?",
+        "expected_tools": ["compare_periods"],
+        "must_have": [],
+        "comment": "Трудный: нужно не перепутать разницу в пунктах с отношением во сколько раз.",
+    },
+    {
+        "id": 8,
+        "query": "Что было выше в марте 2026: инфляция или безработица, и на сколько пунктов?",
+        "expected_tools": ["get_inflation", "get_unemployment", "calculate"],
+        "must_have": [],
+        "comment": "Трудный: разные метрики за один месяц, нужен корректный порядок вызовов и вычитание.",
+    },
+    {
+        "id": 9,
+        "query": "Какой был индекс нищеты в марте 2026?",
+        "expected_tools": ["get_inflation", "get_unemployment", "calculate"],
+        "must_have": [],
+        "comment": "Реальный макро-вопрос: инфляция плюс безработица.",
+    },
+    {
+        "id": 10,
+        "query": "Сколько юаней за доллар по кросс-курсу ЦБ на 15 апреля 2026?",
+        "expected_tools": ["get_fx_rate", "calculate"],
+        "must_have": [],
+        "comment": "Реальный макро-вопрос: нужны курсы USD и CNY и деление USD/CNY.",
+    },
 ]
 
 
@@ -65,10 +107,10 @@ def run_case(case: dict, *, use_cache: bool = False, track_cost: bool = False) -
 
     print(f"\n  tools used : {used_tools}")
     print(
-        f"  expected    : {case['expected_tools']}  → {'OK' if tool_match else 'MISS'}"
+        f"  expected    : {case['expected_tools']}  -> {'OK' if tool_match else 'MISS'}"
     )
     print(f"  answer      : {answer[:200]}")
-    print(f"  must_have   : {case['must_have']}  → {'OK' if text_match else 'MISS'}")
+    print(f"  must_have   : {case['must_have']}  -> {'OK' if text_match else 'MISS'}")
     print(f"  verdict     : {'PASS' if ok else 'FAIL'}")
 
     return {

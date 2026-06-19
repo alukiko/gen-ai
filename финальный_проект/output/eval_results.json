@@ -1,0 +1,2598 @@
+{
+  "summary": {
+    "cases": 15,
+    "pass_rate": 1.0,
+    "avg_delta": 0.141,
+    "ghost_numbers_total": 0,
+    "ghost_quotes_total": 0,
+    "llm_mode": false
+  },
+  "rows": [
+    {
+      "case_id": 1,
+      "original_score": 3.88,
+      "best_score": 3.88,
+      "delta": 0.0,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 2,
+      "original_score": 3.34,
+      "best_score": 3.74,
+      "delta": 0.4,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 3,
+      "original_score": 4.1,
+      "best_score": 4.26,
+      "delta": 0.16,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 4,
+      "original_score": 4.17,
+      "best_score": 4.17,
+      "delta": 0.0,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 5,
+      "original_score": 3.88,
+      "best_score": 4.12,
+      "delta": 0.24,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 6,
+      "original_score": 4.2,
+      "best_score": 4.2,
+      "delta": 0.0,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 7,
+      "original_score": 3.62,
+      "best_score": 3.96,
+      "delta": 0.34,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 8,
+      "original_score": 3.86,
+      "best_score": 3.86,
+      "delta": 0.0,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 9,
+      "original_score": 4.08,
+      "best_score": 4.09,
+      "delta": 0.01,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 10,
+      "original_score": 3.69,
+      "best_score": 4.35,
+      "delta": 0.66,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 11,
+      "original_score": 4.49,
+      "best_score": 4.49,
+      "delta": 0.0,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 12,
+      "original_score": 4.11,
+      "best_score": 4.11,
+      "delta": 0.0,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 13,
+      "original_score": 3.76,
+      "best_score": 4.02,
+      "delta": 0.26,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 14,
+      "original_score": 3.85,
+      "best_score": 3.9,
+      "delta": 0.05,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    },
+    {
+      "case_id": 15,
+      "original_score": 4.19,
+      "best_score": 4.19,
+      "delta": 0.0,
+      "passed": true,
+      "judge_score": 4,
+      "tool_steps": 5,
+      "ghost_numbers": 0,
+      "ghost_quotes": 0,
+      "used_tools": "predict_engagement"
+    }
+  ],
+  "results": [
+    {
+      "original": {
+        "text": "Our new cloud monitoring dashboard is live. Check the website for details. #cloud",
+        "weekday": "Wednesday",
+        "hour": 13
+      },
+      "original_prediction": {
+        "engagement_score": 3.88,
+        "weekday": "Wednesday",
+        "hour": 13,
+        "text_length": 81
+      },
+      "best_variant": {
+        "text": "Our new cloud monitoring dashboard is live. Check the website for details. #cloud",
+        "weekday": "Wednesday",
+        "hour": 13,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "best_prediction": {
+        "engagement_score": 3.88,
+        "weekday": "Wednesday",
+        "hour": 13,
+        "text_length": 81
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-686540701643964416",
+          "text": "#FantasyKickstarter Steampunk icon set for Amazon Web Services dashboard",
+          "weekday": "Monday",
+          "hour": 6,
+          "engagement_score": 0.0,
+          "similarity": 0.369
+        },
+        {
+          "tweet_id": "tw-683951354361036800",
+          "text": "Our Website is live at http://lxmoda.pt ...now speeding it up with #AWS . #3dprinting #WearableTech #Wearables #fashion #lxmoda",
+          "weekday": "Monday",
+          "hour": 3,
+          "engagement_score": 4.86,
+          "similarity": 0.333
+        },
+        {
+          "tweet_id": "tw-684018278629568512",
+          "text": "@SpanishToMove Hola. Thx for the follow amigo. Check out @g2techgroup for any IT or #AWS website questions.",
+          "weekday": "Monday",
+          "hour": 7,
+          "engagement_score": 0.0,
+          "similarity": 0.277
+        },
+        {
+          "tweet_id": "tw-684811709022867456",
+          "text": "I can't even sign into #Coachella's website. This is messed up. #AWS? #Elasticity?",
+          "weekday": "Wednesday",
+          "hour": 12,
+          "engagement_score": 0.0,
+          "similarity": 0.273
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Our new cloud monitoring dashboard is live. Check the website for details. #cloud",
+            "weekday": "Wednesday",
+            "hour": 13
+          },
+          "output": {
+            "engagement_score": 3.88,
+            "weekday": "Wednesday",
+            "hour": 13,
+            "text_length": 81
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Our new cloud monitoring dashboard is live. Check the website for details. #cloud What would you build with it? #cloud",
+            "weekday": "Monday",
+            "hour": 3,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.53,
+            "weekday": "Monday",
+            "hour": 3,
+            "text_length": 118
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Our new cloud monitoring dashboard is live. Check the website for details. #cloud Join the discussion and share your take. #cloud",
+            "weekday": "Wednesday",
+            "hour": 3,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.77,
+            "weekday": "Wednesday",
+            "hour": 3,
+            "text_length": 141
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Our new cloud monitoring dashboard is live. Check the website for details. #cloud Save this for your next project and tell us what should come next. #cloud",
+            "weekday": "Monday",
+            "hour": 18,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.85,
+            "weekday": "Monday",
+            "hour": 18,
+            "text_length": 155
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Our new cloud monitoring dashboard is live. Check the website for details. #cloud",
+            "weekday": "Wednesday",
+            "hour": 13,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.88,
+            "weekday": "Wednesday",
+            "hour": 13,
+            "text_length": 81
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.88",
+          "3.88",
+          "13"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.00, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws",
+        "weekday": "Thursday",
+        "hour": 17
+      },
+      "original_prediction": {
+        "engagement_score": 3.34,
+        "weekday": "Thursday",
+        "hour": 17,
+        "text_length": 88
+      },
+      "best_variant": {
+        "text": "We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws Save this for your next project and tell us what should come next. #jobs #aws",
+        "weekday": "Friday",
+        "hour": 12,
+        "rationale": "Uses a practical CTA and avoids very low attention hours."
+      },
+      "best_prediction": {
+        "engagement_score": 3.74,
+        "weekday": "Friday",
+        "hour": 12,
+        "text_length": 166
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-685182012962009088",
+          "text": "Aws Senior Software Development Engineer Database Systems Jobs in Seattle WA #Seattle #WA #jobs #jobsearch https://www.jobfindly.com/aws-senior-software-development-engineer-database-systems-jobs-seattle-wa.html",
+          "weekday": "Thursday",
+          "hour": 12,
+          "engagement_score": 0.0,
+          "similarity": 0.312
+        },
+        {
+          "tweet_id": "tw-685479487568490500",
+          "text": "Senior Systems Engineer Aws Jobs in Austin TX #Austin #TX #jobs #jobsearch https://www.jobfindly.com/senior-systems-engineer-aws-jobs-austin-tx.html",
+          "weekday": "Friday",
+          "hour": 8,
+          "engagement_score": 0.0,
+          "similarity": 0.304
+        },
+        {
+          "tweet_id": "tw-685561523897544704",
+          "text": "Systems Engineer Aws Database Services Hiring Jobs in Seattle WA #Seattle #WA #jobs #jobsearch https://www.jobfindly.com/systems-engineer-aws-database-services-hiring-jobs-seattle-wa.html",
+          "weekday": "Friday",
+          "hour": 13,
+          "engagement_score": 0.0,
+          "similarity": 0.296
+        },
+        {
+          "tweet_id": "tw-686680402346536960",
+          "text": "Systems Engineer Aws Database Services Hiring Jobs in Seattle WA #Seattle #WA #jobs #jobsearch https://www.jobfindly.com/systems-engineer-aws-database-services-hiring-jobs-seattle-wa.html",
+          "weekday": "Monday",
+          "hour": 15,
+          "engagement_score": 0.0,
+          "similarity": 0.296
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws",
+            "weekday": "Thursday",
+            "hour": 17
+          },
+          "output": {
+            "engagement_score": 3.34,
+            "weekday": "Thursday",
+            "hour": 17,
+            "text_length": 88
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws What would you build with it? #jobs #aws",
+            "weekday": "Friday",
+            "hour": 12,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.26,
+            "weekday": "Friday",
+            "hour": 12,
+            "text_length": 129
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws Join the discussion and share your take. #jobs #aws",
+            "weekday": "Thursday",
+            "hour": 12,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.48,
+            "weekday": "Thursday",
+            "hour": 12,
+            "text_length": 152
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws Save this for your next project and tell us what should come next. #jobs #aws",
+            "weekday": "Friday",
+            "hour": 12,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.74,
+            "weekday": "Friday",
+            "hour": 12,
+            "text_length": 166
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws",
+            "weekday": "Thursday",
+            "hour": 17,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.34,
+            "weekday": "Thursday",
+            "hour": 17,
+            "text_length": 88
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.34",
+          "3.74",
+          "12"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.40, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Join our webinar about practical machine learning operations next week. Seats are limited. #mlops",
+        "weekday": "Tuesday",
+        "hour": 11
+      },
+      "original_prediction": {
+        "engagement_score": 4.1,
+        "weekday": "Tuesday",
+        "hour": 11,
+        "text_length": 97
+      },
+      "best_variant": {
+        "text": "New update: Join our webinar about practical machine learning operations next week. Seats are limited. #mlops Join the discussion and share your take. #mlops",
+        "weekday": "Tuesday",
+        "hour": 4,
+        "rationale": "Frames the post as news and adds a clear discussion prompt."
+      },
+      "best_prediction": {
+        "engagement_score": 4.26,
+        "weekday": "Tuesday",
+        "hour": 4,
+        "text_length": 157
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-685537751123378176",
+          "text": "Dato Uses AWS for Real-Time Machine Learning-BasedAnalytics http://doap.com/2016/01/08/dato-uses-aws-for-real-time-machine-learning-based-analytics/",
+          "weekday": "Friday",
+          "hour": 12,
+          "engagement_score": 0.0,
+          "similarity": 0.294
+        },
+        {
+          "tweet_id": "tw-686808699906732032",
+          "text": "Experimenting with AWS Machine Learning for Classification http://www.datasciencecentral.com/profiles/blogs/experimenting-with-aws-machine-learning-for-classification",
+          "weekday": "Tuesday",
+          "hour": 0,
+          "engagement_score": 4.63,
+          "similarity": 0.285
+        },
+        {
+          "tweet_id": "tw-682825541943214080",
+          "text": "RT @InfonomicsToday: http://Infonomics.Today Experimenting with AWS Machine Learning for Classification http://www.datasciencecentral.com/profiles/blogs/experimenting-with-aws-machine-learning-for-classification",
+          "weekday": "Friday",
+          "hour": 0,
+          "engagement_score": 2.41,
+          "similarity": 0.279
+        },
+        {
+          "tweet_id": "tw-686866568974831616",
+          "text": "RT @analyticbridge: Experimenting with AWS Machine Learning for Classification http://www.datasciencecentral.com/profiles/blogs/experimenting-with-aws-machine-learning-for-classification",
+          "weekday": "Tuesday",
+          "hour": 4,
+          "engagement_score": 5.07,
+          "similarity": 0.276
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Join our webinar about practical machine learning operations next week. Seats are limited. #mlops",
+            "weekday": "Tuesday",
+            "hour": 11
+          },
+          "output": {
+            "engagement_score": 4.1,
+            "weekday": "Tuesday",
+            "hour": 11,
+            "text_length": 97
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Join our webinar about practical machine learning operations next week. Seats are limited. #mlops What would you build with it? #mlops",
+            "weekday": "Friday",
+            "hour": 4,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.8,
+            "weekday": "Friday",
+            "hour": 4,
+            "text_length": 134
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Join our webinar about practical machine learning operations next week. Seats are limited. #mlops Join the discussion and share your take. #mlops",
+            "weekday": "Tuesday",
+            "hour": 4,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 4.26,
+            "weekday": "Tuesday",
+            "hour": 4,
+            "text_length": 157
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Join our webinar about practical machine learning operations next week. Seats are limited. #mlops Save this for your next project and tell us what should come next. #mlops",
+            "weekday": "Friday",
+            "hour": 18,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 4.11,
+            "weekday": "Friday",
+            "hour": 18,
+            "text_length": 171
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Join our webinar about practical machine learning operations next week. Seats are limited. #mlops",
+            "weekday": "Tuesday",
+            "hour": 11,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 4.1,
+            "weekday": "Tuesday",
+            "hour": 11,
+            "text_length": 97
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "4.1",
+          "4.26",
+          "4"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.16, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "New API release: faster search, better logs, and simpler billing exports. #devtools",
+        "weekday": "Monday",
+        "hour": 10
+      },
+      "original_prediction": {
+        "engagement_score": 4.17,
+        "weekday": "Monday",
+        "hour": 10,
+        "text_length": 83
+      },
+      "best_variant": {
+        "text": "New API release: faster search, better logs, and simpler billing exports. #devtools",
+        "weekday": "Monday",
+        "hour": 10,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "best_prediction": {
+        "engagement_score": 4.17,
+        "weekday": "Monday",
+        "hour": 10,
+        "text_length": 83
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-685537738905391104",
+          "text": "AWS Loft Talks  Better Living Through Faster ContinuousIntegration http://doap.com/2016/01/08/aws-loft-talks-better-living-through-faster-continuous-integration/",
+          "weekday": "Friday",
+          "hour": 12,
+          "engagement_score": 0.0,
+          "similarity": 0.288
+        },
+        {
+          "tweet_id": "tw-684180327368011778",
+          "text": "Amazon AWS billing management is atrocious!  20 pages of reference on how to activate Billing Access to IAM users... https://www.facebook.com/greg.rundlett/posts/10153931928679708",
+          "weekday": "Monday",
+          "hour": 18,
+          "engagement_score": 0.0,
+          "similarity": 0.266
+        },
+        {
+          "tweet_id": "tw-684617580498190336",
+          "text": "@notch Better than AWS!?",
+          "weekday": "Tuesday",
+          "hour": 23,
+          "engagement_score": 0.0,
+          "similarity": 0.231
+        },
+        {
+          "tweet_id": "tw-684404080551309312",
+          "text": "@notch like aws better",
+          "weekday": "Tuesday",
+          "hour": 9,
+          "engagement_score": 0.0,
+          "similarity": 0.207
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New API release: faster search, better logs, and simpler billing exports. #devtools",
+            "weekday": "Monday",
+            "hour": 10
+          },
+          "output": {
+            "engagement_score": 4.17,
+            "weekday": "Monday",
+            "hour": 10,
+            "text_length": 83
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New API release: faster search, better logs, and simpler billing exports. #devtools What would you build with it? #devtools",
+            "weekday": "Tuesday",
+            "hour": 12,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 4.01,
+            "weekday": "Tuesday",
+            "hour": 12,
+            "text_length": 123
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: New API release: faster search, better logs, and simpler billing exports. #devtools Join the discussion and share your take. #devtools",
+            "weekday": "Monday",
+            "hour": 12,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 4.12,
+            "weekday": "Monday",
+            "hour": 12,
+            "text_length": 146
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New API release: faster search, better logs, and simpler billing exports. #devtools Save this for your next project and tell us what should come next. #devtools",
+            "weekday": "Tuesday",
+            "hour": 12,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.75,
+            "weekday": "Tuesday",
+            "hour": 12,
+            "text_length": 160
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New API release: faster search, better logs, and simpler billing exports. #devtools",
+            "weekday": "Monday",
+            "hour": 10,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 4.17,
+            "weekday": "Monday",
+            "hour": 10,
+            "text_length": 83
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "4.17",
+          "4.17",
+          "10"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.00, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Case study: how our team reduced support response time with automation. #customersuccess",
+        "weekday": "Friday",
+        "hour": 15
+      },
+      "original_prediction": {
+        "engagement_score": 3.88,
+        "weekday": "Friday",
+        "hour": 15,
+        "text_length": 88
+      },
+      "best_variant": {
+        "text": "Case study: how our team reduced support response time with automation. #customersuccess Save this for your next project and tell us what should come next. #customersuccess",
+        "weekday": "Friday",
+        "hour": 13,
+        "rationale": "Uses a practical CTA and avoids very low attention hours."
+      },
+      "best_prediction": {
+        "engagement_score": 4.12,
+        "weekday": "Friday",
+        "hour": 13,
+        "text_length": 172
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-685562818590973952",
+          "text": "RT @mndoci: New Amazon ECS case study: Linden Labs. http://twitter.com/mndoci/status/685561230140915712/photo/1",
+          "weekday": "Friday",
+          "hour": 13,
+          "engagement_score": 2.17,
+          "similarity": 0.286
+        },
+        {
+          "tweet_id": "tw-683855890596823040",
+          "text": "\"AWS Case Study: SEAOILhttp://aws.amazon.com/solutions/case-studies/seaoil/ http://aws.amazon.com/solutions/case-studies/seaoil/\"",
+          "weekday": "Sunday",
+          "hour": 20,
+          "engagement_score": 0.0,
+          "similarity": 0.251
+        },
+        {
+          "tweet_id": "tw-682797707920936961",
+          "text": "@KoleHam @VaMitch53 @realDonaldTrump @bean_kay @PeggyBRooster Kole once again study first! AWs used least in most shootings",
+          "weekday": "Thursday",
+          "hour": 22,
+          "engagement_score": 0.0,
+          "similarity": 0.246
+        },
+        {
+          "tweet_id": "tw-684679595954679808",
+          "text": "12 months server response time. Its not difficult to spot when we moved from dedicated to AWS :( http://twitter.com/jontybehr/status/684679595954679808/photo/1",
+          "weekday": "Wednesday",
+          "hour": 3,
+          "engagement_score": 0.0,
+          "similarity": 0.237
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Case study: how our team reduced support response time with automation. #customersuccess",
+            "weekday": "Friday",
+            "hour": 15
+          },
+          "output": {
+            "engagement_score": 3.88,
+            "weekday": "Friday",
+            "hour": 15,
+            "text_length": 88
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Case study: how our team reduced support response time with automation. #customersuccess What would you build with it? #customersuccess",
+            "weekday": "Friday",
+            "hour": 13,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.86,
+            "weekday": "Friday",
+            "hour": 13,
+            "text_length": 135
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Case study: how our team reduced support response time with automation. #customersuccess Join the discussion and share your take. #customersuccess",
+            "weekday": "Friday",
+            "hour": 13,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.89,
+            "weekday": "Friday",
+            "hour": 13,
+            "text_length": 158
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Case study: how our team reduced support response time with automation. #customersuccess Save this for your next project and tell us what should come next. #customersuccess",
+            "weekday": "Friday",
+            "hour": 13,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 4.12,
+            "weekday": "Friday",
+            "hour": 13,
+            "text_length": 172
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Case study: how our team reduced support response time with automation. #customersuccess",
+            "weekday": "Friday",
+            "hour": 15,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.88,
+            "weekday": "Friday",
+            "hour": 15,
+            "text_length": 88
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.88",
+          "4.12",
+          "13"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.24, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Security patch is available for all users. Please update your workspace today. #security",
+        "weekday": "Wednesday",
+        "hour": 9
+      },
+      "original_prediction": {
+        "engagement_score": 4.2,
+        "weekday": "Wednesday",
+        "hour": 9,
+        "text_length": 88
+      },
+      "best_variant": {
+        "text": "Security patch is available for all users. Please update your workspace today. #security",
+        "weekday": "Wednesday",
+        "hour": 9,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "best_prediction": {
+        "engagement_score": 4.2,
+        "weekday": "Wednesday",
+        "hour": 9,
+        "text_length": 88
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-684773168360386560",
+          "text": "The Most Popular AWS Security Blog Posts in 2015 - AWS Security Blog http://blogs.aws.amazon.com/security/post/Tx4QX7W51NDSLO/The-Most-Popular-AWS-Security-Blog-Posts-in-2015",
+          "weekday": "Wednesday",
+          "hour": 9,
+          "engagement_score": 3.08,
+          "similarity": 0.34
+        },
+        {
+          "tweet_id": "tw-684790254029664256",
+          "text": "RT @rstrazza: The Most Popular AWS Security Blog Posts in 2015 - AWS Security Blog http://blogs.aws.amazon.com/security/post/Tx4QX7W51NDSLO/The-Most-Popular-AWS-Security-Blog-Posts-in-2015",
+          "weekday": "Wednesday",
+          "hour": 10,
+          "engagement_score": 2.6,
+          "similarity": 0.339
+        },
+        {
+          "tweet_id": "tw-683245949200805888",
+          "text": "RT @rkedrin: We are hiring: AWS Security Engineer AWS Security Engine http://www.reqcloud.com/jobs/650669/?k=QepTY5cIky/c1Aqgc1Fofd8Iffv2Cfo94wPXLzekZdk&utm_source=twitter&utm_campaign=reqCloud_JobPost #job @awscloud #security #securityengineering",
+          "weekday": "Saturday",
+          "hour": 4,
+          "engagement_score": 2.53,
+          "similarity": 0.329
+        },
+        {
+          "tweet_id": "tw-683200193345531904",
+          "text": "RT @rkedrin: We are hiring: AWS Security Engineer AWS Security Engine http://www.reqcloud.com/jobs/650669/?k=u43j60N7hIcZ4mE33BlbhR9yoNNHNZnOSFYuh5WRVh4&utm_source=twitter&utm_campaign=reqCloud_JobPost #job @awscloud #security #securityengineering",
+          "weekday": "Saturday",
+          "hour": 1,
+          "engagement_score": 2.53,
+          "similarity": 0.329
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Security patch is available for all users. Please update your workspace today. #security",
+            "weekday": "Wednesday",
+            "hour": 9
+          },
+          "output": {
+            "engagement_score": 4.2,
+            "weekday": "Wednesday",
+            "hour": 9,
+            "text_length": 88
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Security patch is available for all users. Please update your workspace today. #security What would you build with it? #security",
+            "weekday": "Wednesday",
+            "hour": 9,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.76,
+            "weekday": "Wednesday",
+            "hour": 9,
+            "text_length": 128
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Security patch is available for all users. Please update your workspace today. #security Join the discussion and share your take. #security",
+            "weekday": "Wednesday",
+            "hour": 9,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.99,
+            "weekday": "Wednesday",
+            "hour": 9,
+            "text_length": 151
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Security patch is available for all users. Please update your workspace today. #security Save this for your next project and tell us what should come next. #security",
+            "weekday": "Wednesday",
+            "hour": 9,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.79,
+            "weekday": "Wednesday",
+            "hour": 9,
+            "text_length": 165
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Security patch is available for all users. Please update your workspace today. #security",
+            "weekday": "Wednesday",
+            "hour": 9,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 4.2,
+            "weekday": "Wednesday",
+            "hour": 9,
+            "text_length": 88
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "4.2",
+          "4.2",
+          "9"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.00, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Product tip: save custom filters to review incidents faster every morning. #saas",
+        "weekday": "Tuesday",
+        "hour": 8
+      },
+      "original_prediction": {
+        "engagement_score": 3.62,
+        "weekday": "Tuesday",
+        "hour": 8,
+        "text_length": 80
+      },
+      "best_variant": {
+        "text": "New update: Product tip: save custom filters to review incidents faster every morning. #saas Join the discussion and share your take. #saas",
+        "weekday": "Tuesday",
+        "hour": 6,
+        "rationale": "Frames the post as news and adds a clear discussion prompt."
+      },
+      "best_prediction": {
+        "engagement_score": 3.96,
+        "weekday": "Tuesday",
+        "hour": 6,
+        "text_length": 139
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-683229050874245120",
+          "text": "RT @max_pronko: @andreaswittig: #AWS year in review: most important changes in 2015 https://cloudonaut.io/aws-year-in-review/ to read in the morning",
+          "weekday": "Saturday",
+          "hour": 3,
+          "engagement_score": 3.96,
+          "similarity": 0.21
+        },
+        {
+          "tweet_id": "tw-683172256361656320",
+          "text": "RT @max_pronko: @andreaswittig: #AWS year in review: most important changes in 2015 https://cloudonaut.io/aws-year-in-review/ to read in the morning",
+          "weekday": "Friday",
+          "hour": 23,
+          "engagement_score": 2.71,
+          "similarity": 0.21
+        },
+        {
+          "tweet_id": "tw-685448572024832000",
+          "text": "RT @awscloud: Need to build a custom Docker container scheduler? Learn how using the Amazon ECS APIs: https://aws.amazon.com/blogs/compute/how-to-create-a-custom-scheduler-for-amazon-ecs/?adbsc=social_blogs_20151118_55374136&adbid=667044983728291841&adbpl=tw&adbpr=66780587 https:",
+          "weekday": "Friday",
+          "hour": 6,
+          "engagement_score": 8.22,
+          "similarity": 0.194
+        },
+        {
+          "tweet_id": "tw-686596418820157440",
+          "text": "AWS year in review https://cloudonaut.io/aws-year-in-review/",
+          "weekday": "Monday",
+          "hour": 10,
+          "engagement_score": 0.0,
+          "similarity": 0.186
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Product tip: save custom filters to review incidents faster every morning. #saas",
+            "weekday": "Tuesday",
+            "hour": 8
+          },
+          "output": {
+            "engagement_score": 3.62,
+            "weekday": "Tuesday",
+            "hour": 8,
+            "text_length": 80
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Product tip: save custom filters to review incidents faster every morning. #saas What would you build with it? #saas",
+            "weekday": "Friday",
+            "hour": 6,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.9,
+            "weekday": "Friday",
+            "hour": 6,
+            "text_length": 116
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Product tip: save custom filters to review incidents faster every morning. #saas Join the discussion and share your take. #saas",
+            "weekday": "Tuesday",
+            "hour": 6,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.96,
+            "weekday": "Tuesday",
+            "hour": 6,
+            "text_length": 139
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Product tip: save custom filters to review incidents faster every morning. #saas Save this for your next project and tell us what should come next. #saas",
+            "weekday": "Friday",
+            "hour": 18,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.93,
+            "weekday": "Friday",
+            "hour": 18,
+            "text_length": 153
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Product tip: save custom filters to review incidents faster every morning. #saas",
+            "weekday": "Tuesday",
+            "hour": 8,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.62,
+            "weekday": "Tuesday",
+            "hour": 8,
+            "text_length": 80
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.62",
+          "3.96",
+          "6"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.34, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "We published benchmarks for the new inference endpoint. Read the full report. #ai",
+        "weekday": "Thursday",
+        "hour": 14
+      },
+      "original_prediction": {
+        "engagement_score": 3.86,
+        "weekday": "Thursday",
+        "hour": 14,
+        "text_length": 81
+      },
+      "best_variant": {
+        "text": "We published benchmarks for the new inference endpoint. Read the full report. #ai",
+        "weekday": "Thursday",
+        "hour": 14,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "best_prediction": {
+        "engagement_score": 3.86,
+        "weekday": "Thursday",
+        "hour": 14,
+        "text_length": 81
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-683714183909761025",
+          "text": "@jcase @americanexpress try this create VPN on AWS for free http://blog.ttlequals0.com/openvpn-endpoint-on-aws-in-10-minutes/",
+          "weekday": "Sunday",
+          "hour": 11,
+          "engagement_score": 0.0,
+          "similarity": 0.216
+        },
+        {
+          "tweet_id": "tw-686626678307684352",
+          "text": "1105 Media Expands Portfolio with Amazon Web Services Cloud Report #AWS #HiTech #ITProf https://www.meritdirect.com/making-news/1105-media-expands-portfolio-with-amazon-web-services-cloud-report/",
+          "weekday": "Monday",
+          "hour": 12,
+          "engagement_score": 0.0,
+          "similarity": 0.185
+        },
+        {
+          "tweet_id": "tw-684180596378210304",
+          "text": "For big data throughput and network caps are crucial: AWS S3 vs Azure vs Google Cloud storage benchmarks via /r/bigdata",
+          "weekday": "Monday",
+          "hour": 18,
+          "engagement_score": 0.0,
+          "similarity": 0.163
+        },
+        {
+          "tweet_id": "tw-683221488367960064",
+          "text": "\"@awscloud error on running$aws ecr get-loginCould not connect to the endpoint URL: https://ecr.us-west-1.amazonaws.com/\"",
+          "weekday": "Saturday",
+          "hour": 2,
+          "engagement_score": 0.0,
+          "similarity": 0.16
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We published benchmarks for the new inference endpoint. Read the full report. #ai",
+            "weekday": "Thursday",
+            "hour": 14
+          },
+          "output": {
+            "engagement_score": 3.86,
+            "weekday": "Thursday",
+            "hour": 14,
+            "text_length": 81
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We published benchmarks for the new inference endpoint. Read the full report. #ai What would you build with it? #ai",
+            "weekday": "Monday",
+            "hour": 11,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.71,
+            "weekday": "Monday",
+            "hour": 11,
+            "text_length": 115
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: We published benchmarks for the new inference endpoint. Read the full report. #ai Join the discussion and share your take. #ai",
+            "weekday": "Thursday",
+            "hour": 11,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.53,
+            "weekday": "Thursday",
+            "hour": 11,
+            "text_length": 138
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We published benchmarks for the new inference endpoint. Read the full report. #ai Save this for your next project and tell us what should come next. #ai",
+            "weekday": "Monday",
+            "hour": 11,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.57,
+            "weekday": "Monday",
+            "hour": 11,
+            "text_length": 152
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "We published benchmarks for the new inference endpoint. Read the full report. #ai",
+            "weekday": "Thursday",
+            "hour": 14,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.86,
+            "weekday": "Thursday",
+            "hour": 14,
+            "text_length": 81
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.86",
+          "3.86",
+          "14"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.00, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Early access starts today for our analytics assistant. Tell us what you want to test. #analytics",
+        "weekday": "Monday",
+        "hour": 16
+      },
+      "original_prediction": {
+        "engagement_score": 4.08,
+        "weekday": "Monday",
+        "hour": 16,
+        "text_length": 96
+      },
+      "best_variant": {
+        "text": "New update: Early access starts today for our analytics assistant. Tell us what you want to test. #analytics Join the discussion and share your take. #analytics",
+        "weekday": "Monday",
+        "hour": 10,
+        "rationale": "Frames the post as news and adds a clear discussion prompt."
+      },
+      "best_prediction": {
+        "engagement_score": 4.09,
+        "weekday": "Monday",
+        "hour": 10,
+        "text_length": 160
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-686236562418315264",
+          "text": "\"@Azure need to support latest for analytics/machine learning for developershttp://www.computerworld.com/article/3019817/data-analytics/microsoft-unwraps-a-big-data-analytics-platform-based-on-r.html?utm_content=buffer0f20f&utm_medium=social&utm_source=li\"",
+          "weekday": "Sunday",
+          "hour": 10,
+          "engagement_score": 0.0,
+          "similarity": 0.334
+        },
+        {
+          "tweet_id": "tw-686714146860105729",
+          "text": "Test [This is a service test] posting for AWS Alerts",
+          "weekday": "Monday",
+          "hour": 17,
+          "engagement_score": 0.0,
+          "similarity": 0.299
+        },
+        {
+          "tweet_id": "tw-686342242450026498",
+          "text": "as well as the emergence of AWS Redshift as a major force in data warehouses. The 2015 Analytics Software Market http://techcrunch.com/2016/01/09/the-year-in-analytics/",
+          "weekday": "Sunday",
+          "hour": 17,
+          "engagement_score": 0.0,
+          "similarity": 0.297
+        },
+        {
+          "tweet_id": "tw-686063199968342016",
+          "text": "The 2015 Analytics SoftwareMarket http://techcrunch.com/2016/01/09/the-year-in-analytics/ #dataanalytics #hadoop #bigdata #tableau #microstrategy #powerbi #aws #azure",
+          "weekday": "Saturday",
+          "hour": 22,
+          "engagement_score": 0.0,
+          "similarity": 0.283
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Early access starts today for our analytics assistant. Tell us what you want to test. #analytics",
+            "weekday": "Monday",
+            "hour": 16
+          },
+          "output": {
+            "engagement_score": 4.08,
+            "weekday": "Monday",
+            "hour": 16,
+            "text_length": 96
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Early access starts today for our analytics assistant. Tell us what you want to test. #analytics What would you build with it? #analytics",
+            "weekday": "Sunday",
+            "hour": 10,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.9,
+            "weekday": "Sunday",
+            "hour": 10,
+            "text_length": 137
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Early access starts today for our analytics assistant. Tell us what you want to test. #analytics Join the discussion and share your take. #analytics",
+            "weekday": "Monday",
+            "hour": 10,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 4.09,
+            "weekday": "Monday",
+            "hour": 10,
+            "text_length": 160
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Early access starts today for our analytics assistant. Tell us what you want to test. #analytics Save this for your next project and tell us what should come next. #analytics",
+            "weekday": "Sunday",
+            "hour": 10,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.72,
+            "weekday": "Sunday",
+            "hour": 10,
+            "text_length": 174
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Early access starts today for our analytics assistant. Tell us what you want to test. #analytics",
+            "weekday": "Monday",
+            "hour": 16,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 4.08,
+            "weekday": "Monday",
+            "hour": 16,
+            "text_length": 96
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "4.08",
+          "4.09",
+          "10"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.01, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Recap from our engineering meetup: observability, queues, and lessons learned. #engineering",
+        "weekday": "Saturday",
+        "hour": 12
+      },
+      "original_prediction": {
+        "engagement_score": 3.69,
+        "weekday": "Saturday",
+        "hour": 12,
+        "text_length": 91
+      },
+      "best_variant": {
+        "text": "New update: Recap from our engineering meetup: observability, queues, and lessons learned. #engineering Join the discussion and share your take. #engineering",
+        "weekday": "Saturday",
+        "hour": 15,
+        "rationale": "Frames the post as news and adds a clear discussion prompt."
+      },
+      "best_prediction": {
+        "engagement_score": 4.35,
+        "weekday": "Saturday",
+        "hour": 15,
+        "text_length": 157
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-685220995100180480",
+          "text": "Data Warehouse Engineering Manager - ETL AWS Redshift http://jobview.monster.com/Data-Warehouse-Engineering-Manager-ETL-AWS-Redshift-Job-Seattle-WA-US-162029065.aspx",
+          "weekday": "Thursday",
+          "hour": 15,
+          "engagement_score": 0.0,
+          "similarity": 0.331
+        },
+        {
+          "tweet_id": "tw-686872172892143616",
+          "text": "Sr Manager Web Engineering Amazon Web Services Jobs in Seattle WA #Seattle #WA #jobs #jobsearch https://www.jobfindly.com/sr-manager-web-engineering-amazon-web-services-jobs-seattle-wa.html",
+          "weekday": "Tuesday",
+          "hour": 4,
+          "engagement_score": 0.0,
+          "similarity": 0.296
+        },
+        {
+          "tweet_id": "tw-684810598597574656",
+          "text": "Moving Mountains of Data to AWS very intersting article. http://engineering.riotgames.com/news/moving-mountains-data-aws via @RiotCareers #RiotTechBlog",
+          "weekday": "Wednesday",
+          "hour": 11,
+          "engagement_score": 0.0,
+          "similarity": 0.288
+        },
+        {
+          "tweet_id": "tw-685557739456716800",
+          "text": "Sr Product Manager Engineering Aws Mobile Services Jobs in Seattle WA #Seattle #WA #jobs #jobsearch https://www.jobfindly.com/sr-product-manager-engineering-aws-mobile-services-jobs-seattle-wa.html",
+          "weekday": "Friday",
+          "hour": 13,
+          "engagement_score": 0.0,
+          "similarity": 0.284
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Recap from our engineering meetup: observability, queues, and lessons learned. #engineering",
+            "weekday": "Saturday",
+            "hour": 12
+          },
+          "output": {
+            "engagement_score": 3.69,
+            "weekday": "Saturday",
+            "hour": 12,
+            "text_length": 91
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Recap from our engineering meetup: observability, queues, and lessons learned. #engineering What would you build with it? #engineering",
+            "weekday": "Thursday",
+            "hour": 15,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.76,
+            "weekday": "Thursday",
+            "hour": 15,
+            "text_length": 134
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Recap from our engineering meetup: observability, queues, and lessons learned. #engineering Join the discussion and share your take. #engineering",
+            "weekday": "Saturday",
+            "hour": 15,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 4.35,
+            "weekday": "Saturday",
+            "hour": 15,
+            "text_length": 157
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Recap from our engineering meetup: observability, queues, and lessons learned. #engineering Save this for your next project and tell us what should come next. #engineering",
+            "weekday": "Thursday",
+            "hour": 15,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.89,
+            "weekday": "Thursday",
+            "hour": 15,
+            "text_length": 171
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Recap from our engineering meetup: observability, queues, and lessons learned. #engineering",
+            "weekday": "Saturday",
+            "hour": 12,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.69,
+            "weekday": "Saturday",
+            "hour": 12,
+            "text_length": 91
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.69",
+          "4.35",
+          "15"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.66, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "The mobile app now supports offline drafts and faster sync. Update from the store. #mobile",
+        "weekday": "Friday",
+        "hour": 18
+      },
+      "original_prediction": {
+        "engagement_score": 4.49,
+        "weekday": "Friday",
+        "hour": 18,
+        "text_length": 90
+      },
+      "best_variant": {
+        "text": "The mobile app now supports offline drafts and faster sync. Update from the store. #mobile",
+        "weekday": "Friday",
+        "hour": 18,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "best_prediction": {
+        "engagement_score": 4.49,
+        "weekday": "Friday",
+        "hour": 18,
+        "text_length": 90
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-684350358727057409",
+          "text": "AWS Webinar - Easily Build and Scale Mobile Apps with AWS Mobile Services https://www.youtube.com/watch?v=CVnb2MUYIHU&feature=youtu.be",
+          "weekday": "Tuesday",
+          "hour": 5,
+          "engagement_score": 0.0,
+          "similarity": 0.268
+        },
+        {
+          "tweet_id": "tw-684055095730958337",
+          "text": "Developer communities find a Third Space: AWS Offline Hangouts http://developer.pearson.com/blog/developer-communities-find-third-space-aws-offline-hangouts",
+          "weekday": "Monday",
+          "hour": 9,
+          "engagement_score": 0.0,
+          "similarity": 0.262
+        },
+        {
+          "tweet_id": "tw-683069490263932928",
+          "text": "Senior Web Developer at AWS Mobile http://jobview.monster.com/Senior-Web-Developer-at-AWS-Mobile-Job-Seattle-WA-US-161777210.aspx",
+          "weekday": "Friday",
+          "hour": 16,
+          "engagement_score": 0.0,
+          "similarity": 0.252
+        },
+        {
+          "tweet_id": "tw-684786526534930432",
+          "text": "We are hiring: Mobile Developer Mobile Developer http://www.reqcloud.com/jobs/719859/?k=/7XaXGjKR/tU7hjYEsw/HcQ3i4mrwW3N6hYH044732o&utm_source=twitter&utm_campaign=reqCloud_JobPost #job @awscloud #job #aws #mobiledev #application #ios #andoid",
+          "weekday": "Wednesday",
+          "hour": 10,
+          "engagement_score": 0.0,
+          "similarity": 0.238
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "The mobile app now supports offline drafts and faster sync. Update from the store. #mobile",
+            "weekday": "Friday",
+            "hour": 18
+          },
+          "output": {
+            "engagement_score": 4.49,
+            "weekday": "Friday",
+            "hour": 18,
+            "text_length": 90
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "The mobile app now supports offline drafts and faster sync. Update from the store. #mobile What would you build with it? #mobile",
+            "weekday": "Tuesday",
+            "hour": 5,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.72,
+            "weekday": "Tuesday",
+            "hour": 5,
+            "text_length": 128
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: The mobile app now supports offline drafts and faster sync. Update from the store. #mobile Join the discussion and share your take. #mobile",
+            "weekday": "Friday",
+            "hour": 5,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.98,
+            "weekday": "Friday",
+            "hour": 5,
+            "text_length": 151
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "The mobile app now supports offline drafts and faster sync. Update from the store. #mobile Save this for your next project and tell us what should come next. #mobile",
+            "weekday": "Tuesday",
+            "hour": 18,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 4.05,
+            "weekday": "Tuesday",
+            "hour": 18,
+            "text_length": 165
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "The mobile app now supports offline drafts and faster sync. Update from the store. #mobile",
+            "weekday": "Friday",
+            "hour": 18,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 4.49,
+            "weekday": "Friday",
+            "hour": 18,
+            "text_length": 90
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "4.49",
+          "4.49",
+          "18"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.00, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Behind the scenes: how we designed the new onboarding checklist. #product",
+        "weekday": "Wednesday",
+        "hour": 12
+      },
+      "original_prediction": {
+        "engagement_score": 4.11,
+        "weekday": "Wednesday",
+        "hour": 12,
+        "text_length": 73
+      },
+      "best_variant": {
+        "text": "Behind the scenes: how we designed the new onboarding checklist. #product",
+        "weekday": "Wednesday",
+        "hour": 12,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "best_prediction": {
+        "engagement_score": 4.11,
+        "weekday": "Wednesday",
+        "hour": 12,
+        "text_length": 73
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-683110482937540609",
+          "text": "We are hiring: Sr. Product Manager Sr. Product Manager http://www.reqcloud.com/jobs/719863/?k=RmrhfgVOy6f7Gwp9H9xVUJ5nQtmUXqQQyHa08QS0oVg&utm_source=twitter&utm_campaign=reqCloud_JobPost #job @awscloud #workspaces #aws @awscloud #job",
+          "weekday": "Friday",
+          "hour": 19,
+          "engagement_score": 0.0,
+          "similarity": 0.228
+        },
+        {
+          "tweet_id": "tw-683548388835618816",
+          "text": "We are hiring: Sr. Product Manager Sr. Product Manager http://www.reqcloud.com/jobs/719863/?k=RViXSnsFTS8JJDPi/uQ87ytH0edQsqN9LVyvk1gSzNE&utm_source=twitter&utm_campaign=reqCloud_JobPost #job @awscloud #workspaces #aws @awscloud #job",
+          "weekday": "Sunday",
+          "hour": 0,
+          "engagement_score": 0.0,
+          "similarity": 0.228
+        },
+        {
+          "tweet_id": "tw-684439273077129216",
+          "text": "We are hiring: Sr. Product Manager Sr. Product Manager http://www.reqcloud.com/jobs/719863/?k=crS7e%20Oi4xvexGjBfIZjA1y8gp1hI1lihpwu1%206HXbU&utm_source=twitter&utm_campaign=reqCloud_JobPost #job @awscloud #workspaces #aws @awscloud #job",
+          "weekday": "Tuesday",
+          "hour": 11,
+          "engagement_score": 0.0,
+          "similarity": 0.228
+        },
+        {
+          "tweet_id": "tw-686205884045877248",
+          "text": "We are hiring: Sr. Product Manager Sr. Product Manager http://www.reqcloud.com/jobs/719863/?k=OJyiAU6/OOq90OTC1VlJ30C60bP5bZGUWsAshCaVCkQ&utm_source=twitter&utm_campaign=reqCloud_JobPost #job @awscloud #workspaces #aws @awscloud #job",
+          "weekday": "Sunday",
+          "hour": 8,
+          "engagement_score": 0.0,
+          "similarity": 0.228
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Behind the scenes: how we designed the new onboarding checklist. #product",
+            "weekday": "Wednesday",
+            "hour": 12
+          },
+          "output": {
+            "engagement_score": 4.11,
+            "weekday": "Wednesday",
+            "hour": 12,
+            "text_length": 73
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Behind the scenes: how we designed the new onboarding checklist. #product What would you build with it? #product",
+            "weekday": "Sunday",
+            "hour": 19,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.87,
+            "weekday": "Sunday",
+            "hour": 19,
+            "text_length": 112
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Behind the scenes: how we designed the new onboarding checklist. #product Join the discussion and share your take. #product",
+            "weekday": "Wednesday",
+            "hour": 19,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.79,
+            "weekday": "Wednesday",
+            "hour": 19,
+            "text_length": 135
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Behind the scenes: how we designed the new onboarding checklist. #product Save this for your next project and tell us what should come next. #product",
+            "weekday": "Sunday",
+            "hour": 19,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.96,
+            "weekday": "Sunday",
+            "hour": 19,
+            "text_length": 149
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Behind the scenes: how we designed the new onboarding checklist. #product",
+            "weekday": "Wednesday",
+            "hour": 12,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 4.11,
+            "weekday": "Wednesday",
+            "hour": 12,
+            "text_length": 73
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "4.11",
+          "4.11",
+          "12"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.00, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource",
+        "weekday": "Sunday",
+        "hour": 19
+      },
+      "original_prediction": {
+        "engagement_score": 3.76,
+        "weekday": "Sunday",
+        "hour": 19,
+        "text_length": 88
+      },
+      "best_variant": {
+        "text": "Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource Save this for your next project and tell us what should come next. #opensource",
+        "weekday": "Monday",
+        "hour": 17,
+        "rationale": "Uses a practical CTA and avoids very low attention hours."
+      },
+      "best_prediction": {
+        "engagement_score": 4.02,
+        "weekday": "Monday",
+        "hour": 17,
+        "text_length": 167
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-686701756399652865",
+          "text": "AWS SDK for Unity Is Now Part of AWS SDK for .NET http://mobile.awsblog.com/post/Tx1K3R5975IFX8/AWS-SDK-for-Unity-Is-Now-Part-of-AWS-SDK-for-NET #aws #mobile",
+          "weekday": "Monday",
+          "hour": 17,
+          "engagement_score": 0.0,
+          "similarity": 0.299
+        },
+        {
+          "tweet_id": "tw-686083260015849472",
+          "text": "AWS SDK for Java 1.10.45 https://aws.amazon.com/sdk-for-java/",
+          "weekday": "Sunday",
+          "hour": 0,
+          "engagement_score": 0.0,
+          "similarity": 0.255
+        },
+        {
+          "tweet_id": "tw-686745570719866880",
+          "text": "AWS SDK for .NET | AWS https://aws.amazon.com/jp/sdk-for-net/",
+          "weekday": "Monday",
+          "hour": 20,
+          "engagement_score": 0.0,
+          "similarity": 0.247
+        },
+        {
+          "tweet_id": "tw-682803363411542016",
+          "text": "AWS SDK for Ruby 2.2.8 https://aws.amazon.com/sdk-for-ruby/",
+          "weekday": "Thursday",
+          "hour": 22,
+          "engagement_score": 0.0,
+          "similarity": 0.244
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource",
+            "weekday": "Sunday",
+            "hour": 19
+          },
+          "output": {
+            "engagement_score": 3.76,
+            "weekday": "Sunday",
+            "hour": 19,
+            "text_length": 88
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource What would you build with it? #opensource",
+            "weekday": "Monday",
+            "hour": 17,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.5,
+            "weekday": "Monday",
+            "hour": 17,
+            "text_length": 130
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource Join the discussion and share your take. #opensource",
+            "weekday": "Sunday",
+            "hour": 17,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.91,
+            "weekday": "Sunday",
+            "hour": 17,
+            "text_length": 153
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource Save this for your next project and tell us what should come next. #opensource",
+            "weekday": "Monday",
+            "hour": 17,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 4.02,
+            "weekday": "Monday",
+            "hour": 17,
+            "text_length": 167
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource",
+            "weekday": "Sunday",
+            "hour": 19,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.76,
+            "weekday": "Sunday",
+            "hour": 19,
+            "text_length": 88
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.76",
+          "4.02",
+          "17"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.26, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Customer story: a small team shipped reporting dashboards in one week. #startup",
+        "weekday": "Tuesday",
+        "hour": 15
+      },
+      "original_prediction": {
+        "engagement_score": 3.85,
+        "weekday": "Tuesday",
+        "hour": 15,
+        "text_length": 79
+      },
+      "best_variant": {
+        "text": "Customer story: a small team shipped reporting dashboards in one week. #startup What would you build with it? #startup",
+        "weekday": "Friday",
+        "hour": 20,
+        "rationale": "Adds a direct question and uses timing from similar historical posts."
+      },
+      "best_prediction": {
+        "engagement_score": 3.9,
+        "weekday": "Friday",
+        "hour": 20,
+        "text_length": 118
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-685407159522168832",
+          "text": "@awscloud http://srikandijepara.com/tempat-tidur-racoco-small/",
+          "weekday": "Friday",
+          "hour": 3,
+          "engagement_score": 0.0,
+          "similarity": 0.369
+        },
+        {
+          "tweet_id": "tw-685983553348349952",
+          "text": "Aws S3 Operations System Engineering Enterprise Customer Experience Team Jobs in Seattle WA #Seattle #WA https://www.jobfindly.com/aws-s3-operations-system-engineering-enterprise-customer-experience-team-jobs-seattle-wa.html",
+          "weekday": "Saturday",
+          "hour": 17,
+          "engagement_score": 0.0,
+          "similarity": 0.231
+        },
+        {
+          "tweet_id": "tw-685155617619750912",
+          "text": "@rahulpathak AWS customer support has already handled it. Thanks a lot! :)",
+          "weekday": "Thursday",
+          "hour": 10,
+          "engagement_score": 0.0,
+          "similarity": 0.206
+        },
+        {
+          "tweet_id": "tw-683853838302982149",
+          "text": "\"Get access to improved #AWS billing and reporting with @bulletproofnet powered by CloudHealth:http://www.bulletproof.net.au/products-services/cloud-platforms/amazon-web-services-aws/bulletproof-aws-billing-reporting/?utm_campaign=Channel%20Social&utm_content=27127937&utm_medium=",
+          "weekday": "Sunday",
+          "hour": 20,
+          "engagement_score": 2.58,
+          "similarity": 0.2
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Customer story: a small team shipped reporting dashboards in one week. #startup",
+            "weekday": "Tuesday",
+            "hour": 15
+          },
+          "output": {
+            "engagement_score": 3.85,
+            "weekday": "Tuesday",
+            "hour": 15,
+            "text_length": 79
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Customer story: a small team shipped reporting dashboards in one week. #startup What would you build with it? #startup",
+            "weekday": "Friday",
+            "hour": 20,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 3.9,
+            "weekday": "Friday",
+            "hour": 20,
+            "text_length": 118
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Customer story: a small team shipped reporting dashboards in one week. #startup Join the discussion and share your take. #startup",
+            "weekday": "Tuesday",
+            "hour": 20,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.8,
+            "weekday": "Tuesday",
+            "hour": 20,
+            "text_length": 141
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Customer story: a small team shipped reporting dashboards in one week. #startup Save this for your next project and tell us what should come next. #startup",
+            "weekday": "Friday",
+            "hour": 20,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.8,
+            "weekday": "Friday",
+            "hour": 20,
+            "text_length": 155
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Customer story: a small team shipped reporting dashboards in one week. #startup",
+            "weekday": "Tuesday",
+            "hour": 15,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 3.85,
+            "weekday": "Tuesday",
+            "hour": 15,
+            "text_length": 79
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "3.85",
+          "3.9",
+          "20"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.05, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    },
+    {
+      "original": {
+        "text": "Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status",
+        "weekday": "Thursday",
+        "hour": 20
+      },
+      "original_prediction": {
+        "engagement_score": 4.19,
+        "weekday": "Thursday",
+        "hour": 20,
+        "text_length": 85
+      },
+      "best_variant": {
+        "text": "Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status",
+        "weekday": "Thursday",
+        "hour": 20,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "best_prediction": {
+        "engagement_score": 4.19,
+        "weekday": "Thursday",
+        "hour": 20,
+        "text_length": 85
+      },
+      "retrieved_examples": [
+        {
+          "tweet_id": "tw-686181881520336896",
+          "text": "A $5.00 Cloud Server is Possible with AWS http://www.privoit.com/a-5-00-cloud-server-is-possible-with-aws/",
+          "weekday": "Sunday",
+          "hour": 6,
+          "engagement_score": 0.0,
+          "similarity": 0.213
+        },
+        {
+          "tweet_id": "tw-685822028549496832",
+          "text": "This is really good for few use cases. A $5.00 Cloud Server is Possible with AWS http://www.privoit.com/a-5-00-cloud-server-is-possible-with-aws/",
+          "weekday": "Saturday",
+          "hour": 6,
+          "engagement_score": 0.0,
+          "similarity": 0.191
+        },
+        {
+          "tweet_id": "tw-684584897176969218",
+          "text": "Reminder: Enterprise-grade Amazon Web Services Deployments  Is Your OrganizationReady? https://trendsandevents4developers.wordpress.com/2016/01/06/reminder-enterprise-grade-amazon-web-services-deployments-is-your-organization-ready/",
+          "weekday": "Tuesday",
+          "hour": 20,
+          "engagement_score": 0.0,
+          "similarity": 0.18
+        },
+        {
+          "tweet_id": "tw-684697754774417408",
+          "text": "@kristofera @internetofshit it required login to AWS. What did happen?",
+          "weekday": "Wednesday",
+          "hour": 4,
+          "engagement_score": 0.0,
+          "similarity": 0.171
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status",
+            "weekday": "Thursday",
+            "hour": 20
+          },
+          "output": {
+            "engagement_score": 4.19,
+            "weekday": "Thursday",
+            "hour": 20,
+            "text_length": 85
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status What would you build with it? #status",
+            "weekday": "Sunday",
+            "hour": 6,
+            "rationale": "Adds a direct question and uses timing from similar historical posts."
+          },
+          "output": {
+            "engagement_score": 4.07,
+            "weekday": "Sunday",
+            "hour": 6,
+            "text_length": 123
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "New update: Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status Join the discussion and share your take. #status",
+            "weekday": "Thursday",
+            "hour": 6,
+            "rationale": "Frames the post as news and adds a clear discussion prompt."
+          },
+          "output": {
+            "engagement_score": 3.84,
+            "weekday": "Thursday",
+            "hour": 6,
+            "text_length": 146
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status Save this for your next project and tell us what should come next. #status",
+            "weekday": "Sunday",
+            "hour": 18,
+            "rationale": "Uses a practical CTA and avoids very low attention hours."
+          },
+          "output": {
+            "engagement_score": 3.77,
+            "weekday": "Sunday",
+            "hour": 18,
+            "text_length": 160
+          }
+        },
+        {
+          "tool": "predict_engagement",
+          "input": {
+            "text": "Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status",
+            "weekday": "Thursday",
+            "hour": 20,
+            "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+          },
+          "output": {
+            "engagement_score": 4.19,
+            "weekday": "Thursday",
+            "hour": 20,
+            "text_length": 85
+          }
+        }
+      ],
+      "hallucination_report": {
+        "ghost_numbers": 0,
+        "ghost_quotes": 0,
+        "checked_numbers": [
+          "4.19",
+          "4.19",
+          "20",
+          "22",
+          "00",
+          "22",
+          "00"
+        ],
+        "checked_quotes": [],
+        "notes": [
+          "No unsupported numbers or quotes found."
+        ]
+      },
+      "judge": {
+        "score": 4,
+        "passes": true,
+        "reason": "Heuristic judge: score delta=0.00, ghost numbers=0, ghost quotes=0."
+      },
+      "techniques_used": [
+        "RAG over historical tweets",
+        "agent with engagement prediction tool",
+        "structured output with Pydantic validators",
+        "LLM-as-judge with heuristic fallback",
+        "hallucination check for ghost numbers and quotes"
+      ]
+    }
+  ]
+}

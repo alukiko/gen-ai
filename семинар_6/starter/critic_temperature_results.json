@@ -1,0 +1,42 @@
+[
+  {
+    "case": "арифметика без calculate",
+    "false_accept_t0": 0,
+    "false_accept_t07": 0,
+    "errors_t0": 0,
+    "errors_t07": 0,
+    "n": 10
+  },
+  {
+    "case": "выдуманное число",
+    "false_accept_t0": 0,
+    "false_accept_t07": 1,
+    "errors_t0": 1,
+    "errors_t07": 0,
+    "n": 10
+  },
+  {
+    "case": "несогласованные данные",
+    "false_accept_t0": 1,
+    "false_accept_t07": 2,
+    "errors_t0": 0,
+    "errors_t07": 1,
+    "n": 10
+  },
+  {
+    "case": "ошибка инструмента принята как ответ",
+    "false_accept_t0": 0,
+    "false_accept_t07": 0,
+    "errors_t0": 0,
+    "errors_t07": 0,
+    "n": 10
+  },
+  {
+    "case": "план не покрывает вопрос",
+    "false_accept_t0": 0,
+    "false_accept_t07": 0,
+    "errors_t0": 0,
+    "errors_t07": 0,
+    "n": 10
+  }
+]

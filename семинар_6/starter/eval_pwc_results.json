@@ -1,0 +1,901 @@
+[
+  {
+    "id": "Q1",
+    "query": "Во сколько раз USD подорожал с 1 января 2022 по сегодня?",
+    "comment": "Класс ошибки C: одиночный часто считает в уме, не зовёт calculate. PWC должен починить — Планировщик обязан добавить calculate-подвопрос.",
+    "n": 3,
+    "single": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": "С 1 января 2022 года курс USD к рублю снизился, и на сегодня он составляет примерно 0.99 от курса на начало 2022 года. Это означает, что доллар подешевел примерно на 1.26%."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": "С 1 января 2022 года курс USD к рублю снизился, и на сегодняшний день он составляет примерно 0.99 от курса на начало 2022 года. Это означает, что доллар подешевел примерно на 1.26%"
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": false,
+          "arith_without_calc": false,
+          "answer_preview": "С 1 января 2022 года курс USD к рублю снизился, и на сегодняшний день он составляет примерно 0.99 от курса на начало 2022 года. Это означает, что доллар подешевел, а не подорожал."
+        }
+      ],
+      "pass": 0
+    },
+    "pwc_no_validator": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 0
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 1,
+          "answer_preview": "USD подорожал в 0.987 раз с 1 января 2022 года, что означает его незначительное удешевление."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_fx_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": false,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": -1,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 1
+    }
+  },
+  {
+    "id": "Q2",
+    "query": "Какая сейчас реальная ключевая ставка, если инфляцию брать по последнему доступному месяцу, а не по году?",
+    "comment": "Класс ошибки B: одиночный не умеет искать «последний доступный» месяц, зацикливается. PWC должен разбить на шаги.",
+    "n": 3,
+    "single": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Текущая реальная ключевая ставка составляет 9.31% годовых. Инфляция за последний доступный месяц (октябрь 2023 года) составила 6.69%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Текущая реальная ключевая ставка составляет 9.31% годовых. Инфляция за последний доступный месяц (октябрь 2023 года) составила 6.69%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Текущая реальная ключевая ставка составляет 9.31% годовых. Данные о ключевой ставке взяты из локального архива, так как ЦБ в моменте недоступен."
+        }
+      ],
+      "pass": 3
+    },
+    "pwc_no_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 1,
+          "answer_preview": "Реальная ключевая ставка составляет 9.31% годовых, при текущей ключевой ставке 16,0% и инфляции за октябрь 2023 года в 6.69%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 1,
+          "answer_preview": "Реальная ключевая ставка составляет 9.31% годовых, учитывая инфляцию за октябрь 2023 года в 6.69%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 1,
+          "answer_preview": "Реальная ключевая ставка на сентябрь 2023 года составляет 10.01% годовых."
+        }
+      ],
+      "pass": 3
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 1,
+          "answer_preview": "Реальная ключевая ставка составляет 9.31% годовых, при текущей ключевой ставке 16,0% и инфляции за октябрь 2023 года в 6.69%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 1,
+          "answer_preview": "Реальная ключевая ставка составляет 9.31% годовых, при текущей ключевой ставке 16,0% и инфляции за октябрь 2023 года в 6.69%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 2,
+          "answer_preview": "Реальная ключевая ставка составляет 9.31% годовых, при текущей ключевой ставке 16,0% и инфляции за октябрь 2023 года в 6.69%."
+        }
+      ],
+      "pass": 3
+    }
+  },
+  {
+    "id": "Q3",
+    "query": "Какова накопленная инфляция с января 2022 по март 2026? Рассчитай как произведение всех (1 + ипц_м/100) по месяцам.",
+    "comment": "Класс ошибки D (граница паттерна): требует get_inflation за много месяцев + большое calculate-выражение. Одиночный галлюцинирует get_cumulative_inflation; PWC обычно тоже (Планировщик может добавить выдуманный инструмент в план). Это — повод для Schema-Validator в домашке.",
+    "n": 3,
+    "single": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Накопленная инфляция с января 2022 по март 2026 составила примерно 8587.24%.",
+          "sanity_ok": false
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Накопленная инфляция с января 2022 по март 2026 составила примерно 8587.24%.",
+          "sanity_ok": false
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Накопленная инфляция с января 2022 по март 2026 составила примерно 8587.24%.",
+          "sanity_ok": false
+        }
+      ],
+      "pass": 0
+    },
+    "pwc_no_validator": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": "",
+          "sanity_ok": true
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": "",
+          "sanity_ok": true
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "plan_tools": [
+            "get_inflation"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": "",
+          "sanity_ok": true
+        }
+      ],
+      "pass": 0
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 2,
+          "answer_preview": "Накопленная инфляция с января 2022 по март 2026 составила 84.87%.",
+          "sanity_ok": true
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 2,
+          "answer_preview": "Накопленная инфляция с января 2022 по март 2026 составила 84.87%.",
+          "sanity_ok": true
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": "Накопленная инфляция с января 2022 по март 2026 составила 84.87%.",
+          "sanity_ok": true
+        }
+      ],
+      "pass": 3
+    }
+  },
+  {
+    "id": "Q4",
+    "query": "Какая накопленная инфляция с января 2022 по март 2026? Если для этого нужен один инструмент накопленной инфляции, объясни, почему он недоступен, и не выдумывай его.",
+    "comment": "Проверка Schema-Validator: модель может захотеть get_cumulative_inflation, но валидатор должен вернуть планировщик к разрешённым инструментам или честному отказу.",
+    "n": 3,
+    "single": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Для расчета накопленной инфляции с января 2022 по март 2026 мне нужно получить данные об инфляции на конец каждого месяца в этом периоде. Однако, к сожалению, у меня нет инструмент"
+        },
+        {
+          "ok": true,
+          "used_tools": [],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Для расчета накопленной инфляции с января 2022 по март 2026 мне нужно получить данные об инфляции на конец каждого месяца в этом периоде. Однако, к сожалению, у меня нет инструмент"
+        },
+        {
+          "ok": true,
+          "used_tools": [],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Для расчета накопленной инфляции с января 2022 по март 2026 года необходимо получить данные об инфляции за каждый месяц в этом периоде. Однако, к сожалению, у меня нет инструмента,"
+        }
+      ],
+      "pass": 3
+    },
+    "pwc_no_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 0,
+          "answer_preview": "Накопленная инфляция не может быть рассчитана с использованием доступных инструментов, так как нет инструмента для получения накопленной инфляции за период. Доступные инструменты п"
+        },
+        {
+          "ok": true,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 0,
+          "answer_preview": "Задача о накопленной инфляции требует использования инструмента, который не доступен в текущем наборе инструментов. Мы можем получить только ИПЦ за отдельные месяцы, но нет инструм"
+        },
+        {
+          "ok": true,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 0,
+          "answer_preview": "Для расчета накопленной инфляции требуется инструмент, который может предоставить данные о накопленной инфляции за указанный период. Однако такой инструмент не доступен, и я не мог"
+        }
+      ],
+      "pass": 3
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 0,
+          "answer_preview": "Для расчета накопленной инфляции требуется инструмент, который может предоставить данные о накопленной инфляции за указанный период. Однако такой инструмент не доступен в текущем н"
+        },
+        {
+          "ok": true,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 0,
+          "answer_preview": "Накопленная инфляция не может быть рассчитана с использованием доступных инструментов, так как нет инструмента для получения накопленной инфляции за период. Доступные инструменты п"
+        },
+        {
+          "ok": true,
+          "used_tools": [],
+          "plan_tools": [],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 0,
+          "answer_preview": "Накопленная инфляция не может быть рассчитана с использованием доступных инструментов, так как нет инструмента для получения накопленной инфляции за период. Доступные инструменты п"
+        }
+      ],
+      "pass": 3
+    }
+  },
+  {
+    "id": "Q5",
+    "query": "Собери независимые показатели на сегодня: курс USD, курс EUR, курс CNY и ключевую ставку ЦБ. Ничего не сравнивай.",
+    "comment": "Проверка параллельности: 3+ независимых подвопроса первого уровня должны исполняться через ThreadPoolExecutor.",
+    "n": 3,
+    "single": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "На сегодня курс USD составляет 73.36 рубля, курс EUR — 85.03 рубля, курс CNY — 10.83 рубля. Ключевая ставка ЦБ России равна 16.0% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "На сегодня курс USD составляет 73.36 рубля, курс EUR — 85.03 рубля, курс CNY — 10.83 рубля. Ключевая ставка ЦБ России равна 16.0% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "На сегодня курс USD составляет 73.36 рубля, курс EUR — 85.03 рубля, курс CNY — 10.83 рубля. Ключевая ставка ЦБ составляет 16.0%."
+        }
+      ],
+      "pass": 3
+    },
+    "pwc_no_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD к рублю составляет 73.36, курс EUR к рублю — 85.0305, курс CNY к рублю — 10.8284, ключевая ставка ЦБ — 16.0% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD на сегодня составляет 73.36 рубля, курс EUR — 85.0305 рубля, курс CNY — 10.8284 рубля, а ключевая ставка ЦБ — 16.0% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD к рублю на сегодня составляет 73.36 рубля, курс EUR — 85.0305 рубля, курс CNY — 10.8284 рубля, а ключевая ставка ЦБ — 16.0% годовых."
+        }
+      ],
+      "pass": 3
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD к рублю на сегодня составляет 73.36 рубля, курс EUR — 85.0305 рубля, курс CNY — 10.8284 рубля, а ключевая ставка ЦБ — 16.0% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD на сегодня составляет 73.36 рубля, курс EUR — 85.0305 рубля, курс CNY — 10.8284 рубля, а ключевая ставка ЦБ — 16.0% годовых."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "get_fx_rate",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": true,
+          "iterations": 1,
+          "answer_preview": "Курс USD к рублю на сегодня составляет 73.36 рубля, курс EUR — 85.0305 рубля, курс CNY — 10.8284 рубля, а ключевая ставка ЦБ — 16.0% годовых."
+        }
+      ],
+      "pass": 3
+    }
+  },
+  {
+    "id": "Q6",
+    "query": "По уже известным числам: ключевая ставка 16%, последняя доступная инфляция 7.72%. Какой реальный процентный зазор между ними в пунктах?",
+    "comment": "Реалистичный короткий вопрос про макроэкономику: числа уже даны, поэтому нужен calculate для разности.",
+    "n": 3,
+    "single": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Реальный процентный зазор между ключевой ставкой и инфляцией составляет 8.28 процентных пункта."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Реальный процентный зазор между ключевой ставкой и инфляцией составляет 8.28 процентных пункта."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate"
+          ],
+          "hallucinated": [],
+          "must_have_ok": true,
+          "arith_without_calc": false,
+          "answer_preview": "Реальный процентный зазор между ключевой ставкой и инфляцией составляет 8.28 процентных пункта."
+        }
+      ],
+      "pass": 3
+    },
+    "pwc_no_validator": {
+      "runs": [
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": ""
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate"
+          ],
+          "plan_tools": [
+            "calculate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": "Реальный процентный зазор между ключевой ставкой 16% и инфляцией 7.72% составляет 8.28%."
+        },
+        {
+          "ok": false,
+          "used_tools": [
+            "calculate",
+            "get_inflation",
+            "get_key_rate"
+          ],
+          "plan_tools": [
+            "calculate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": false,
+          "parallel_level_ok": null,
+          "iterations": 3,
+          "answer_preview": ""
+        }
+      ],
+      "pass": 1
+    },
+    "pwc_validator": {
+      "runs": [
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate"
+          ],
+          "plan_tools": [
+            "calculate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 1,
+          "answer_preview": "Реальный процентный зазор между ключевой ставкой 16% и инфляцией 7.72% составляет 8.28%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate"
+          ],
+          "plan_tools": [
+            "calculate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 2,
+          "answer_preview": "Реальный процентный зазор между ключевой ставкой 16% и инфляцией 7.72% составляет 8.28%."
+        },
+        {
+          "ok": true,
+          "used_tools": [
+            "calculate"
+          ],
+          "plan_tools": [
+            "calculate"
+          ],
+          "hallucinated_in_workers": [],
+          "hallucinated_in_plan": [],
+          "must_have_ok": true,
+          "parallel_level_ok": null,
+          "iterations": 2,
+          "answer_preview": "Реальный процентный зазор между ключевой ставкой 16% и инфляцией 7.72% составляет 8.28%."
+        }
+      ],
+      "pass": 3
+    }
+  }
+]

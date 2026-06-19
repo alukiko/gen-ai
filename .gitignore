@@ -12,3 +12,9 @@ chroma_db
 
 # env
 .env
+
+# Large local model artifacts
+*.pkl
+
+# Local/raw datasets that trip GitHub secret scanning
+финальный_проект/Tweets/Twitterdatainsheets.csv

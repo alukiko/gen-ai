@@ -1,0 +1,160 @@
+{
+  "original": {
+    "text": "Our new product is out. Check the website. #cloud",
+    "weekday": "Wednesday",
+    "hour": 13
+  },
+  "original_prediction": {
+    "engagement_score": 3.61,
+    "weekday": "Wednesday",
+    "hour": 13,
+    "text_length": 49
+  },
+  "best_variant": {
+    "text": "🚀 Exciting news! Our latest product is now live! 🌐 Visit our website to discover all the amazing features. Don't miss out! #cloud",
+    "weekday": "Wednesday",
+    "hour": 13,
+    "rationale": "Using emojis and a call to action to create excitement and engagement."
+  },
+  "best_prediction": {
+    "engagement_score": 3.84,
+    "weekday": "Wednesday",
+    "hour": 13,
+    "text_length": 129
+  },
+  "retrieved_examples": [
+    {
+      "tweet_id": "tw-684018278629568512",
+      "text": "@SpanishToMove Hola. Thx for the follow amigo. Check out @g2techgroup for any IT or #AWS website questions.",
+      "weekday": "Monday",
+      "hour": 7,
+      "engagement_score": 0.0,
+      "similarity": 0.422
+    },
+    {
+      "tweet_id": "tw-684811709022867456",
+      "text": "I can't even sign into #Coachella's website. This is messed up. #AWS? #Elasticity?",
+      "weekday": "Wednesday",
+      "hour": 12,
+      "engagement_score": 0.0,
+      "similarity": 0.417
+    },
+    {
+      "tweet_id": "tw-684017136533114880",
+      "text": "@JuntaeDeLane Thx for the follow Juntae Check out @g2techgroup if you have any #DevOps or #AWS website questions",
+      "weekday": "Monday",
+      "hour": 7,
+      "engagement_score": 0.0,
+      "similarity": 0.406
+    },
+    {
+      "tweet_id": "tw-684024981395783680",
+      "text": "@C49Productions Thx for the follow C49. Check out @g2techgroup for any #DevOps or #AWS website questions.",
+      "weekday": "Monday",
+      "hour": 7,
+      "engagement_score": 0.0,
+      "similarity": 0.406
+    }
+  ],
+  "tool_trace": [
+    {
+      "tool": "predict_engagement",
+      "input": {
+        "text": "Our new product is out. Check the website. #cloud",
+        "weekday": "Wednesday",
+        "hour": 13
+      },
+      "output": {
+        "engagement_score": 3.61,
+        "weekday": "Wednesday",
+        "hour": 13,
+        "text_length": 49
+      }
+    },
+    {
+      "tool": "predict_engagement",
+      "input": {
+        "text": "🚀 Exciting news! Our latest product is now live! 🌐 Visit our website to discover all the amazing features. Don't miss out! #cloud",
+        "weekday": "Wednesday",
+        "hour": 13,
+        "rationale": "Using emojis and a call to action to create excitement and engagement."
+      },
+      "output": {
+        "engagement_score": 3.84,
+        "weekday": "Wednesday",
+        "hour": 13,
+        "text_length": 129
+      }
+    },
+    {
+      "tool": "predict_engagement",
+      "input": {
+        "text": "🌟 It's here! Our new product just launched! Check it out on our website and see what makes it special! #cloud",
+        "weekday": "Wednesday",
+        "hour": 13,
+        "rationale": "Shortened message with a clear call to action and engaging emoji."
+      },
+      "output": {
+        "engagement_score": 3.69,
+        "weekday": "Wednesday",
+        "hour": 13,
+        "text_length": 109
+      }
+    },
+    {
+      "tool": "predict_engagement",
+      "input": {
+        "text": "🎉 Big news! Our new product is officially launched! Head over to our website to learn more and see it in action! #cloud",
+        "weekday": "Wednesday",
+        "hour": 13,
+        "rationale": "Using engaging language and emojis to attract attention and encourage visits."
+      },
+      "output": {
+        "engagement_score": 3.78,
+        "weekday": "Wednesday",
+        "hour": 13,
+        "text_length": 119
+      }
+    },
+    {
+      "tool": "predict_engagement",
+      "input": {
+        "text": "Our new product is out. Check the website. #cloud",
+        "weekday": "Wednesday",
+        "hour": 13,
+        "rationale": "Baseline candidate: keep the original if rewrites reduce predicted engagement."
+      },
+      "output": {
+        "engagement_score": 3.61,
+        "weekday": "Wednesday",
+        "hour": 13,
+        "text_length": 49
+      }
+    }
+  ],
+  "hallucination_report": {
+    "ghost_numbers": 0,
+    "ghost_quotes": 0,
+    "checked_numbers": [
+      "3.61",
+      "3.84",
+      "13"
+    ],
+    "checked_quotes": [],
+    "notes": [
+      "No unsupported numbers or quotes found."
+    ]
+  },
+  "judge": {
+    "score": 4,
+    "passes": true,
+    "reason": "The optimization effectively increases the predicted engagement score from 3.61 to 3.84 by using engaging language and emojis, which is grounded in the tool outputs."
+  },
+  "techniques_used": [
+    "RAG over historical tweets",
+    "agent with engagement prediction tool",
+    "structured output with Pydantic validators",
+    "LLM-as-judge with heuristic fallback",
+    "hallucination check for ghost numbers and quotes"
+  ]
+}

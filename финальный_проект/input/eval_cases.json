@@ -1,0 +1,18 @@
+[
+  {"text": "Our new cloud monitoring dashboard is live. Check the website for details. #cloud", "weekday": "Wednesday", "hour": 13},
+  {"text": "We are hiring a senior backend engineer for distributed systems. Apply today. #jobs #aws", "weekday": "Thursday", "hour": 17},
+  {"text": "Join our webinar about practical machine learning operations next week. Seats are limited. #mlops", "weekday": "Tuesday", "hour": 11},
+  {"text": "New API release: faster search, better logs, and simpler billing exports. #devtools", "weekday": "Monday", "hour": 10},
+  {"text": "Case study: how our team reduced support response time with automation. #customersuccess", "weekday": "Friday", "hour": 15},
+  {"text": "Security patch is available for all users. Please update your workspace today. #security", "weekday": "Wednesday", "hour": 9},
+  {"text": "Product tip: save custom filters to review incidents faster every morning. #saas", "weekday": "Tuesday", "hour": 8},
+  {"text": "We published benchmarks for the new inference endpoint. Read the full report. #ai", "weekday": "Thursday", "hour": 14},
+  {"text": "Early access starts today for our analytics assistant. Tell us what you want to test. #analytics", "weekday": "Monday", "hour": 16},
+  {"text": "Recap from our engineering meetup: observability, queues, and lessons learned. #engineering", "weekday": "Saturday", "hour": 12},
+  {"text": "The mobile app now supports offline drafts and faster sync. Update from the store. #mobile", "weekday": "Friday", "hour": 18},
+  {"text": "Behind the scenes: how we designed the new onboarding checklist. #product", "weekday": "Wednesday", "hour": 12},
+  {"text": "Open source update: our SDK examples now include Python, JavaScript, and Go. #opensource", "weekday": "Sunday", "hour": 19},
+  {"text": "Customer story: a small team shipped reporting dashboards in one week. #startup", "weekday": "Tuesday", "hour": 15},
+  {"text": "Reminder: maintenance window starts tonight at 22:00 UTC. No action required. #status", "weekday": "Thursday", "hour": 20}
+]
+
